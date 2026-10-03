@@ -3,6 +3,8 @@
  * - /ai          : الذكاء الاصطناعي: مجاني من Cloudflare افتراضيًا، أو Claude لو حطيت مفتاحه (يبقى مخفي هنا ولا يوصل للمتصفح أبدًا)
  * - /radar       : رادار البلاغات المشترك (أنماط فقط، بدون نص رسائل)
  * - /family/CODE : تنبيهات لوحة الأسرة لرمز من 6 خانات
+ * - /tts          : صوت المتصل وفطن (ElevenLabs أو Azure)
+ * - /stt          : يكتب كلام المستخدم في المكالمة (Whisper المجاني من Cloudflare)
  *
  * الإعدادات في الـWorker:
  *   AI                 (Workers AI binding) الذكاء الاصطناعي المجاني من Cloudflare (بدون مفتاح ولا بطاقة)
@@ -119,6 +121,26 @@ export default {
         const buf = await r.arrayBuffer();
         if (env.FATIN_KV && text.length <= 300) ctx.waitUntil(env.FATIN_KV.put(kvKey, buf, { expirationTtl: 30 * 86400 }).catch(() => {}));
         return new Response(buf, { headers: audio });
+      }
+
+      // ---------- السمع: يحوّل كلام المستخدم في المكالمة إلى نص (Whisper المجاني من Cloudflare) ----------
+      if (url.pathname === "/stt" && req.method === "POST") {
+        if (!okOrigin) return json({ error: "origin" }, 403);
+        if (!env.AI) return json({ error: "no_ai" }, 503);
+        const buf = await req.arrayBuffer();
+        if (buf.byteLength > 3_000_000) return json({ error: "too_big" }, 413);
+        if (buf.byteLength < 2000) return json({ text: "" });
+        const lang = /^[a-z]{2}$/.test(url.searchParams.get("lang") || "") ? url.searchParams.get("lang") : "ar";
+        const bytes = new Uint8Array(buf);
+        let bin = ""; for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+        let text = "";
+        try {
+          const out = await env.AI.run("@cf/openai/whisper-large-v3-turbo", { audio: btoa(bin), task: "transcribe", language: lang, vad_filter: true });
+          text = (out && out.text) || "";
+        } catch (e) {
+          try { const out = await env.AI.run("@cf/openai/whisper", { audio: [...bytes] }); text = (out && out.text) || ""; } catch (e2) { return json({ error: "stt" }, 502); }
+        }
+        return json({ text: String(text).trim().slice(0, 500) });
       }
 
       // ---------- AI ----------
