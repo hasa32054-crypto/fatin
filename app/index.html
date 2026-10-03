@@ -1023,6 +1023,12 @@ h1,h2,h3{line-height:1.45!important;padding-bottom:.08em}
 .te-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .te-stats div{background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:16px;padding:10px 6px;display:flex;flex-direction:column;gap:2px}
 .te-stats b{font-family:var(--f-display);font-size:24px;color:var(--gold)}.te-stats span{font-size:12px;color:var(--muted);line-height:1.35}
+.ask-fab{position:absolute;z-index:9;left:14px;bottom:calc(92px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:8px;border:none;cursor:pointer;border-radius:999px;padding:7px 16px 7px 7px;font-family:var(--f-display);font-weight:700;font-size:14px;color:var(--night);background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.15) inset;transition:transform .2s,opacity .2s}
+[dir="rtl"] .ask-fab,.ask-fab{flex-direction:row}
+.ask-fab:hover{transform:translateY(-2px)}.ask-fab:active{transform:scale(.96)}
+.ask-fab .af-ic{width:36px;height:36px;border-radius:50%;background:var(--night);color:var(--gold);display:grid;place-items:center;flex:none}.ask-fab .af-ic svg{width:20px;height:20px}
+.ask-fab[hidden]{display:none}
+.ask-fab.mini .af-t{display:none}.ask-fab.mini{padding:7px}
 </style>
 
 <div class="aurora" aria-hidden="true"></div>
@@ -1447,6 +1453,7 @@ h1,h2,h3{line-height:1.45!important;padding-bottom:.08em}
         
       </div>
     </nav>
+    <button class="ask-fab" id="ask-fab" type="button" aria-label="اسأل فطن"><span class="af-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M9.5 9a2.5 2.5 0 015 .5c0 1.5-2.5 1.5-2.5 3M12 14.5h.01"/></svg></span><span class="af-t" id="ask-fab-t">اسأل فطن</span></button>
 
     <!-- report sheet -->
     <div class="scrim lscrim" id="lang-scrim"></div>
@@ -3271,6 +3278,19 @@ showTab=function(name,jump){
   if(name==="badges") drawBadges();
   if(name==="family") drawFamily();
 };
+/* floating "ask Fatin" button, like a support chat: on every page, opens the chat, back returns where you were */
+let askFrom=null;
+function fabSync(){ const f=$("ask-fab"); if(!f) return;
+  let tb=false; try{ tb=tourOn; }catch(e){} const busy=tb||curTab==="ask"||["login","onb","panic","tour-end"].some(id=>{ const o=$(id); return o&&!o.hidden; });
+  f.hidden=busy;
+  const FAB_T={ar:"اسأل فطن",en:"Ask Fatin",ur:"فطن سے پوچھیں",hi:"फ़तिन से पूछें",bn:"ফাতিনকে জিজ্ঞাসা করুন",tl:"Tanungin si Fatin",id:"Tanya Fatin",fr:"Demander à Fatin",es:"Pregunta a Fatin",zh:"问 Fatin"};
+  let lg="ar"; try{ lg=lang; }catch(e){} const tx=FAB_T[lg]||FAB_T.ar;
+  $("ask-fab-t").textContent=tx; f.setAttribute("aria-label",tx);
+  f.classList.toggle("mini",curTab==="call"||curTab==="sim"); }
+{ const _stF=showTab; showTab=function(n,j){ _stF(n,j); fabSync(); }; }
+$("ask-fab").onclick=()=>{ askFrom=curTab; showTab("ask"); setTimeout(()=>{ const i=$("ask-in"); if(i) i.focus(); },120); };
+{ const back=document.querySelector('#v-ask .back'); if(back) back.addEventListener("click",e=>{ if(askFrom&&askFrom!=="ask"&&askFrom!=="more"){ e.stopImmediatePropagation(); const t=askFrom; askFrom=null; showTab(t); } else askFrom=null; },true); }
+setInterval(fabSync,700);
 document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{ const g=b.dataset.go; if(g==="panic") openPanic(); else if(g==="class") openClass(); else if(g==="qr") $("qr-file").click(); else if(g==="lang"){ openLangSheet(); } else showTab(g); });
 document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>applyLang(b.dataset.lang));
 
