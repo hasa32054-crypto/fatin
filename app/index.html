@@ -2486,16 +2486,17 @@ const VOICE={cloud:null,el:null,cache:new Map(),seq:0,unlocked:false,busy:false,
 const CLOUD_LANGS=/^(ar|en|hi|tl|id|fr|es|zh)$/;
 function voiceLang(){ try{ return lang||"ar"; }catch(e){ return "ar"; } }
 const _ssCancel=(()=>{ try{ return speechSynthesis.cancel.bind(speechSynthesis); }catch(e){ return ()=>{}; } })();
-function cloudStop(){ VOICE.seq++; VOICE.busy=false; VOICE.next=null; const a=VOICE.el; if(a){ try{ a.onended=null; a.onerror=null; a.pause(); }catch(e){} } }
+function cloudStop(){ VOICE.seq++; VOICE.busy=false; VOICE.next=null; const a=VOICE.el; if(a){ try{ a.onended=null; a.onerror=null; a.onplaying=null; a.pause(); }catch(e){} } }
 try{ speechSynthesis.cancel=function(){ cloudStop(); _ssCancel(); }; }catch(e){}
 /* iPhone only plays sound that starts from a tap: the first tap anywhere opens both voices */
-const SILENT_WAV="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=";
+const SILENT_WAV="data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA";
 function audioPlayback(){ try{ if(navigator.audioSession) navigator.audioSession.type="playback"; }catch(e){} }   // loud speaker, even after the mic was used
 function voiceUnlock(){ if(VOICE.unlocked||VOICE.unlocking) return; VOICE.unlocking=true;
   try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); a.muted=false;
-    if(!VOICE.busy){ a.src=SILENT_WAV; const p=a.play(); if(p&&p.then) p.then(()=>{ VOICE.unlocked=true; VOICE.unlocking=false; }).catch(()=>{ VOICE.unlocking=false; }); else { VOICE.unlocked=true; VOICE.unlocking=false; } }
+    if(!VOICE.busy){ a.onended=null; a.onerror=null; a.onplaying=null; a.src=SILENT_WAV; const p=a.play(); if(p&&p.then) p.then(()=>{ VOICE.unlocked=true; VOICE.unlocking=false; }).catch(()=>{ VOICE.unlocking=false; }); else { VOICE.unlocked=true; VOICE.unlocking=false; } }
     else VOICE.unlocking=false; }catch(e){ VOICE.unlocking=false; }
-  try{ if(!VOICE.ssOK){ const u=new SpeechSynthesisUtterance("."); u.volume=0; u.onend=()=>{ VOICE.ssOK=true; }; speechSynthesis.speak(u); } }catch(e){} }
+  // wake the phone's own voice silently (an empty line), and not at all while the AI voice is in use
+  try{ if(!VOICE.ssOK&&VOICE.cloud!==true&&!VOICE.busy){ VOICE.ssOK=true; const u=new SpeechSynthesisUtterance(""); u.volume=0; speechSynthesis.speak(u); } }catch(e){} }
 ["touchend","click","keydown"].forEach(t=>addEventListener(t,voiceUnlock,{capture:true,passive:true}));
 async function cloudOK(){ if(VOICE.cloud!==null) return VOICE.cloud; try{ await fatinConfig; }catch(e){}
   if(!FATIN.server||!navigator.onLine) return false;
@@ -2527,12 +2528,15 @@ function say(text,opt={}){
   const local=()=>{ if(my!==VOICE.seq) return; audioPlayback(); try{ if(!("speechSynthesis" in window)) return done(); const u=utter(text,opt); u.onend=done; u.onerror=done; speechSynthesis.speak(u); }catch(e){ done(); } };
   cloudOK().then(ok=>{ if(my!==VOICE.seq) return; if(!ok) return local();
     if(VOICE.langs?!VOICE.langs.includes(voiceLang()):!CLOUD_LANGS.test(voiceLang())) return local();
-    cloudAudio(text,opt.role||"fatin",opt.emotion).then(src=>{ if(my!==VOICE.seq) return; if(!src) return local();
+    cloudAudio(text,opt.role||"fatin",opt.emotion).then(src=>{ if(my!==VOICE.seq) return; if(!src) return (opt.role==="caller"&&VOICE.cloud)?done():local();
       const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); audioPlayback();
-      a.onended=done; a.onerror=()=>{ a.onerror=null; local(); }; a.src=src;
+      // one voice at a time: once the AI voice has started, a hiccup ends the line instead of handing it to the phone's voice
+      let started=false; a.onplaying=()=>{ started=true; };
+      const finish=()=>{ a.onended=null; a.onerror=null; a.onplaying=null; done(); };
+      a.onended=finish; a.onerror=()=>{ a.onerror=null; a.onended=null; if(started||VOICE.cloud) finish(); else local(); }; a.src=src;
       const sp=parseFloat(($("rate")||{}).value)||1.1; a.playbackRate=Math.max(.8,Math.min(1.4,(sp/1.1)*(opt.rate||1)));
       try{ a.preservesPitch=true; a.webkitPreservesPitch=true; }catch(e){}
-      const p=a.play(); p&&p.catch(()=>{ a.onended=null; local(); }); }); });
+      const p=a.play(); p&&p.catch(err=>{ if(my!==VOICE.seq) return; a.onended=null; a.onerror=null; if(started) return finish(); if(err&&err.name==="AbortError") return; if(VOICE.cloud&&opt.role==="caller") return finish(); local(); }); }); });
 }
 function speak(text){ say(text,{role:"fatin"}); }
 function flash(level){
@@ -3463,7 +3467,7 @@ function callEnd(how){
   if(mode==="visual") speak(t[1]+". "+t[2]); else if(mode!=="simple"){ flash(t[0]==="win"?"safe":"danger"); if(mode==="touch") vibrate(t[0]==="win"?"safe":"danger"); }
 }
 $("cs-accept").onclick=async()=>{ if(!call||call.ended) return;
-  try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); if(!VOICE.busy){ a.src=SILENT_WAV; const p=a.play(); p&&p.then&&p.then(()=>{ VOICE.unlocked=true; }).catch(()=>{}); } }catch(e){}
+  try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); if(!VOICE.busy){ a.onended=null; a.onerror=null; a.onplaying=null; a.src=SILENT_WAV; const p=a.play(); p&&p.then&&p.then(()=>{ VOICE.unlocked=true; }).catch(()=>{}); } }catch(e){}
   $("cs-note").hidden=true;
   if(callMode==="voice"){ micOK=await ensureMic(); if(micOK!=="ok") micFallback(); }
   if(!call||call.ended) return;
