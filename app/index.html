@@ -3012,7 +3012,7 @@ function startSim(k){
   $("chat").innerHTML=""; $("say-in").disabled=false;
   const sc=scn(k); chatAdd("them",sc.open,sc.who); simTurns.push({role:"assistant",content:sc.open});
   setTimeout(()=>chatAdd("coach",coachFor(sc.open)+L2("s_start")),reduced?0:700); simIdleN=0; simArmIdle();
-  if(mode==="visual") speak(curLang()==="ar"?sc.who+" يقول: "+sc.open:sc.open);
+  if(mode==="visual"){ if(curLang()==="ar") say(sc.who+" يقول:",{role:"fatin"}); say(sc.open,{role:"caller",queue:curLang()==="ar"}); }
   drawQuick();
   $("sim-note").textContent=L2(sample?"sim_note_ai":"sim_note_off");
 }
@@ -3075,7 +3075,7 @@ let simIdleT=null, simIdleN=0;
 function simArmIdle(){ clearTimeout(simIdleT); if(simDone) return;
   simIdleT=setTimeout(()=>{ if(simDone||simBusy||$("v-train").hidden) return; simIdleN++;
     const line=simIdleN===1?L2("hello1"):simIdleN===2?L2("hello2"):null; if(!line) return;
-    chatAdd("them",line,scn(simScen).who); simTurns.push({role:"assistant",content:line}); if(mode==="visual") speak(line); simArmIdle(); },60000); }
+    chatAdd("them",line,scn(simScen).who); simTurns.push({role:"assistant",content:line}); if(mode==="visual") say(line,{role:"caller"}); simArmIdle(); },60000); }
 async function userSays(text){
   text=(text||"").trim(); if(!text||simDone||simBusy) return; clearTimeout(simIdleT); simIdleN=0;
   chatAdd("me",text); simTurns.push({role:"user",content:text}); $("say-in").value="";
@@ -3101,7 +3101,7 @@ async function userSays(text){
   simStep++;
   chatAdd("them",reply,scn(simScen).who); simTurns.push({role:"assistant",content:reply});
   chatAdd("coach",tip||coachFor(reply)); simArmIdle();
-  if(mode==="visual") speak(reply);
+  if(mode==="visual") say(reply,{role:"caller"});
   if(simStep>=6) endSim(simRefusals>0,simRefusals>0?"صمدت للآخر وما أعطيته شي.":"تذكّر: الرفض الواضح والتأكد بنفسك هو الحل.");
 }
 $("say").addEventListener("submit",e=>{ e.preventDefault(); userSays($("say-in").value); });

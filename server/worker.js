@@ -14,8 +14,8 @@
  *   AZURE_TTS_REGION   (اختياري، مع المفتاح) منطقة Azure Speech، مثل eastus
  *   AZURE_VOICE_CALLER / AZURE_VOICE_FATIN (اختياري) لتغيير الصوت العربي
  *   ELEVENLABS_API_KEY (Secret، اختياري) بديل لـAzure. بدون أي مفتاح التطبيق يستخدم صوت الجوال
- *   VOICE_CALLER       (اختياري) رقم صوت المتصل من ElevenLabs
- *   VOICE_FATIN        (اختياري) رقم صوت فطن من ElevenLabs
+ *   VOICE_CALLER       (اختياري) رقم صوت الرجال (المتصل والمحتال) من ElevenLabs، افتراضيًا فهد
+ *   VOICE_FATIN        (اختياري) رقم صوت فطن (امرأة) من ElevenLabs، افتراضيًا سارة
  *   TTS_MODEL          (اختياري) افتراضيًا eleven_v4_turbo (أسرع رد)، وتقدر تحط eleven_v4 لجودة أعلى
  */
 const MODEL = "claude-haiku-4-5-20251001";
@@ -53,7 +53,7 @@ export default {
       // Azure (صوت حامد السعودي) أولًا لو مفتاحه موجود، وإلا ElevenLabs، وإلا التطبيق يستخدم صوت الجوال
       if (url.pathname === "/tts") {
         const azure = !!(env.AZURE_TTS_KEY && env.AZURE_TTS_REGION), eleven = !!env.ELEVENLABS_API_KEY;
-        if (req.method === "GET") return json({ ok: azure || eleven, provider: azure ? "azure" : eleven ? "elevenlabs" : null, langs: azure ? Object.keys(AZURE_VOICES) : eleven ? ["ar", "en", "hi", "tl", "id", "fr", "es", "zh"] : [] });
+        if (req.method === "GET") return json({ ok: azure || eleven, provider: azure ? "azure" : eleven ? "elevenlabs" : null, langs: azure ? Object.keys(AZURE_VOICES) : eleven ? (/^eleven_(v4|v3)/.test(env.TTS_MODEL || TTS_MODEL) ? Object.keys(AZURE_VOICES) : ["ar", "en", "hi", "tl", "id", "fr", "es", "zh"]) : [] });
         if (req.method !== "POST") return json({ error: "method" }, 405);
         if (!okOrigin) return json({ error: "origin" }, 403);
         if (!azure && !eleven) return json({ error: "no_tts" }, 503);
