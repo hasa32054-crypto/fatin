@@ -132,6 +132,23 @@ p{margin:0}
 @keyframes wv{0%,100%{height:25%}50%{height:100%}}
 .p-cap{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%) translateY(100%);font-size:12px;color:var(--dim);white-space:nowrap}
 
+/* hero motion */
+/* ===== hero motion: «أسرع من الضغطة» — a finger heads for the scam link, Fatin's Kufi shield assembles on it first ===== */
+.phone{transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,1,.3,1),filter .6s}
+.stage{perspective:1200px}
+.phone.hit{transform:rotateX(4deg) rotateY(-7deg) scale(.985)}
+.phone.slow .bubble span:not(.link){filter:saturate(.3) brightness(.75);transition:filter .4s}
+.phone .bubble span{transition:filter .5s}
+.finger{position:absolute;z-index:6;left:0;top:0;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;opacity:0;pointer-events:none;
+  background:radial-gradient(circle at 40% 35%,rgba(255,255,255,.95),rgba(255,255,255,.55) 45%,rgba(255,255,255,.12) 70%,transparent 72%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.25),0 12px 30px rgba(0,0,0,.45)}
+.finger i{position:absolute;inset:-14px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);opacity:0}
+.shock{position:absolute;z-index:5;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--gold);opacity:0;pointer-events:none}
+.seal{position:absolute;z-index:7;left:0;top:0;width:96px;height:96px;margin:-48px 0 0 -48px;overflow:visible;pointer-events:none;filter:drop-shadow(0 10px 24px rgba(224,188,94,.45))}
+.seal *{transform-box:fill-box;transform-origin:center}
+.itag{position:absolute;z-index:8;left:50%;top:0;transform:translate(-50%,0);white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--gold);color:var(--night);font-family:var(--f-display);font-weight:700;font-size:13px;opacity:0;pointer-events:none;box-shadow:0 8px 20px rgba(0,0,0,.35)}
+@media (prefers-reduced-motion:reduce){.phone{transition:none}}
+
 /* sections */
 section.sec{padding-block:56px 8px}
 .sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;max-width:720px}
@@ -506,8 +523,12 @@ html{direction:rtl}
     <div class="stage in d2" aria-label="عرض متحرك: فطن يفحص رسائل حقيقية الشكل" role="img">
       <div class="halo"></div>
       <svg class="rings" viewBox="0 0 460 460" aria-hidden="true"><g class="spin"><circle cx="230" cy="230" r="222"/></g><g class="spin2"><circle cx="230" cy="230" r="190" stroke-dasharray="1 14"/></g></svg>
-      <div class="phone" aria-hidden="true">
+      <div class="phone" id="phone" aria-hidden="true">
         <div class="notch"></div>
+        <div class="finger" id="finger"><i></i></div>
+        <div class="shock" id="shock"></div>
+        <svg class="seal" id="seal" viewBox="19 26 162 162"></svg>
+        <div class="itag" id="itag">فطن أوقفها قبل الضغطة</div>
         <div class="p-head"><div class="p-av">SMS</div><div><b id="p-from">AbsherSA</b><small>رسالة نصية · الآن</small></div></div>
         <div class="p-body">
           <div class="beam" id="p-beam"></div>
@@ -832,16 +853,79 @@ function build(d){
   d.parts.forEach(([t,c])=>{const s=document.createElement("span"); s.textContent=t; if(c) s.className="w "+c; b.appendChild(s);});
   $("p-from").textContent=d.from; const v=$("p-verdict"); v.dataset.l=d.l; $("pv-i").innerHTML=ICON[d.l]; $("pv-t").textContent=d.t; $("pv-s").textContent=d.s;
 }
+/* Fatin's emblem, built piece by piece so it can assemble in front of the link */
+const SEAL=(()=>{ const NS="http://www.w3.org/2000/svg", svg=$("seal"), el=(t,a)=>{ const e=document.createElementNS(NS,t); for(const k in a) e.setAttribute(k,a[k]); svg.appendChild(e); return e; };
+  const teeth=[[40,50,60],[65,75,85],[90,100,110],[115,125,135],[140,150,160]].map(([x1,x2,x3],i)=>el("path",{d:`M${x1} 49 ${x2} ${i===2?30:35} ${x3} 49Z`,fill:"#E0BC5E"}));
+  const left=el("path",{d:"M36 48H100V184C58 152 34 110 36 48Z",fill:"#E0BC5E"});
+  const right=el("path",{d:"M100 48H164C166 110 142 152 100 184Z",fill:"#F4DA94"});
+  const R="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9Z";
+  const blocks=[...R.matchAll(/M([\d.]+) ([\d.]+)h([\d.]+)v([\d.]+)/g)].map(m=>el("rect",{x:m[1],y:m[2],width:m[3],height:m[4],fill:"#03130D"}));
+  const dia=el("path",{d:"M64 102.8 67.24 106.05 64 109.29 60.76 106.05Z",fill:"#03130D"});
+  const eye=el("path",{d:"M120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z",fill:"#03130D"});
+  const pupil=el("circle",{cx:136,cy:84.9,r:4.68,fill:"#E0BC5E"});
+  return {svg,teeth,left,right,blocks,marks:[dia,eye,pupil],all:[...teeth,left,right,...blocks,dia,eye,pupil]};
+})();
+const EASE="cubic-bezier(.2,1,.3,1)", SNAP="cubic-bezier(.3,1.6,.4,1)";
+const anim=(e,k,o)=>e.animate(k,Object.assign({fill:"forwards"},o)).finished.catch(()=>{});
+function at(el,x,y){ el.style.left=x+"px"; el.style.top=y+"px"; }
+function centerOf(node,host){ const a=node.getBoundingClientRect(), h=host.getBoundingClientRect(); return [a.left-h.left+a.width/2, a.top-h.top+a.height/2]; }
+function sealReset(){ SEAL.all.forEach(e=>{ e.getAnimations().forEach(x=>x.cancel()); e.style.opacity=0; }); SEAL.svg.getAnimations().forEach(x=>x.cancel()); SEAL.svg.style.opacity=1; }
+async function assembleSeal(){
+  const R=(a,b)=>a+Math.random()*(b-a), T=[];
+  // shield halves close in like a gate, the crown drops, then the Kufi blocks of «فطن» fly in and lock
+  T.push(anim(SEAL.left,[{opacity:0,transform:"translateX(-70px) rotate(-14deg)"},{opacity:1,transform:"none"}],{duration:520,easing:SNAP}));
+  T.push(anim(SEAL.right,[{opacity:0,transform:"translateX(70px) rotate(14deg)"},{opacity:1,transform:"none"}],{duration:520,easing:SNAP}));
+  SEAL.teeth.forEach((t,i)=>T.push(anim(t,[{opacity:0,transform:"translateY(-40px) scale(.4)"},{opacity:1,transform:"none"}],{duration:420,delay:260+i*55,easing:SNAP})));
+  SEAL.blocks.forEach((b,i)=>T.push(anim(b,[{opacity:0,transform:`translate(${R(-160,160)}px,${R(-170,170)}px) rotate(${R(-180,180)}deg) scale(.3)`},{opacity:1,transform:"none"}],{duration:620,delay:330+i*34,easing:EASE})));
+  SEAL.marks.forEach((m,i)=>T.push(anim(m,[{opacity:0,transform:"scale(0)"},{opacity:1,transform:"none"}],{duration:380,delay:820+i*70,easing:SNAP})));
+  await Promise.all(T);
+}
+async function danger(d){
+  const ph=$("phone"), b=$("p-bubble"), v=$("p-verdict"), f=$("finger"), sh=$("shock");
+  const link=b.querySelector(".link"), [lx,ly]=centerOf(link,ph), W=ph.clientWidth, H=ph.clientHeight;
+  // the finger comes for the link…
+  at(f,W*.82,H*.96); f.style.opacity=0;
+  await anim(f,[{opacity:0,transform:"translate(0,30px) scale(.8)"},{opacity:1,transform:"none"}],{duration:380,easing:EASE});
+  const dx=lx-W*.82, dy=ly-H*.96;
+  const approach=f.animate([{transform:"none"},{transform:`translate(${dx}px,${dy}px) scale(.92)`}],{duration:1500,easing:"cubic-bezier(.45,.05,.55,.95)",fill:"forwards"});
+  await wait(1080); approach.pause();                       // …and Fatin is faster: time freezes a hair before the tap
+  ph.classList.add("slow","hit");
+  at(SEAL.svg,lx,ly); at(sh,lx,ly);
+  anim(sh,[{opacity:.9,transform:"scale(1)"},{opacity:0,transform:"scale(22)"}],{duration:900,easing:"cubic-bezier(.1,.7,.3,1)"});
+  anim(f.querySelector("i"),[{opacity:.8,transform:"scale(.6)"},{opacity:0,transform:"scale(1.4)"}],{duration:700});
+  await assembleSeal();
+  const tag=$("itag"); tag.style.top=(ly+58)+"px";
+  anim(tag,[{opacity:0,transform:"translate(-50%,8px) scale(.9)"},{opacity:1,transform:"translate(-50%,0)",offset:.2},{opacity:1,transform:"translate(-50%,0)",offset:.8},{opacity:0,transform:"translate(-50%,-6px)"}],{duration:1900,easing:"ease-out"});
+  ph.classList.remove("hit");
+  // the scam marks light up, the finger backs off
+  const ws=[...b.querySelectorAll(".w")]; for(const w of ws){ w.classList.add("on"); await wait(170); }
+  approach.cancel(); f.style.transform=`translate(${dx}px,${dy}px) scale(.92)`;
+  anim(f,[{opacity:1,transform:`translate(${dx}px,${dy}px) scale(.92)`},{opacity:0,transform:`translate(${dx*.4}px,${dy*.4+60}px) scale(.8)`}],{duration:650,easing:EASE}).then(()=>{ f.style.transform=""; });
+  await wait(500);
+  // the seal drops into the verdict card as its badge
+  const pvi=$("pv-i"); v.classList.remove("out"); await wait(80);
+  const [vx,vy]=centerOf(pvi,ph);
+  await anim(SEAL.svg,[{transform:"none"},{transform:`translate(${vx-lx}px,${vy-ly}px) scale(.5)`,opacity:.0}],{duration:650,easing:"cubic-bezier(.5,0,.2,1)"});
+  pvi.innerHTML=ICON.danger; ph.classList.remove("slow");
+}
+async function safe(d){
+  const b=$("p-bubble"), v=$("p-verdict"), beam=$("p-beam");
+  beam.classList.remove("run"); void beam.offsetWidth; beam.classList.add("run");
+  const ws=[...b.querySelectorAll(".w")]; await wait(900); for(const w of ws){ w.classList.add("on"); await wait(200); }
+  await wait(300); v.classList.remove("out");
+}
 async function loop(){
   const d=DEMO[di%DEMO.length]; di++;
-  const b=$("p-bubble"), v=$("p-verdict"), beam=$("p-beam");
-  b.classList.add("out"); v.classList.add("out"); await wait(450); build(d); b.classList.remove("out"); await wait(600);
-  beam.classList.remove("run"); void beam.offsetWidth; beam.classList.add("run");
-  const ws=[...b.querySelectorAll(".w")]; for(const w of ws){ await wait(1500/(ws.length+1)); w.classList.add("on"); }
-  await wait(450); v.classList.remove("out"); setTimeout(loop,3600);
+  const b=$("p-bubble"), v=$("p-verdict"); sealReset();
+  b.classList.add("out"); v.classList.add("out"); await wait(450); build(d); b.classList.remove("out"); await wait(700);
+  if(d.l==="danger") await danger(d); else await safe(d);
+  setTimeout(()=>{ if(heroVisible) loop(); else heroWaiting=true; },3400);
 }
-build(DEMO[0]); $("p-bubble").classList.remove("out"); document.querySelectorAll("#p-bubble .w").forEach(w=>w.classList.add("on")); $("p-verdict").classList.remove("out");
-if(!reduced){ di=1; setTimeout(loop,3200); }
+let heroVisible=true, heroWaiting=false;
+try{ new IntersectionObserver(es=>{ heroVisible=es[0].isIntersecting; if(heroVisible&&heroWaiting){ heroWaiting=false; loop(); } }).observe($("phone")); }catch(e){}
+build(DEMO[0]); sealReset();
+if(reduced){ $("p-bubble").classList.remove("out"); document.querySelectorAll("#p-bubble .w").forEach(w=>w.classList.add("on")); $("p-verdict").classList.remove("out"); }
+else setTimeout(loop,700);
 
 /* OS integration motion: select → menu → tap → verdict card */
 const op=$("osphone");
