@@ -9,7 +9,7 @@
  *   FATIN_KV           (KV binding) مساحة تخزين مجانية للوحة الأسرة والرادار
  *   ANTHROPIC_API_KEY  (Secret، اختياري) لو حطيته يستخدم Claude بدل النموذج المجاني
  *   ALLOWED_ORIGIN     (اختياري) افتراضيًا https://hasa32054-crypto.github.io
- *   DAILY_CAP          (اختياري) أقصى عدد طلبات ذكاء اصطناعي في اليوم، افتراضيًا 400
+ *   DAILY_CAP          (اختياري، مع مفتاح Claude فقط) أقصى عدد طلبات في اليوم، افتراضيًا 400
  */
 const MODEL = "claude-haiku-4-5-20251001";
 const FREE_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct";
@@ -35,10 +35,14 @@ export default {
       if (url.pathname === "/ai" && req.method === "POST") {
         if (!okOrigin) return json({ error: "origin" }, 403);
         if (!env.ANTHROPIC_API_KEY && !env.AI) return json({ error: "no_ai" }, 503);
-        const day = Math.floor(Date.now() / 864e5), capKey = "day:" + day;
-        const used = +(await env.FATIN_KV.get(capKey)) || 0;
-        if (used >= (+env.DAILY_CAP || 400)) return json({ error: "daily_cap" }, 429);
-        await env.FATIN_KV.put(capKey, String(used + 1), { expirationTtl: 2 * 86400 });
+        // A daily cap only matters for the paid Claude key. The free model stops by itself when
+        // Cloudflare's free allowance runs out, so it spends no KV writes (free KV = 1,000 writes/day).
+        if (env.ANTHROPIC_API_KEY) {
+          const capKey = "day:" + Math.floor(Date.now() / 864e5);
+          const used = +(await env.FATIN_KV.get(capKey)) || 0;
+          if (used >= (+env.DAILY_CAP || 400)) return json({ error: "daily_cap" }, 429);
+          try { await env.FATIN_KV.put(capKey, String(used + 1), { expirationTtl: 2 * 86400 }); } catch (e) {}
+        }
 
         const body = await req.json();
         const messages = Array.isArray(body.messages) ? body.messages.slice(-12) : [];

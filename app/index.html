@@ -2036,7 +2036,7 @@ function makeRemoteSample(){
 }
 function remoteSampleIfAny(){ return (FATIN.server||ownKey())?makeRemoteSample():null; }
 function makeRemoteDB(){
-  const poll=(url,pick,cb)=>{ let stop=false; const tick=async()=>{ if(stop) return; try{ const r=await fetch(url,{cache:"no-store"}); if(r.ok){ const j=await r.json(); const docs=(pick(j)||[]).map((x,i)=>({id:String(i),exists:true,data:()=>x}));
+  const poll=(url,pick,cb)=>{ let stop=false; const tick=async()=>{ if(stop) return; if(document.hidden){ setTimeout(tick,15000); return; } try{ const r=await fetch(url,{cache:"no-store"}); if(r.ok){ const j=await r.json(); const docs=(pick(j)||[]).map((x,i)=>({id:String(i),exists:true,data:()=>x}));
         cb({docs,size:docs.length,empty:!docs.length,docChanges:()=>[],metadata:{fromCache:false,hasPendingWrites:false}}); } }catch(e){} if(!stop) setTimeout(tick,15000); }; tick(); return ()=>{ stop=true; }; };
   const col=path=>{ const fam=path.match(/^families\/([A-Z0-9]{6})\/alerts$/), ep=path==="reports"?"/radar":fam?"/family/"+fam[1]:null;
     const q={where(){return q},orderBy(){return q},limit(){return q},
