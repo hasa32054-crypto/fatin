@@ -53,7 +53,22 @@ p{margin:0}
 .nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
 .nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px}
 .nav a:hover{color:var(--ink);background:var(--panel)}
-@media (max-width:560px){.nav a.opt{display:none}}
+.top-cta{min-height:40px;padding:8px 16px;font-size:14px;flex:none}
+.nav a.xs{display:none}
+.nav a.on{color:var(--ink);background:var(--panel2)}
+.sec,.hero{scroll-margin-top:84px}
+/* phones and tablets: every section in one strip under the logo, swipe it sideways; the section you're reading lights up */
+@media (max-width:900px){
+  .top{flex-wrap:wrap;row-gap:8px;padding-bottom:10px}
+  .nav{order:3;flex:1 0 100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px;gap:6px;
+    -webkit-mask-image:linear-gradient(to left,transparent 0,#000 16px,#000 calc(100% - 28px),transparent 100%);mask-image:linear-gradient(to left,transparent 0,#000 16px,#000 calc(100% - 28px),transparent 100%)}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a,.nav a.xs{display:inline-flex;align-items:center;flex:none;white-space:nowrap;min-height:38px;padding:7px 14px;font-size:14px;border:1px solid var(--line2);background:rgba(11,48,34,.6);color:var(--muted)}
+  .nav a.on{background:var(--gold);border-color:var(--gold);color:var(--night);font-weight:600}
+  .logo .mk{width:40px;height:40px}
+  .sec,.hero{scroll-margin-top:124px}
+}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:48px 36px}
@@ -450,16 +465,19 @@ html{direction:rtl}
       <span class="mk" aria-hidden="true"><svg class="emb" viewBox="19 26 162 162" aria-hidden="true"><path d="M40 49 50 35 60 49ZM65 49 75 35 85 49ZM90 49 100 30 110 49ZM115 49 125 35 135 49ZM140 49 150 35 160 49Z" fill="#E0BC5E"/><path d="M36 48H164C166 110 142 152 100 184 58 152 34 110 36 48Z" fill="#E0BC5E"/><path d="M100 48H164C166 110 142 152 100 184Z" fill="#F4DA94"/><path d="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9ZM64 102.8 67.24 106.05 64 109.29 60.76 106.05ZM120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z" fill="#03130D"/><circle cx="136" cy="84.9" r="4.68" fill="#E0BC5E"/></svg></span>
       <b>فَطِن</b>
     </a>
-    <nav class="nav" aria-label="أقسام الموقع">
+    <nav class="nav" id="nav" aria-label="أقسام الموقع">
       <a href="#os">داخل جوالك</a>
       <a href="#file">الفكرة</a>
-      <a class="opt" href="#test">الاختبار</a>
-      <a class="opt" href="#new">الجديد</a>
-      <a class="opt" href="#compare">المقارنة</a>
-      <a class="opt" href="#criteria">المعايير</a>
-      <a class="opt" href="#roadmap">التطوير</a>
-      <a class="btn btn-main" style="min-height:40px;padding:8px 16px;font-size:14px" href="app/" target="_blank" rel="noopener">افتح التطبيق</a>
+      <a href="#test">الاختبار</a>
+      <a class="xs" href="#calls">المكالمات</a>
+      <a class="xs" href="#people">المستفيدون</a>
+      <a href="#new">الجديد</a>
+      <a href="#compare">المقارنة</a>
+      <a href="#criteria">المعايير</a>
+      <a class="xs" href="#nation">الوطن</a>
+      <a href="#roadmap">التطوير</a>
     </nav>
+    <a class="btn btn-main top-cta" href="app/" target="_blank" rel="noopener">افتح التطبيق</a>
   </header>
 
   <section class="hero" id="top">
@@ -844,6 +862,16 @@ try{
   document.querySelectorAll("[data-count]").forEach(el=>io.observe(el));
 }catch(e){}
 try{ if(window.QRCode) new QRCode($("qr-app"),{text:"https://hasa32054-crypto.github.io/fatin/app/",width:152,height:152,colorDark:"#03130D",colorLight:"#F3F8F5",correctLevel:QRCode.CorrectLevel.M}); }catch(e){}
+/* the section you're reading lights up in the bar (and the strip slides to it on phones) */
+(()=>{ const nav=document.getElementById("nav"); if(!nav||!("IntersectionObserver" in window)) return;
+  const links=[...nav.querySelectorAll('a[href^="#"]')], map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  let cur=null;
+  const set=id=>{ const a=map.get(id)||null; if(a===cur) return; cur&&cur.classList.remove("on"); cur&&cur.removeAttribute("aria-current"); cur=a; if(!a) return;
+    a.classList.add("on"); a.setAttribute("aria-current","true");
+    if(nav.scrollWidth>nav.clientWidth){ const n=nav.getBoundingClientRect(), r=a.getBoundingClientRect(); nav.scrollBy({left:(r.left+r.width/2)-(n.left+n.width/2),behavior:reduced?"auto":"smooth"}); } };
+  const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) set(e.target.id); }); },{rootMargin:"-35% 0px -60% 0px"});
+  document.querySelectorAll("section[id]").forEach(sec=>{ if(map.has(sec.id)||sec.id==="top"||sec.id==="app") io.observe(sec); });
+})();
 </script>
 
 

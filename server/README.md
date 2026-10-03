@@ -41,3 +41,14 @@
 
 ## للمبرمجين (wrangler)
 عدّل `id` في `wrangler.toml` إلى رقم الـKV حقك، ثم `npx wrangler deploy`.
+
+## الصوت الذكي (اختياري)
+
+بدونه فطن يستخدم صوت الجوال. معه، المتصل وفطن يتكلمون بصوت ذكاء اصطناعي طبيعي ينطق العربي زين.
+
+1. سوّ حساب مجاني في elevenlabs.io (ما يحتاج بطاقة، فيه ١٠ آلاف حرف بالشهر).
+2. من Profile → API Keys سوّ مفتاح.
+3. في Cloudflare: الـWorker → Settings → Variables and Secrets → Add → النوع Secret، الاسم `ELEVENLABS_API_KEY` والقيمة المفتاح.
+4. (اختياري) `VOICE_CALLER` و`VOICE_FATIN`: رقم أي صوت تحبه من Voice Library.
+
+الجمل المتكررة تنحفظ ٣٠ يوم في FATIN_KV فما تنحسب مرتين. لو خلص الرصيد، التطبيق يرجع لصوت الجوال تلقائيًا.
