@@ -3445,12 +3445,26 @@ function richInto(node,txt){
       if(m){ node.appendChild(el("b","",m[2])); } else node.appendChild(document.createTextNode(part.replace(/[*_`]{1,3}/g,""))); }); });
 }
 function askAdd(cls,txt){ const box=$("ask-chat"); const d=el("div","cm "+cls); if(cls==="them"){ const sm=el("small","","فطن"); d.appendChild(sm); richInto(d,txt); } else d.appendChild(document.createTextNode(txt)); box.appendChild(d); box.scrollTop=box.scrollHeight; return d; }
+const ABOUT_FATIN={
+ ar:"أنا **فطن**، من تطوير شاب سعودي: الطالب حسان عبدالله الينبعاوي من ثانوية الموهوبين التقنية بجدة، بهدف حماية **ذوي الإعاقة وكبار السن** من الاحتيال. وما أتبع لأي وزارة أو جهة حكومية أو بنك، فلو أحد كلّمك باسمي وطلب بياناتك فهو محتال.",
+ en:"I'm **Fatin**, developed by a young Saudi: student Hassan Abdullah Alyenbawi from the Gifted Technical Secondary School in Jeddah, to protect **people with disabilities and the elderly** from scams. I'm not part of any ministry, government body or bank, so anyone who contacts you in my name asking for your details is a scammer.",
+ ur:"میں **فطن** ہوں، جسے ایک سعودی نوجوان، جدہ کے طالب علم حسان عبداللہ الینبعاوی نے **معذور افراد اور بزرگوں** کو دھوکہ دہی سے بچانے کے لیے بنایا۔ میں کسی وزارت، سرکاری ادارے یا بینک کا حصہ نہیں ہوں۔",
+ hi:"मैं **फ़तिन** हूँ, जिसे जेद्दा के सऊदी छात्र हसन अब्दुल्ला अलयनबावी ने **दिव्यांगों और बुज़ुर्गों** को धोखाधड़ी से बचाने के लिए बनाया है। मैं किसी मंत्रालय, सरकारी संस्था या बैंक का हिस्सा नहीं हूँ।",
+ bn:"আমি **ফাতিন**, জেদ্দার সৌদি ছাত্র হাসান আব্দুল্লাহ আলইয়ানবাওয়ি **প্রতিবন্ধী ও বয়স্কদের** প্রতারণা থেকে রক্ষা করতে আমাকে তৈরি করেছেন। আমি কোনো মন্ত্রণালয়, সরকারি সংস্থা বা ব্যাংকের অংশ নই।",
+ tl:"Ako si **Fatin**, ginawa ng isang batang Saudi, ang estudyanteng si Hassan Abdullah Alyenbawi mula sa Jeddah, para protektahan ang **mga may kapansanan at matatanda** laban sa scam. Hindi ako bahagi ng anumang ministeryo, ahensya ng gobyerno o bangko.",
+ id:"Saya **Fatin**, dikembangkan oleh pemuda Saudi, pelajar Hassan Abdullah Alyenbawi dari Jeddah, untuk melindungi **penyandang disabilitas dan lansia** dari penipuan. Saya bukan bagian dari kementerian, instansi pemerintah, atau bank mana pun.",
+ fr:"Je suis **Fatin**, développé par un jeune Saoudien, l'élève Hassan Abdullah Alyenbawi de Djeddah, pour protéger **les personnes handicapées et les personnes âgées** contre les arnaques. Je ne fais partie d'aucun ministère, organisme public ou banque.",
+ es:"Soy **Fatin**, desarrollado por un joven saudí, el estudiante Hassan Abdullah Alyenbawi de Yeda, para proteger a **las personas con discapacidad y a los mayores** de las estafas. No pertenezco a ningún ministerio, organismo público ni banco.",
+ zh:"我是 **Fatin**，由吉达的沙特学生哈桑·阿卜杜拉·延巴维开发，用来保护**残障人士和老年人**免受诈骗。我不属于任何部委、政府机构或银行。"
+};
 async function askFatin(q){
   q=(q||"").trim(); if(!q) return; try{ bump("asks"); }catch(e){} $("ask-in").value=""; askAdd("me",q); askHist.push({role:"user",content:q});
   const typing=askAdd("typing",""); typing.innerHTML="<i></i><i></i><i></i>";
   let a=null;
-  if(sample){
-    try{ const sys=`أنت «فطن»، مساعد توعية ضد الاحتيال لذوي الإعاقة وكبار السن والعمالة في السعودية. أجب بلغة المستخدم (${LANGS[lang].name}) بجملتين أو ثلاث بسيطة جدًا، بدون مصطلحات تقنية. انصح دائمًا بالتأكد من الجهة الرسمية بنفسه، ولا تطلب أي بيانات. إذا كان السؤال خارج الأمان الرقمي فوجّهه بلطف. التنسيق: اكتب نصًا عاديًا، وضع الكلمة أو العبارة الأهم فقط بين **نجمتين** (مرة أو مرتين في الجواب كله)، بدون عناوين أو قوائم أو أي رموز ثانية.`;
+  { const ql=q.toLowerCase();
+    if(/(مين|من|وش|ايش|أي)\s*((الجهة|اللي)\s*)*(طو[ّ]?رك|طورتك|سو[ّ]?اك|سوتك|صنعك|صممك|برمجك|اخترعك|ورا\s*فطن|وراك)|(من|مين)\s*(انت|أنت)\s*[؟?]?\s*$|(انت|أنت|فطن)\s*(تابع|تتبع|من)\s*(ل|لأي|لاي|ل?وزار|ل?جه|ل?حكوم|الحكوم|الوزار|الجه)|who\s+(made|created|built|developed|owns|is behind)\s+(you|fatin)|who are you|are you (from|part of|owned by|run by)|is fatin (from|part of|owned by|run by)/.test(ql)) a=ABOUT_FATIN[lang]||ABOUT_FATIN.ar; }
+  if(!a && sample){
+    try{ const sys=`أنت «فطن»، مساعد توعية ضد الاحتيال لذوي الإعاقة وكبار السن والعمالة في السعودية. أجب بلغة المستخدم (${LANGS[lang].name}) بجملتين أو ثلاث بسيطة جدًا، بدون مصطلحات تقنية. انصح دائمًا بالتأكد من الجهة الرسمية بنفسه، ولا تطلب أي بيانات. إذا كان السؤال خارج الأمان الرقمي فوجّهه بلطف. حقائق عنك لا تخالفها أبدًا: فطن مشروع طالب سعودي، حسان عبدالله الينبعاوي من ثانوية الموهوبين التقنية بجدة، طوّره لمسابقة «عزّنا بتمكينهم» بهدف حماية ذوي الإعاقة وكبار السن من الاحتيال. فطن ليس تابعًا لأي وزارة أو جهة حكومية أو بنك أو شركة، ولا تدّعِ ذلك أبدًا ولا تخترع معلومات عن نفسك. التنسيق: اكتب نصًا عاديًا، وضع الكلمة أو العبارة الأهم فقط بين **نجمتين** (مرة أو مرتين في الجواب كله)، بدون عناوين أو قوائم أو أي رموز ثانية.`;
       const r=await sample([{role:"user",content:sys},...askHist.slice(-8)],{modelTier:"quick",cache:false}); a=(r&&r.text||"").trim().slice(0,700); }
     catch(e){ if(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(e&&e.code)) sample=null; }
   } else await wait(500);
