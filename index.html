@@ -149,6 +149,76 @@ p{margin:0}
 .itag{position:absolute;z-index:8;left:50%;top:0;transform:translate(-50%,0);white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--gold);color:var(--night);font-family:var(--f-display);font-weight:700;font-size:13px;opacity:0;pointer-events:none;box-shadow:0 8px 20px rgba(0,0,0,.35)}
 @media (prefers-reduced-motion:reduce){.phone{transition:none}}
 
+/* section motion */
+/* ===== section motion: each section gets one moment of its own, once, when it scrolls into view ===== */
+/* «الفكرة»: the chain fills as you read, each step lights when the line reaches it */
+html.mo .chain::before{animation:none;transform:scaleY(var(--p,0));transition:transform .15s linear}
+html.mo .chain>li::before{border-color:rgba(224,188,94,.3);color:rgba(224,188,94,.45);box-shadow:0 0 0 6px var(--night);transition:all .5s cubic-bezier(.2,1,.3,1)}
+html.mo .chain>li.lit::before{background:var(--gold);border-color:var(--gold);color:var(--night);box-shadow:0 0 0 6px var(--night),0 0 0 10px rgba(224,188,94,.18),0 0 30px rgba(224,188,94,.45);transform:scale(1.06)}
+/* «الاختبار»: numbers arrive scrambled like the tricks scammers use, then Fatin decodes them */
+.tstat b.scr,.tdist .big.scr{color:var(--danger);text-shadow:0 0 12px rgba(255,107,94,.35)}
+.tstat b,.tdist .big{transition:color .35s,text-shadow .35s}
+html.mo #test .types span{transition:border-color .4s,color .4s,background .4s}
+html.mo #test.go .types span{animation:chip .5s ease both;animation-delay:calc(1.2s + var(--i,0) * 60ms)}
+@keyframes chip{0%{border-color:var(--line2)}40%{border-color:var(--gold);color:var(--ink);background:var(--gold-soft)}100%{border-color:var(--line2)}}
+/* «المكالمات»: a call's voice line rises from calm to danger, and each card answers in turn */
+.callwave{display:block;width:100%;height:70px;margin:0 0 10px;overflow:visible}
+.callwave .cw-base{stroke:var(--line);stroke-width:1;fill:none}
+.callwave .cw-line{stroke:url(#cwg);stroke-width:2.2;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;filter:drop-shadow(0 0 6px rgba(255,107,94,.35))}
+html.mo #calls:not(.go) .cw-line{stroke-dashoffset:1}
+html.mo #calls.go .cw-line{transition:stroke-dashoffset 2.6s cubic-bezier(.4,0,.2,1)}
+html.mo #calls:not(.go) .ccard{opacity:.35;filter:saturate(.2)}
+html.mo #calls .ccard{transition:opacity .6s,filter .6s,transform .6s cubic-bezier(.3,1.5,.4,1)}
+html.mo #calls.go .ccard.s{transition-delay:.4s}html.mo #calls.go .ccard.w{transition-delay:1.3s}html.mo #calls.go .ccard.d{transition-delay:2.2s}
+html.mo #calls.go .ccard.d{animation:alarm .9s ease 2.4s 2}
+@keyframes alarm{0%,100%{box-shadow:0 0 0 0 rgba(255,107,94,0)}50%{box-shadow:0 0 0 8px rgba(255,107,94,.18),0 0 40px rgba(255,107,94,.35)}}
+/* «المستفيدون»: the «after» wipes over the «before» */
+.ba .af{position:relative}
+html.mo #people:not(.go) .ba .af{clip-path:inset(0 0 0 100%)}
+html.mo #people .ba .af{transition:clip-path 1s cubic-bezier(.6,0,.2,1)}
+html.mo #people.go .persona:nth-child(1) .af{transition-delay:.2s}html.mo #people.go .persona:nth-child(2) .af{transition-delay:.55s}html.mo #people.go .persona:nth-child(3) .af{transition-delay:.9s}
+html.mo #people .ba .b4{transition:opacity .8s,filter .8s}
+html.mo #people.go .ba .b4{opacity:.6;filter:saturate(.5)}
+/* «الجديد»: a radar sweep passes once over the features and wakes each one */
+.firsts{position:relative;overflow:clip}
+html,body{overflow-x:clip}
+.sweep{position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:50%;opacity:0;
+  background:conic-gradient(from 0deg,rgba(224,188,94,0) 0deg,rgba(224,188,94,0) 300deg,rgba(224,188,94,.10) 340deg,rgba(244,218,148,.32) 359deg,rgba(224,188,94,0) 360deg);
+  -webkit-mask:radial-gradient(circle,#000 60%,transparent 72%);mask:radial-gradient(circle,#000 60%,transparent 72%)}
+html.mo #new.go .sweep{animation:sweep 2s cubic-bezier(.45,.05,.4,1) .2s 1 both}
+@keyframes sweep{0%{opacity:0;transform:rotate(0)}10%{opacity:1}90%{opacity:1}100%{opacity:0;transform:rotate(360deg)}}
+html.mo #new .fx-i{transition:transform .5s cubic-bezier(.3,1.7,.4,1),box-shadow .6s,background .6s}
+html.mo #new .fx.ping .fx-i{transform:scale(1.12) rotate(-6deg);background:var(--gold);color:var(--night);box-shadow:0 0 0 6px rgba(224,188,94,.15),0 0 26px rgba(224,188,94,.5)}
+html.mo #new .fx.pinged .fx-i{transform:none}
+/* «المقارنة»: Fatin's column ticks itself in, row after row */
+html.mo #compare:not(.go) td.f.y span{transform:scale(0)}
+html.mo #compare td.f.y span{transition:transform .45s cubic-bezier(.3,1.8,.4,1);transition-delay:calc(var(--i,0) * 55ms)}
+html.mo #compare.go thead .f{animation:colglow 1.2s ease 1}
+@keyframes colglow{50%{box-shadow:inset 0 -60px 40px -30px rgba(34,181,115,.35)}}
+/* «المعايير»: bars fill and the percentages count up */
+html.mo #criteria:not(.go) .crit-bar .t i{animation:none;transform:scaleX(0)}
+html.mo #criteria.go .crit-bar .t i{animation:grow 1.3s cubic-bezier(.2,.8,.2,1) both}
+html.mo #criteria.go #c2 .t i{animation-delay:.12s}html.mo #criteria.go #c3 .t i{animation-delay:.24s}html.mo #criteria.go #c4 .t i{animation-delay:.36s}html.mo #criteria.go #c5 .t i{animation-delay:.48s}
+/* «الوطن»: «الفزعة» gets a gold pen stroke, a light passes over the quote */
+.quote p span{position:relative;display:inline-block}
+.quote p span::after{content:"";position:absolute;right:0;left:0;bottom:-.08em;height:.12em;border-radius:.1em;background:linear-gradient(270deg,var(--gold),#F4DA94);transform-origin:right}
+html.mo #nation:not(.go) .quote p span::after{transform:scaleX(0)}
+html.mo #nation .quote p span::after{transition:transform 1.1s cubic-bezier(.6,0,.2,1) .4s}
+.quote::before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(105deg,transparent 35%,rgba(244,218,148,.16) 50%,transparent 65%);transform:translateX(120%);pointer-events:none}
+html.mo #nation.go .quote::before{animation:shine 1.8s ease .2s 1}
+@keyframes shine{to{transform:translateX(-120%)}}
+/* «التطوير»: the road lights stage by stage, from now to the future */
+.road::before{content:"";position:absolute;right:0;left:0;top:-14px;height:3px;border-radius:3px;background:linear-gradient(270deg,var(--green),var(--gold));transform-origin:right}
+html.mo #roadmap:not(.go) .road::before{transform:scaleX(0)}
+html.mo #roadmap .road::before{transition:transform 2.4s cubic-bezier(.5,0,.3,1)}
+html.mo #roadmap:not(.go) .road li{opacity:.35;transform:translateY(6px)}
+html.mo #roadmap .road li{transition:opacity .5s,transform .5s cubic-bezier(.3,1.4,.4,1),border-color .5s;transition-delay:calc(var(--i,0) * 300ms)}
+/* «جرّب»: a scanner line keeps passing over the QR code */
+.qrw{position:relative;overflow:hidden}
+.qrw::after{content:"";position:absolute;left:8px;right:8px;top:0;height:2px;background:#22B573;box-shadow:0 0 12px 3px rgba(34,181,115,.6);animation:qrscan 2.6s ease-in-out infinite;opacity:.85}
+@keyframes qrscan{0%,100%{transform:translateY(12px)}50%{transform:translateY(162px)}}
+@media (prefers-reduced-motion:reduce){.qrw::after{animation:none;display:none}}
+
 /* sections */
 section.sec{padding-block:56px 8px}
 .sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:26px;max-width:720px}
@@ -680,6 +750,11 @@ html{direction:rtl}
       <h2>المتصل طلب الرمز؟ جوالك يهتز قبل ما تتكلم</h2>
       <p>أثناء المكالمة، فطن يسمع الكلام ويحلله على جهازك، ومؤشر الخطر يرتفع مع كل جملة. التنبيه يطلع من تحت الشاشة ويهتز الجوال، ويختفي لما تختار، ويرجع بس إذا ارتفع الخطر. ولما يوصل <b>85%</b>: زر أحمر كامل «أغلق المكالمة الآن، محتال يريد سرقة بياناتك البنكية» أو أموالك أو بياناتك الشخصية، حسب طلبه.</p>
     </div>
+    <svg class="callwave" viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="cwg" x1="1" x2="0" y1="0" y2="0"><stop offset="0" stop-color="#3EE09B"/><stop offset=".5" stop-color="#FFB84D"/><stop offset="1" stop-color="#FF6B5E"/></linearGradient></defs>
+      <path class="cw-base" d="M600 45H0"/>
+      <path class="cw-line" pathLength="1" d="M600 45 L572 45 566 38 560 52 554 41 548 47 540 45 512 45 506 34 500 58 494 39 488 50 482 45 452 45 446 30 440 62 434 36 428 54 420 45 392 45 386 26 380 66 374 32 368 58 360 45 330 45 324 22 318 70 312 28 306 62 298 45 268 45 262 18 256 74 250 24 244 66 236 45 206 45 200 14 194 78 188 20 182 70 174 45 146 45 140 8 134 84 128 14 122 76 114 45 86 45 80 4 74 86 68 10 62 80 54 45 0 45"/>
+    </svg>
     <div class="cards4">
       <div class="ccard d"><b>خطر احتيال · 60% فأكثر</b><span>يطلب رمز التحقق، أو موافقة نفاذ، أو بيانات البطاقة، أو تحويل فلوس.</span><em>أغلق المكالمة · بلّغ</em></div>
       <div class="ccard w"><b>انتبه · 20% فأكثر</b><span>يدّعي إنه من جهة رسمية، أو قريب من رقم غريب، أو يستعجلك.</span><em>اسأله · أغلق واتصل بالجهة</em></div>
@@ -711,7 +786,8 @@ html{direction:rtl}
       <span class="eyebrow">ميزات ما لقيناها في أي تطبيق</span>
       <h2>فطن ما يحميك بس… يدرّبك ويجمعنا</h2>
     </div>
-    <div class="firsts">
+    <div class="firsts" id="firsts">
+      <div class="sweep" aria-hidden="true"></div>
       <article class="fx"><span class="fx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 10.5h.01M12 10.5h.01M15 10.5h.01"/></svg></span><b>محاكي المحتال</b><p>محادثة حية مع محتال افتراضي بالذكاء الاصطناعي يحاول يقنعك تعطيه الرمز، وفطن يهمس لك بالنصيحة. مثل جهاز محاكاة الطيران، لكن للاحتيال.</p></article>
       <article class="fx"><span class="fx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/></svg></span><b>رادار المجتمع</b><p>كل بلاغ يضيف نمط الاحتيال لرادار مشترك، بدون نص الرسالة. وأي أحد يفحص رسالة مشابهة يشوف: «هذا النمط وصله 12 بلاغًا هذا الأسبوع». فزعة رقمية.</p></article>
       <article class="fx"><span class="fx-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg></span><b>تشريح الرابط</b><p>يفكك الرابط المزيف قطعة قطعة ويوضح وين الخدعة، مثل <code dir="ltr">alrajhibank.com.sa.verify-card.top</code>، ويعلّمك قاعدة: اقرأ الرابط من آخره.</p></article>
@@ -938,6 +1014,41 @@ async function osLoop(){
   osLoop();
 }
 if(reduced) op.className="osphone s1 s4"; else osLoop();
+
+/* ---------- section motion ---------- */
+(()=>{ if(reduced||!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("mo");
+  // the chain in «الفكرة» follows your reading
+  const chain=document.querySelector("#file .chain"), steps=chain?[...chain.children]:[];
+  const onScroll=()=>{ if(!chain) return; const r=chain.getBoundingClientRect(), vh=innerHeight, mark=vh*.62;
+    const pr=Math.max(0,Math.min(1,(mark-r.top)/Math.max(1,r.height-48))); chain.style.setProperty("--p",pr.toFixed(3));
+    steps.forEach(li=>{ const t=li.getBoundingClientRect().top; li.classList.toggle("lit",t+24<mark); }); };
+  addEventListener("scroll",onScroll,{passive:true}); addEventListener("resize",onScroll); onScroll();
+  // per-row / per-item delays
+  document.querySelectorAll("#compare td.f.y span").forEach((e,i)=>e.style.setProperty("--i",i));
+  document.querySelectorAll("#test .types span").forEach((e,i)=>e.style.setProperty("--i",i));
+  document.querySelectorAll("#roadmap .road li").forEach((e,i)=>e.style.setProperty("--i",i));
+  // decode a number: scrambled first, then each character settles from right to left
+  const JUNK="٠١٢٣٤٥٦٧٨٩0123456789%ـ.·|lIO";
+  const decode=el=>{ const final=el.textContent, chars=[...final]; el.classList.add("scr"); const t0=performance.now(), dur=1100;
+    const step=t=>{ const p=Math.min(1,(t-t0)/dur), keep=Math.floor(p*chars.length);
+      el.textContent=chars.map((c,i)=>i<keep||c===" "?c:JUNK[Math.floor(Math.random()*JUNK.length)]).join("");
+      if(p<1) requestAnimationFrame(step); else { el.textContent=final; el.classList.remove("scr"); } };
+    requestAnimationFrame(step); };
+  // the radar: each feature wakes as the sweep passes it
+  const radar=()=>{ const g=$("firsts"); if(!g) return; const R=g.getBoundingClientRect(), cx=R.left+R.width/2, cy=R.top+R.height/2;
+    g.querySelectorAll(".fx").forEach(f=>{ const r=f.getBoundingClientRect(); let a=Math.atan2(r.left+r.width/2-cx,-(r.top+r.height/2-cy))*180/Math.PI; if(a<0) a+=360;
+      const d=200+a/360*1800; setTimeout(()=>{ f.classList.add("ping"); setTimeout(()=>{ f.classList.add("pinged"); f.classList.remove("ping"); },650); },d); }); };
+  // criteria: count the weights up with the bars
+  const countUp=el=>{ const to=parseInt(el.textContent,10); if(!to) return; const t0=performance.now(); const st=t=>{ const p=Math.min(1,(t-t0)/1300); el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+"%"; if(p<1) requestAnimationFrame(st); }; requestAnimationFrame(st); };
+  const ON={
+    test:sec=>sec.querySelectorAll(".tstat b,.tdist .big").forEach((b,i)=>setTimeout(()=>decode(b),i*160)),
+    new:radar,
+    criteria:sec=>sec.querySelectorAll(".crit-bar em").forEach(countUp)
+  };
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; const sec=e.target; io.unobserve(sec); sec.classList.add("go"); (ON[sec.id]||(()=>{}))(sec); }),{threshold:0,rootMargin:"0px 0px -28% 0px"});
+  ["test","calls","people","new","compare","criteria","nation","roadmap"].forEach(id=>{ const el=$(id); if(el) io.observe(el); });
+})();
 
 /* counters */
 try{
