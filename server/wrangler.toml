@@ -1,0 +1,11 @@
+name = "fatin"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+
+# الذكاء الاصطناعي المجاني من Cloudflare
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "FATIN_KV"
+id = "PUT_YOUR_KV_ID_HERE"
