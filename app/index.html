@@ -1072,6 +1072,7 @@ body{padding-top:env(safe-area-inset-top,0px)}
 .qs-x{width:100%;min-height:48px}
 /* phones and tablets: the app is pinned to all four screen edges, so an installed iPhone app fills the screen even where 100dvh leaves out the status bar */
 @media (max-width:1039px){ html,body{height:auto} body{position:fixed;inset:0;bottom:calc(0px - var(--ios-gap,0px));overflow:hidden} }
+@media (max-width:699px){ html{background:#08261B} html:has(.device.call-full){background:#111113} html:has(#callscr[data-os="android"]){background:#0E1210} html:has(.overlay:not([hidden])){background:var(--night)} }
 /* call simulation: setup first, then a full-screen incoming call for the voice option */
 .call-setup{display:flex;flex-direction:column;gap:12px}
 .cst-step{display:flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:700;font-size:15px;color:var(--ink)}
@@ -2388,10 +2389,14 @@ const _ssCancel=(()=>{ try{ return speechSynthesis.cancel.bind(speechSynthesis);
 function cloudStop(){ VOICE.seq++; VOICE.busy=false; VOICE.next=null; const a=VOICE.el; if(a){ try{ a.onended=null; a.onerror=null; a.pause(); }catch(e){} } }
 try{ speechSynthesis.cancel=function(){ cloudStop(); _ssCancel(); }; }catch(e){}
 /* iPhone only plays sound that starts from a tap: the first tap anywhere opens both voices */
-function voiceUnlock(){ if(VOICE.unlocked) return; VOICE.unlocked=true;
-  try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); a.src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA="; const p=a.play(); p&&p.catch(()=>{}); }catch(e){}
-  try{ const u=new SpeechSynthesisUtterance(" "); u.volume=0; speechSynthesis.speak(u); }catch(e){} }
-["pointerdown","touchend","keydown"].forEach(t=>addEventListener(t,voiceUnlock,{capture:true,passive:true}));
+const SILENT_WAV="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=";
+function audioPlayback(){ try{ if(navigator.audioSession) navigator.audioSession.type="playback"; }catch(e){} }   // loud speaker, even after the mic was used
+function voiceUnlock(){ if(VOICE.unlocked||VOICE.unlocking) return; VOICE.unlocking=true;
+  try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); a.muted=false;
+    if(!VOICE.busy){ a.src=SILENT_WAV; const p=a.play(); if(p&&p.then) p.then(()=>{ VOICE.unlocked=true; VOICE.unlocking=false; }).catch(()=>{ VOICE.unlocking=false; }); else { VOICE.unlocked=true; VOICE.unlocking=false; } }
+    else VOICE.unlocking=false; }catch(e){ VOICE.unlocking=false; }
+  try{ if(!VOICE.ssOK){ const u=new SpeechSynthesisUtterance("."); u.volume=0; u.onend=()=>{ VOICE.ssOK=true; }; speechSynthesis.speak(u); } }catch(e){} }
+["touchend","click","keydown"].forEach(t=>addEventListener(t,voiceUnlock,{capture:true,passive:true}));
 async function cloudOK(){ if(VOICE.cloud!==null) return VOICE.cloud; try{ await fatinConfig; }catch(e){}
   if(!FATIN.server||!navigator.onLine) return false;
   try{ const r=await fetch(FATIN.server+"/tts",{cache:"no-store"}); const j=await r.json(); VOICE.cloud=!!(j&&j.ok); }catch(e){ VOICE.cloud=false; }
@@ -2410,11 +2415,11 @@ function say(text,opt={}){
   if(opt.queue&&VOICE.busy){ VOICE.next=()=>say(text,{...opt,queue:false}); return; }
   const done=()=>{ if(my!==VOICE.seq) return; VOICE.busy=false; const f=opt.onend; opt.onend=null; f&&f(); const n=VOICE.next; VOICE.next=null; n&&n(); };
   cloudStop(); _ssCancel(); const my=VOICE.seq; VOICE.busy=true;
-  const local=()=>{ if(my!==VOICE.seq) return; try{ if(!("speechSynthesis" in window)) return done(); const u=utter(text,opt); u.onend=done; u.onerror=done; speechSynthesis.speak(u); }catch(e){ done(); } };
+  const local=()=>{ if(my!==VOICE.seq) return; audioPlayback(); try{ if(!("speechSynthesis" in window)) return done(); const u=utter(text,opt); u.onend=done; u.onerror=done; speechSynthesis.speak(u); }catch(e){ done(); } };
   if(!CLOUD_LANGS.test(voiceLang())) return local();
   cloudOK().then(ok=>{ if(my!==VOICE.seq) return; if(!ok) return local();
     cloudAudio(text,opt.role||"fatin").then(src=>{ if(my!==VOICE.seq) return; if(!src) return local();
-      const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline","");
+      const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); audioPlayback();
       a.onended=done; a.onerror=()=>{ a.onerror=null; local(); }; a.src=src;
       const sp=parseFloat(($("rate")||{}).value)||1.1; a.playbackRate=Math.max(.8,Math.min(1.4,(sp/1.1)*(opt.rate||1)));
       try{ a.preservesPitch=true; a.webkitPreservesPitch=true; }catch(e){}
@@ -3084,6 +3089,7 @@ function micUI(on,txt){ $("cs-mic").classList.toggle("on",on); $("mic-state").te
 function stopListen(){ if(rec){ try{ rec.onend=null; rec.abort(); }catch(e){} rec=null; } micUI(false,""); }
 function listen(){
   if(!call||call.ended||call.hold||callMode!=="voice"||micOK!=="ok"||call.busy) return false;
+  try{ if(navigator.audioSession) navigator.audioSession.type="auto"; }catch(e){}
   stopListen(); clearTimeout(call.idle);
   let finalTxt="";
   try{
@@ -3206,7 +3212,13 @@ const INTENTS=[
 ];
 const CALL_AI=(c,hist,strict)=>`مهمتك: كتابة سطر حوار واحد لشخصية في مكالمة ضمن تمرين توعوي داخل تطبيق «فطن» السعودي. المتدرب يعرف مسبقًا إنه تمرين، والهدف إنه يتعلم يكشف المحتال بنفسه، فلازم الشخصية تكون واقعية.
 الشخصية: ${c.persona}.
-${c.scam?`هدف الشخصية: ${c.goal}. ترد على الأسئلة بأجوبة مقنعة لكنها كاذبة، وتضغط بأساليب معروفة (استعجال، تخويف، لطف مزيف). إذا قال الطرف الثاني إنه بيتصل بالجهة بنفسه، تحاول تمنعه. ما تذكر أي رابط أو رقم حقيقي.`:`صديق طيب، ما يطلب أي بيانات أو فلوس أبدًا.`}
+${c.scam?`هدف الشخصية: ${c.goal}. الشخصية هي اللي اتصلت وعندها خطة، فهي اللي تقود المكالمة دايم.
+- كل سطر لازم يقرّب من الهدف: ${hist.filter(h=>h.who==="caller").length<2?"الحين ابنِ الثقة بسرعة واذكر المشكلة المزعومة، وبعدها مباشرة اطلب الهدف.":"الحين اطلب الهدف بشكل صريح ومباشر في نفس السطر."}
+- ممنوع تسأل الطرف الثاني «وش عندك؟» أو «كيف أخدمك؟» أو «وش تبي؟» أو تنتظره يطلب شي، وممنوع تتصرف كموظف خدمة عملاء.
+- إذا شك فيك أو قال «كذاب» أو «نصاب»: لا تنسحب ولا تعتذر. أنكر بثقة، وأعطِ تفاصيل مزيفة مقنعة، وصعّد الضغط (مثل: الحساب بيتجمد، العملية بتنخصم خلال دقايق)، وارجع اطلب الهدف.
+- إذا سأل عن اسمك أو فرعك: أعطِ جواب مقنع مزيف وكمّل للهدف في نفس السطر.
+- إذا قال إنه بيتصل بالجهة بنفسه: حاول تمنعه بحجة الوقت.
+- ما تذكر أي رابط أو رقم حقيقي.`:`صديق طيب، ما يطلب أي بيانات أو فلوس أبدًا.`}
 ${ROLE_RULES(strict,true)}
 المكالمة حتى الآن:
 ${hist.map(h=>(h.who==="caller"?"الشخصية: ":"الطرف الثاني: ")+h.t).join("\n")}
@@ -3276,6 +3288,7 @@ function callEnd(how){
   if(mode==="visual") speak(t[1]+". "+t[2]); else if(mode!=="simple"){ flash(t[0]==="win"?"safe":"danger"); if(mode==="touch") vibrate(t[0]==="win"?"safe":"danger"); }
 }
 $("cs-accept").onclick=async()=>{ if(!call||call.ended) return;
+  try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); if(!VOICE.busy){ a.src=SILENT_WAV; const p=a.play(); p&&p.then&&p.then(()=>{ VOICE.unlocked=true; }).catch(()=>{}); } }catch(e){}
   $("cs-note").hidden=true;
   if(callMode==="voice"){ micOK=await ensureMic(); if(micOK!=="ok") micFallback(); }
   if(!call||call.ended) return;
