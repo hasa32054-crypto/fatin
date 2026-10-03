@@ -20,7 +20,7 @@
  */
 const MODEL = "claude-haiku-4-5-20251001";
 const TTS_MODEL = "eleven_multilingual_v2";
-const VOICE_CALLER = "nPczCjzI2devNBz1zQrW"; // Brian: صوت رجل
+const VOICE_CALLER = "rpGHcNQJvO8dFNNFNj1v"; // Fahad: صوت سعودي واثق
 const VOICE_FATIN = "EXAVITQu4vr4xnSDxMaL";  // Sarah: صوت هادئ وواضح
 // أصوات Azure لكل لغة: [المتصل (رجل)، فطن (امرأة)]
 const AZURE_VOICES = {
