@@ -44,11 +44,14 @@
 
 ## الصوت الذكي (اختياري)
 
-بدونه فطن يستخدم صوت الجوال. معه، المتصل وفطن يتكلمون بصوت ذكاء اصطناعي طبيعي ينطق العربي زين.
+بدونه فطن يستخدم صوت الجوال. معه، المتصل يتكلم بصوت **حامد** السعودي وفطن بصوت **زارية**، من Microsoft Azure، وكل اللغات العشر لها صوت طبيعي.
 
-1. سوّ حساب مجاني في elevenlabs.io (ما يحتاج بطاقة، فيه ١٠ آلاف حرف بالشهر).
-2. من Profile → API Keys سوّ مفتاح.
-3. في Cloudflare: الـWorker → Settings → Variables and Secrets → Add → النوع Secret، الاسم `ELEVENLABS_API_KEY` والقيمة المفتاح.
-4. (اختياري) `VOICE_CALLER` و`VOICE_FATIN`: رقم أي صوت تحبه من Voice Library.
+1. سوّ حساب في portal.azure.com (يطلب بطاقة للتحقق، والطبقة المجانية F0 فيها ٥٠٠ ألف حرف بالشهر).
+2. Create a resource → ابحث عن **Speech** → Create.
+3. Pricing tier: **Free F0**، Region: **East US**.
+4. بعد ما يخلص: Keys and Endpoint → انسخ **KEY 1** و**Location/Region**.
+5. في Cloudflare: الـWorker → Settings → Variables and Secrets:
+   - `AZURE_TTS_KEY` (Secret) = KEY 1
+   - `AZURE_TTS_REGION` = المنطقة، مثل `eastus`
 
-الجمل المتكررة تنحفظ ٣٠ يوم في FATIN_KV فما تنحسب مرتين. لو خلص الرصيد، التطبيق يرجع لصوت الجوال تلقائيًا.
+الجمل المتكررة تنحفظ ٣٠ يوم في FATIN_KV. لو صار أي خطأ، التطبيق يرجع لصوت الجوال تلقائيًا. (ElevenLabs بديل: `ELEVENLABS_API_KEY`.)

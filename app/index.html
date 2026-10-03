@@ -2399,7 +2399,7 @@ function voiceUnlock(){ if(VOICE.unlocked||VOICE.unlocking) return; VOICE.unlock
 ["touchend","click","keydown"].forEach(t=>addEventListener(t,voiceUnlock,{capture:true,passive:true}));
 async function cloudOK(){ if(VOICE.cloud!==null) return VOICE.cloud; try{ await fatinConfig; }catch(e){}
   if(!FATIN.server||!navigator.onLine) return false;
-  try{ const r=await fetch(FATIN.server+"/tts",{cache:"no-store"}); const j=await r.json(); VOICE.cloud=!!(j&&j.ok); }catch(e){ VOICE.cloud=false; }
+  try{ const r=await fetch(FATIN.server+"/tts",{cache:"no-store"}); const j=await r.json(); VOICE.cloud=!!(j&&j.ok); if(j&&Array.isArray(j.langs)&&j.langs.length) VOICE.langs=j.langs; }catch(e){ VOICE.cloud=false; }
   return VOICE.cloud; }
 async function cloudAudio(text,role){ const k=role+"|"+voiceLang()+"|"+text; if(VOICE.cache.has(k)) return VOICE.cache.get(k);
   const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),8000);
@@ -2416,8 +2416,8 @@ function say(text,opt={}){
   const done=()=>{ if(my!==VOICE.seq) return; VOICE.busy=false; const f=opt.onend; opt.onend=null; f&&f(); const n=VOICE.next; VOICE.next=null; n&&n(); };
   cloudStop(); _ssCancel(); const my=VOICE.seq; VOICE.busy=true;
   const local=()=>{ if(my!==VOICE.seq) return; audioPlayback(); try{ if(!("speechSynthesis" in window)) return done(); const u=utter(text,opt); u.onend=done; u.onerror=done; speechSynthesis.speak(u); }catch(e){ done(); } };
-  if(!CLOUD_LANGS.test(voiceLang())) return local();
   cloudOK().then(ok=>{ if(my!==VOICE.seq) return; if(!ok) return local();
+    if(VOICE.langs?!VOICE.langs.includes(voiceLang()):!CLOUD_LANGS.test(voiceLang())) return local();
     cloudAudio(text,opt.role||"fatin").then(src=>{ if(my!==VOICE.seq) return; if(!src) return local();
       const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); audioPlayback();
       a.onended=done; a.onerror=()=>{ a.onerror=null; local(); }; a.src=src;
