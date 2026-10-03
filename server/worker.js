@@ -61,6 +61,7 @@ export default {
         const text = String(b.text || "").replace(/\s+/g, " ").trim().slice(0, 400);
         if (!text) return json({ error: "text" }, 400);
         const role = b.role === "caller" ? "caller" : "fatin";
+        const emotion = b.emotion === "angry" || b.emotion === "annoyed" ? b.emotion : "";
         const lang = AZURE_VOICES[b.lang] ? b.lang : "ar";
         let voice, model;
         if (azure) {
@@ -73,7 +74,7 @@ export default {
         }
         const audio = { ...cors, "content-type": "audio/mpeg", "cache-control": "no-store" };
         // نفس الجملة ما تنحسب مرتين: تنحفظ 30 يوم
-        const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(voice + "|" + model + "|" + text)))].map(x => x.toString(16).padStart(2, "0")).join("");
+        const hash = [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(voice + "|" + model + "|" + emotion + "|" + text)))].map(x => x.toString(16).padStart(2, "0")).join("");
         const kvKey = "tts:" + hash.slice(0, 40);
         if (env.FATIN_KV) {
           const hit = await env.FATIN_KV.get(kvKey, "arrayBuffer");
@@ -83,7 +84,7 @@ export default {
         if (azure) {
           const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
           const loc = voice.split("-").slice(0, 2).join("-");
-          const style = role === "caller" ? "<prosody rate=\"+4%\">" : "<prosody rate=\"-2%\">";
+          const style = emotion === "angry" ? "<prosody rate=\"+12%\" pitch=\"+6%\" volume=\"+15%\">" : emotion === "annoyed" ? "<prosody rate=\"-6%\" pitch=\"-4%\">" : role === "caller" ? "<prosody rate=\"+4%\">" : "<prosody rate=\"-2%\">";
           const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="${loc}"><voice name="${voice}">${style}${esc(text)}</prosody></voice></speak>`;
           r = await fetch(`https://${env.AZURE_TTS_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`, {
             method: "POST",
@@ -91,12 +92,17 @@ export default {
             body: ssml,
           });
         } else {
+          // المزاج: v4 يفهم وسوم الصوت مثل [angry]، والنماذج القديمة نخفّض لها الثبات عشان يطلع الانفعال
+          const tag = emotion === "angry" ? "[angry] " : emotion === "annoyed" ? "[sighs] " : "";
+          const stab = emotion ? 0.25 : role === "caller" ? 0.4 : 0.6;
           const eleven = m => fetch("https://api.elevenlabs.io/v1/text-to-speech/" + voice + "?output_format=mp3_44100_64", {
             method: "POST",
             headers: { "xi-api-key": env.ELEVENLABS_API_KEY, "content-type": "application/json", accept: "audio/mpeg" },
             // v4 يقبل الثبات والتشابه بس (بدون style)
-            body: JSON.stringify({ text, model_id: m, voice_settings: /^eleven_v4/.test(m)
-              ? { stability: role === "caller" ? 0.4 : 0.6, similarity_boost: 0.8 }
+            body: JSON.stringify({ text: /^eleven_v4/.test(m) ? tag + text : text, model_id: m, voice_settings: /^eleven_v4/.test(m)
+              ? { stability: stab, similarity_boost: 0.8 }
+              : emotion
+                ? { stability: stab, similarity_boost: 0.8, style: 0.6, use_speaker_boost: true }
               : role === "caller"
                 ? { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true }
                 : { stability: 0.6, similarity_boost: 0.8, style: 0.1, use_speaker_boost: true } }),
