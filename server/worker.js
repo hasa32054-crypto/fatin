@@ -16,10 +16,10 @@
  *   ELEVENLABS_API_KEY (Secret، اختياري) بديل لـAzure. بدون أي مفتاح التطبيق يستخدم صوت الجوال
  *   VOICE_CALLER       (اختياري) رقم صوت المتصل من ElevenLabs
  *   VOICE_FATIN        (اختياري) رقم صوت فطن من ElevenLabs
- *   TTS_MODEL          (اختياري) افتراضيًا eleven_multilingual_v2
+ *   TTS_MODEL          (اختياري) افتراضيًا eleven_v4_turbo (أسرع رد)، وتقدر تحط eleven_v4 لجودة أعلى
  */
 const MODEL = "claude-haiku-4-5-20251001";
-const TTS_MODEL = "eleven_v4";           // أفضل نطق للعربي وأكثر إحساس، ولو رفض يرجع لـ eleven_multilingual_v2
+const TTS_MODEL = "eleven_v4_turbo";     // نفس إحساس v4 بس يرد خلال جزء من الثانية؛ لو رفض يجرب eleven_v4 ثم eleven_multilingual_v2
 const VOICE_CALLER = "rpGHcNQJvO8dFNNFNj1v"; // Fahad: صوت سعودي واثق
 const VOICE_FATIN = "EXAVITQu4vr4xnSDxMaL";  // Sarah: صوت هادئ وواضح
 // أصوات Azure لكل لغة: [المتصل (رجل)، فطن (امرأة)]
@@ -107,8 +107,13 @@ export default {
                 ? { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true }
                 : { stability: 0.6, similarity_boost: 0.8, style: 0.1, use_speaker_boost: true } }),
           });
-          r = await eleven(model);
-          if (!r.ok && model !== "eleven_multilingual_v2" && (r.status === 400 || r.status === 403 || r.status === 404 || r.status === 422)) r = await eleven("eleven_multilingual_v2");
+          // نجرب النماذج بالترتيب، ولو الخدمة مشغولة (429) ننتظر شوي ونعيد مرة
+          const chain = [...new Set([model, "eleven_v4", "eleven_multilingual_v2"])];
+          for (const m of chain) {
+            r = await eleven(m);
+            if (r.status === 429) { await new Promise(z => setTimeout(z, 600)); r = await eleven(m); }
+            if (r.ok || !(r.status === 400 || r.status === 403 || r.status === 404 || r.status === 422)) break;
+          }
         }
         if (!r.ok) return json({ error: "tts", status: r.status }, r.status === 401 || r.status === 403 || r.status === 429 ? 429 : 502);
         const buf = await r.arrayBuffer();
