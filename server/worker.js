@@ -19,7 +19,7 @@
  *   TTS_MODEL          (اختياري) افتراضيًا eleven_multilingual_v2
  */
 const MODEL = "claude-haiku-4-5-20251001";
-const TTS_MODEL = "eleven_multilingual_v2";
+const TTS_MODEL = "eleven_v4";           // أفضل نطق للعربي وأكثر إحساس، ولو رفض يرجع لـ eleven_multilingual_v2
 const VOICE_CALLER = "rpGHcNQJvO8dFNNFNj1v"; // Fahad: صوت سعودي واثق
 const VOICE_FATIN = "EXAVITQu4vr4xnSDxMaL";  // Sarah: صوت هادئ وواضح
 // أصوات Azure لكل لغة: [المتصل (رجل)، فطن (امرأة)]
@@ -91,13 +91,18 @@ export default {
             body: ssml,
           });
         } else {
-          r = await fetch("https://api.elevenlabs.io/v1/text-to-speech/" + voice + "?output_format=mp3_44100_64", {
+          const eleven = m => fetch("https://api.elevenlabs.io/v1/text-to-speech/" + voice + "?output_format=mp3_44100_64", {
             method: "POST",
             headers: { "xi-api-key": env.ELEVENLABS_API_KEY, "content-type": "application/json", accept: "audio/mpeg" },
-            body: JSON.stringify({ text, model_id: model, voice_settings: role === "caller"
-              ? { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true }
-              : { stability: 0.6, similarity_boost: 0.8, style: 0.1, use_speaker_boost: true } }),
+            // v4 يقبل الثبات والتشابه بس (بدون style)
+            body: JSON.stringify({ text, model_id: m, voice_settings: /^eleven_v4/.test(m)
+              ? { stability: role === "caller" ? 0.4 : 0.6, similarity_boost: 0.8 }
+              : role === "caller"
+                ? { stability: 0.4, similarity_boost: 0.8, style: 0.3, use_speaker_boost: true }
+                : { stability: 0.6, similarity_boost: 0.8, style: 0.1, use_speaker_boost: true } }),
           });
+          r = await eleven(model);
+          if (!r.ok && model !== "eleven_multilingual_v2" && (r.status === 400 || r.status === 403 || r.status === 404 || r.status === 422)) r = await eleven("eleven_multilingual_v2");
         }
         if (!r.ok) return json({ error: "tts", status: r.status }, r.status === 401 || r.status === 403 || r.status === 429 ? 429 : 502);
         const buf = await r.arrayBuffer();
