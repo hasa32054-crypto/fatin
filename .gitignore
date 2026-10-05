@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# Cloudflare / wrangler local state and dry-run output
+.wrangler/
+.wrangler-dry/
+.dev.vars
+.dev.vars.*
+
+# build output that is not served (the single-file build for the Claude app)
+dist/
+
+# test output
+test-results/
+tests/.artifacts/
+
+# secrets and local env files
+.env
+.env.*
+!.env.example
+
+# editors and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,36 @@
+{
+  "name": "fatin",
+  "private": true,
+  "description": "Fatin: an AI assistant that detects scam messages and calls, built for people with disabilities and the elderly.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "build:check": "node tools/build.mjs --check",
+    "build:single": "node tools/build.mjs --single",
+    "check:syntax": "node tests/syntax.mjs",
+    "check:news": "node tools/check-news.mjs",
+    "check:sync": "node tools/sync-tables.mjs --check",
+    "check:secrets": "node tests/secret-scan.mjs",
+    "test:unit": "node --test \"tests/unit/**/*.test.mjs\"",
+    "test:worker": "node --test \"tests/worker/**/*.test.mjs\"",
+    "test:e2e": "node --test --test-concurrency=1 \"tests/e2e/**/*.test.mjs\"",
+    "test": "npm run build:check && npm run check:syntax && npm run check:news && npm run check:sync && npm run check:secrets && npm run test:unit && npm run test:worker && npm run test:e2e",
+    "deploy:dry": "cd server && wrangler deploy --dry-run --outdir ../.wrangler-dry",
+    "vendor": "node tools/vendor.mjs",
+    "vendor:check": "node tools/vendor.mjs --check",
+    "sync": "node tools/sync-tables.mjs"
+  },
+  "devDependencies": {
+    "@fontsource/alexandria": "5.3.0",
+    "@fontsource/ibm-plex-sans-arabic": "5.3.0",
+    "esbuild": "0.28.1",
+    "jsqr": "1.4.0",
+    "playwright": "1.63.0",
+    "qrcodejs": "1.0.0",
+    "wrangler": "4.147.0"
+  }
+}

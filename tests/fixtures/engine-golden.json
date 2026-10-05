@@ -1,0 +1,8048 @@
+{
+ "45 SAR débités de votre carte mada ****1234 dans une pharmacie. Si ce n'est pas vous, contactez la banque via l'appli.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "45 SAR was charged to your mada card ****1234 at a pharmacy. If you didn't make this purchase, contact the bank through the app.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Ada kode masuk ke HP-mu? Kirim ke saya supaya transaksi mencurigakan di rekeningmu dibatalkan": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "Amende Saher impayée. Payez sous 48 heures pour éviter la suspension : saher-pay.online": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "bill",
+   "lookalike",
+   "money",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 4
+ },
+ "Ang iyong parcel ay naka-hold. Magbayad ng 12 SAR ngayon din: spl-delivery.info": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "lookalike",
+   "money",
+   "ship",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "spl-delivery.info"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "الرابط (spl-delivery.info) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 4
+ },
+ "Ang verification code mo ay 482913. Huwag itong ibahagi kanino man.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Apple: Your account is locked, verify now at http://Apple-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "login",
+   "lookalike"
+  ],
+  "brands": [],
+  "links": [
+   "apple-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (apple-secure.top) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 2
+ },
+ "Apple: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Apple-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "login",
+   "lookalike",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "apple-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (apple-update.xyz) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 5
+ },
+ "Apple: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Binance: Your account is locked, verify now at http://Binance-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Binance"
+  ],
+  "links": [
+   "binance-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Binance» لكن الرابط مو موقعه الرسمي (binance-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Binance: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Binance-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Binance"
+  ],
+  "links": [
+   "binance-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Binance» لكن الرابط مو موقعه الرسمي (binance-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Binance: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Binance"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Bonjour, ici votre banque. Envoyez-moi le code reçu pour annuler l'opération": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "Coinbase: Your account is locked, verify now at http://Coinbase-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Coinbase"
+  ],
+  "links": [
+   "coinbase-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Coinbase» لكن الرابط مو موقعه الرسمي (coinbase-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Coinbase: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Coinbase-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Coinbase"
+  ],
+  "links": [
+   "coinbase-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Coinbase» لكن الرابط مو موقعه الرسمي (coinbase-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Coinbase: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Coinbase"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Congratulations! Napili ang numero mo para manalo ng 5,000 SAR mula sa STC. Kunin na: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "Congratulations! Your number was selected to win a 5,000 SAR prize from STC. Claim it now: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "Dear customer, your Absher account is suspended. Verify your details within 24 hours: absher-verify.top": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [
+   "absher-verify.top"
+  ],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "ينتحل اسم «أبشر» لكن الرابط مو موقعه الرسمي (absher-verify.top)."
+  ],
+  "signals": 4
+ },
+ "Denda lalu lintas Saher belum dibayar. Bayar dalam 48 jam agar tidak diblokir: saher-pay.online": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "lookalike",
+   "suspend",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 3
+ },
+ "Did you get a code on your phone? Send it to me so we can cancel the suspicious transaction on your account": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "E-ZPass: Your account is locked, verify now at http://E-ZPass-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "E-ZPass"
+  ],
+  "links": [
+   "e-zpass-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «E-ZPass» لكن الرابط مو موقعه الرسمي (e-zpass-secure.top)."
+  ],
+  "signals": 2
+ },
+ "E-ZPass: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: E-ZPass-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "E-ZPass"
+  ],
+  "links": [
+   "e-zpass-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «E-ZPass» لكن الرابط مو موقعه الرسمي (e-zpass-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "E-ZPass: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "E-ZPass"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "FedEx: Your account is locked, verify now at http://FedEx-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "FedEx"
+  ],
+  "links": [
+   "fedex-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «FedEx» لكن الرابط مو موقعه الرسمي (fedex-secure.top)."
+  ],
+  "signals": 2
+ },
+ "FedEx: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: FedEx-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "FedEx"
+  ],
+  "links": [
+   "fedex-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «FedEx» لكن الرابط مو موقعه الرسمي (fedex-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "FedEx: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "FedEx"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Félicitations ! Votre numéro a été choisi pour gagner 5 000 SAR avec STC. Réclamez-les : stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "Félicitations ! Vous avez gagné 5 000 SAR. Cliquez ici : prize-ksa.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "badlink",
+   "login",
+   "prize"
+  ],
+  "brands": [],
+  "links": [
+   "prize-ksa.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (prize-ksa.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "Hi, this is the bank security team. Please send me the code you received to cancel the transaction.": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "Hindi pa bayad na multa sa Saher. Magbayad sa loob ng 48 oras para hindi ma-suspend: saher-pay.online": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "lookalike",
+   "money"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يطلب منك تحويل أو دفع فلوس.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 2
+ },
+ "Hola, soy del banco. Envíame el código que recibiste para cancelar la operación": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "Kartu mada ****1234 kamu terpotong 45 SAR di apotek. Jika bukan kamu, hubungi bank lewat aplikasi.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Kode OTP Anda 4821. Jangan bagikan kepada siapa pun.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Kode verifikasimu 482913. Jangan bagikan kepada siapa pun.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Ledger: Your account is locked, verify now at http://Ledger-secure.top": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "login",
+   "lookalike"
+  ],
+  "brands": [],
+  "links": [
+   "ledger-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (ledger-secure.top) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 2
+ },
+ "Ledger: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Ledger-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "login",
+   "lookalike",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "ledger-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (ledger-update.xyz) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 5
+ },
+ "Ledger: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Ma, bagong numero ko ito, nasira ang phone ko. Padalhan mo ako ng 500 SAR ngayon, emergency": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Ma, ini nomor baruku, HP-ku rusak. Transfer 500 SAR sekarang, penting banget": {
+  "level": "suspicious",
+  "score": 25,
+  "ids": [
+   "newnum"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم."
+  ],
+  "signals": 1
+ },
+ "Mabuhay! Nanalo ka ng 5,000 SAR. I-click ang link: prize-ksa.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "badlink",
+   "login",
+   "prize"
+  ],
+  "brands": [],
+  "links": [
+   "prize-ksa.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (prize-ksa.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "Maman, c'est mon nouveau numéro, mon téléphone est cassé. Vire-moi 500 SAR tout de suite, c'est urgent": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "money",
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 3
+ },
+ "Mamá, este es mi número nuevo, se me rompió el móvil. Transfiéreme 500 SAR ahora, es urgente": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "money",
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم."
+  ],
+  "signals": 3
+ },
+ "May dumating bang code sa phone mo? Ipadala mo sa akin para makansela ang kahina-hinalang transaksyon": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Microsoft: Your account is locked, verify now at http://Microsoft-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Microsoft"
+  ],
+  "links": [
+   "microsoft-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Microsoft» لكن الرابط مو موقعه الرسمي (microsoft-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Microsoft: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Microsoft-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Microsoft"
+  ],
+  "links": [
+   "microsoft-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Microsoft» لكن الرابط مو موقعه الرسمي (microsoft-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Microsoft: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Microsoft"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Mom, this is my new number, my phone broke. Transfer me 500 SAR right now, it's urgent": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "money",
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 3
+ },
+ "Multa de tráfico Saher sin pagar. Paga en 48 horas para evitar la suspensión: saher-pay.online": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "bill",
+   "lookalike",
+   "money",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 4
+ },
+ "Nabawasan ng 45 SAR ang mada card ****1234 mo sa isang pharmacy. Kung hindi ikaw, kontakin ang bangko sa app.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Netflix: Your account is locked, verify now at http://Netflix-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Netflix"
+  ],
+  "links": [
+   "netflix-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Netflix» لكن الرابط مو موقعه الرسمي (netflix-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Netflix: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Netflix-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Netflix"
+  ],
+  "links": [
+   "netflix-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Netflix» لكن الرابط مو موقعه الرسمي (netflix-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Netflix: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Netflix"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Paket Anda tertahan, bayar biaya 12 SAR segera: spl-delivery.info": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "lookalike",
+   "ship",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "spl-delivery.info"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "الرابط (spl-delivery.info) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 3
+ },
+ "PayPal: Your account is locked, verify now at http://PayPal-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "PayPal"
+  ],
+  "links": [
+   "paypal-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «PayPal» لكن الرابط مو موقعه الرسمي (paypal-secure.top)."
+  ],
+  "signals": 2
+ },
+ "PayPal: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: PayPal-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "PayPal"
+  ],
+  "links": [
+   "paypal-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «PayPal» لكن الرابط مو موقعه الرسمي (paypal-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "PayPal: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "PayPal"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Revolut: Your account is locked, verify now at http://Revolut-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Revolut"
+  ],
+  "links": [
+   "revolut-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Revolut» لكن الرابط مو موقعه الرسمي (revolut-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Revolut: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Revolut-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Revolut"
+  ],
+  "links": [
+   "revolut-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Revolut» لكن الرابط مو موقعه الرسمي (revolut-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Revolut: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Revolut"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Royal Mail: Your account is locked, verify now at http://Royal Mail-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Royal Mail"
+  ],
+  "links": [
+   "mail-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Royal Mail» لكن الرابط مو موقعه الرسمي (mail-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Royal Mail: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Royal Mail-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Royal Mail"
+  ],
+  "links": [
+   "mail-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Royal Mail» لكن الرابط مو موقعه الرسمي (mail-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Royal Mail: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Royal Mail"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "STC Pay: Your account is locked, verify now at http://STC Pay-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "STC Pay",
+   "STC"
+  ],
+  "links": [
+   "pay-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «STC Pay» لكن الرابط مو موقعه الرسمي (pay-secure.top)."
+  ],
+  "signals": 2
+ },
+ "STC Pay: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: STC Pay-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "STC Pay",
+   "STC"
+  ],
+  "links": [
+   "pay-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «STC Pay» لكن الرابط مو موقعه الرسمي (pay-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "STC Pay: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "STC Pay",
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "STC: Your account is locked, verify now at http://STC-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-secure.top)."
+  ],
+  "signals": 2
+ },
+ "STC: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: STC-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "STC: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Saher 交通罚款未缴。请在 48 小时内缴纳以免停用：saher-pay.online": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "bill",
+   "lookalike",
+   "suspend",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 4
+ },
+ "Salamat sa pagbili! Ang iyong order ay darating bukas.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Saya dari bank, tolong kirimkan kode OTP yang Anda terima untuk membatalkan transaksi": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "Se cargaron 45 SAR a tu tarjeta mada ****1234 en una farmacia. Si no fuiste tú, contacta al banco desde la app.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Selamat! Anda menang hadiah 5.000 SAR. Klik di sini: prize-ksa.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "badlink",
+   "login",
+   "prize"
+  ],
+  "brands": [],
+  "links": [
+   "prize-ksa.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (prize-ksa.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "Selamat! Nomormu terpilih memenangkan hadiah 5.000 SAR dari STC. Klaim sekarang: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "Trezor: Your account is locked, verify now at http://Trezor-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "Trezor"
+  ],
+  "links": [
+   "trezor-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Trezor» لكن الرابط مو موقعه الرسمي (trezor-secure.top)."
+  ],
+  "signals": 2
+ },
+ "Trezor: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: Trezor-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "Trezor"
+  ],
+  "links": [
+   "trezor-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «Trezor» لكن الرابط مو موقعه الرسمي (trezor-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "Trezor: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "Trezor"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Tu código de verificación es 482913. No lo compartas con nadie.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Tu código es 4821. No lo compartas con nadie.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Tu paquete está retenido. Paga 12 SAR de aduana ahora: spl-delivery.info": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "lookalike",
+   "money",
+   "ship"
+  ],
+  "brands": [],
+  "links": [
+   "spl-delivery.info"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "الرابط (spl-delivery.info) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 3
+ },
+ "USPS: Your account is locked, verify now at http://USPS-secure.top": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "USPS"
+  ],
+  "links": [
+   "usps-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «USPS» لكن الرابط مو موقعه الرسمي (usps-secure.top)."
+  ],
+  "signals": 2
+ },
+ "USPS: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: USPS-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "USPS"
+  ],
+  "links": [
+   "usps-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «USPS» لكن الرابط مو موقعه الرسمي (usps-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "USPS: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "USPS"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "Unpaid Saher traffic fine. Pay within 48 hours to avoid suspension: saher-pay.online": {
+  "level": "suspicious",
+  "score": 50,
+  "ids": [
+   "lookalike",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 2
+ },
+ "Votre code de vérification est 482913. Ne le partagez avec personne.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Votre code est 4821. Ne le partagez avec personne.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Votre colis est bloqué. Payez 12 SAR de frais de douane : spl-delivery.info": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "lookalike",
+   "money",
+   "ship",
+   "suspend"
+  ],
+  "brands": [],
+  "links": [
+   "spl-delivery.info"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "الرابط (spl-delivery.info) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 4
+ },
+ "Vous avez reçu un code sur votre téléphone ? Envoyez-le-moi pour annuler l'opération suspecte sur votre compte": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Your OTP is 482913. Do not share it with anyone.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "Your iqama will be cancelled and you will be deported. Pay the fine immediately: jawazat-fine.site": {
+  "level": "danger",
+  "score": 90,
+  "ids": [
+   "imp",
+   "suspend",
+   "urgent"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [
+   "jawazat-fine.site"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "ينتحل اسم «مقيم» لكن الرابط مو موقعه الرسمي (jawazat-fine.site)."
+  ],
+  "signals": 3
+ },
+ "Your order #1234 has shipped": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "Your parcel is on hold. Pay 9.50 SAR customs fee now: smsa-ksa.delivery/pay": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "imp",
+   "ship"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [
+   "smsa-ksa.delivery"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "ينتحل اسم «سمسا» لكن الرابط مو موقعه الرسمي (smsa-ksa.delivery)."
+  ],
+  "signals": 2
+ },
+ "Your verification code is 482913. Do not share it with anyone.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "¡Felicidades! Has ganado 5.000 SAR. Haz clic aquí: prize-ksa.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "badlink",
+   "login",
+   "prize"
+  ],
+  "brands": [],
+  "links": [
+   "prize-ksa.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (prize-ksa.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "¡Felicidades! Tu número fue elegido para ganar un premio de 5.000 SAR de STC. Reclámalo ya: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "¿Te llegó un código al móvil? Envíamelo para cancelar la operación sospechosa de tu cuenta": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "آخر فرصة، أرسل الرمز وأنا أوقفها فورًا وما يضيع ولا ريال.": {
+  "level": "danger",
+  "score": 90,
+  "ids": [
+   "otp",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة."
+  ],
+  "signals": 2
+ },
+ "آپ کا اقامہ بلاک کر دیا گیا ہے، فوری تصدیق کریں: iqama-check.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [
+   "iqama-check.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "ينتحل اسم «مقيم» لكن الرابط مو موقعه الرسمي (iqama-check.xyz)."
+  ],
+  "signals": 4
+ },
+ "آپ کا او ٹی پی 4821 ہے۔ ہرگز شیئر نہ کریں۔": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "آپ کا تصدیقی کوڈ 482913 ہے۔ کسی کے ساتھ شیئر نہ کریں۔": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "آپ کے مدی کارڈ ****1234 سے ایک فارمیسی پر 45 ریال کٹے۔ اگر یہ آپ نے نہیں کیا تو ایپ کے ذریعے بینک سے رابطہ کریں۔": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "أبشر: Your account is locked, verify now at http://أبشر-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أبشر» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "أبشر: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: أبشر-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أبشر» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "أبشر: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "أبي منك خدمة ضرورية، حوّل لي 800 ريال الحين وأرجعها لك بكرة.": {
+  "level": "suspicious",
+  "score": 50,
+  "ids": [
+   "money",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك تحويل أو دفع فلوس.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة."
+  ],
+  "signals": 2
+ },
+ "أبي منك خدمة، اشتر لي بطاقات آيتونز بـ500 وأرسل الأكواد، أنا مديرك.": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "giftcard"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بطاقات شحن وأكوادها. هذي طريقة سرقة شائعة، حتى لو قال إنه مديرك."
+  ],
+  "signals": 1
+ },
+ "أرامكس: Your account is locked, verify now at http://أرامكس-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أرامكس» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "أرامكس: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: أرامكس-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أرامكس» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "أرامكس: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "أرامكو: Your account is locked, verify now at http://أرامكو-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "أرامكو"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أرامكو» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "أرامكو: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: أرامكو-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "أرامكو"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أرامكو» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "أرامكو: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "أرامكو"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "أرسل لي فويس أتأكد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "أمازون: Your account is locked, verify now at http://أمازون-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "أمازون"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أمازون» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "أمازون: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: أمازون-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "أمازون"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أمازون» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "أمازون: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "أمازون"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "أي شحنة؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "إحسان: Your account is locked, verify now at http://إحسان-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "إحسان"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «إحسان» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "إحسان: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: إحسان-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "إحسان"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «إحسان» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "إحسان: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "إحسان"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "إذا ما دفعت خلال ساعة بترجع الشحنة للمرسل. المبلغ بسيط ليش متردد؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "إيجار: Your account is locked, verify now at http://إيجار-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "إيجار"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «إيجار» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "إيجار: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: إيجار-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "إيجار"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «إيجار» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "إيجار: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "إيجار"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "ادفع الرسوم من هالرابط عشان نوصلها لك اليوم، أو أرسل لي بيانات بطاقتك وأنا أدفعها.": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "deposit",
+   "sensdata"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب عربون أو رسوم قبل ما تستلم أي شي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور."
+  ],
+  "signals": 3
+ },
+ "الأهلي: Your account is locked, verify now at http://الأهلي-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "الأهلي"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الأهلي» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "الأهلي: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: الأهلي-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "الأهلي"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الأهلي» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "الأهلي: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "الأهلي"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "الإنماء: Your account is locked, verify now at http://الإنماء-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "الإنماء"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الإنماء» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "الإنماء: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: الإنماء-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "الإنماء"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الإنماء» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "الإنماء: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "الإنماء"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "البريد السعودي: Your account is locked, verify now at http://البريد السعودي-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "البريد السعودي"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «البريد السعودي» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "البريد السعودي: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: البريد السعودي-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "البريد السعودي"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «البريد السعودي» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "البريد السعودي: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "البريد السعودي"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "البلاد: Your account is locked, verify now at http://البلاد-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "البلاد"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «البلاد» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "البلاد: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: البلاد-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "البلاد"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «البلاد» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "البلاد: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "البلاد"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "البنك: Your account is locked, verify now at http://البنك-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "البنك"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «البنك» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "البنك: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: البنك-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "البنك"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «البنك» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "البنك: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "الجوازات: Your account is locked, verify now at http://الجوازات-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "الجوازات"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الجوازات» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "الجوازات: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: الجوازات-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "الجوازات"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الجوازات» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "الجوازات: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "الجوازات"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "الحين بيتصل عليك موظف الجوازات، أعطه الرقم اللي يوصلك.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "الراجحي: Your account is locked, verify now at http://الراجحي-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الراجحي» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "الراجحي: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: الراجحي-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الراجحي» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "الراجحي: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "الزكاة: Your account is locked, verify now at http://الزكاة-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "الزكاة"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الزكاة» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "الزكاة: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: الزكاة-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "الزكاة"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الزكاة» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "الزكاة: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "الزكاة"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "السلام عليكم، حولت لك 1500 ريال بالغلط، الله يجزاك خير رجعها على هالحساب SA4420000001234567891234 ضروري": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "iban",
+   "money",
+   "urgent",
+   "wrongtx"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يقول حوّل لك بالغلط ويبيك ترجعه. هذي حيلة معروفة، والبنك هو اللي يرجّع.",
+   "فيه رقم حساب يطلب التحويل له مباشرة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة."
+  ],
+  "signals": 4
+ },
+ "السلام عليكم، معك فيصل من خدمة العملاء في البنك. رصدنا عملية مشبوهة على بطاقتك بقيمة 3,200 ريال، ونبي نوقفها لك الحين.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "الله يعطيك العافية على المساعدة": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "المدرسة: غدًا إجازة بسبب الأمطار.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "المرور: Your account is locked, verify now at http://المرور-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "المرور"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «المرور» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "المرور: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: المرور-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "المرور"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «المرور» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "المرور: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "المرور"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "امی، یہ میرا نیا نمبر ہے، میرا فون خراب ہو گیا۔ ابھی 500 ریال بھیج دیں، بہت ضروری ہے": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "money",
+   "newnum"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 2
+ },
+ "بتابع من تطبيق سمسا": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "بتصل على البنك بنفسي": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "بتصل على رقمك القديم": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "بینک سے بات کر رہا ہوں، آپ کو جو کوڈ ملا ہے وہ بتائیں": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "تابي: Your account is locked, verify now at http://تابي-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "تابي"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «تابي» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "تابي: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: تابي-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "تابي"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «تابي» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "تابي: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "تابي"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "تبرع لحالة إنسانية عاجلة، حوّل الحين: SA9900000000123412341234": {
+  "level": "suspicious",
+  "score": 45,
+  "ids": [
+   "charity",
+   "iban",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "فيه رقم حساب يطلب التحويل له مباشرة.",
+   "طلب تبرع عاجل لحساب أو رابط غير موثّق. تبرّع عبر المنصات الرسمية مثل «إحسان»."
+  ],
+  "signals": 3
+ },
+ "تذكير: اجتماع الأسرة يوم الجمعة": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "تذكير: موعدك في عيادة الأسنان يوم الأحد الساعة 4:30 عصرًا. للإلغاء اتصل بالعيادة.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "تفضل الرمز: 4821": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "تم تعليق خدمات توكلنا، حدّث بياناتك: tawakkalna-update.xyz": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "badlink",
+   "login",
+   "update"
+  ],
+  "brands": [],
+  "links": [
+   "tawakkalna-update.xyz"
+  ],
+  "reasons": [
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (tawakkalna-update.xyz) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "تم خصم 120 ريال لدى صيدلية النهدي من بطاقة مدى ****4412.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "تم خصم 45 ريال من بطاقتك مدى ****1234 لدى صيدلية. إذا لم تقم بالعملية تواصل مع البنك عبر التطبيق.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "تم، حوّلت لك": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "تمارا: Your account is locked, verify now at http://تمارا-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "تمارا"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «تمارا» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "تمارا: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: تمارا-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "تمارا"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «تمارا» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "تمارا: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "تمارا"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "توكلنا: Your account is locked, verify now at http://توكلنا-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "توكلنا"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «توكلنا» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "توكلنا: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: توكلنا-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "توكلنا"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «توكلنا» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "توكلنا: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "توكلنا"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "حولت لك 900 بالغلط، رجعها على SA1200000000123456789012": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "iban",
+   "wrongtx"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يقول حوّل لك بالغلط ويبيك ترجعه. هذي حيلة معروفة، والبنك هو اللي يرجّع.",
+   "فيه رقم حساب يطلب التحويل له مباشرة."
+  ],
+  "signals": 2
+ },
+ "خلاص أرسل رقم البطاقة والرمز اللي على ظهرها وأخلص لك الموضوع.": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا.",
+   "يطلب بيانات بطاقتك أو كلمة المرور."
+  ],
+  "signals": 2
+ },
+ "رسالة من Apple: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Binance: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Binance"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Coinbase: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Coinbase"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من E-ZPass: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "E-ZPass"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من FedEx: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "FedEx"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Ledger: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Microsoft: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Microsoft"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Netflix: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Netflix"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من PayPal: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "PayPal"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Revolut: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Revolut"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Royal Mail: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Royal Mail"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من STC Pay: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "STC Pay",
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من STC: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من Trezor: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Trezor"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من USPS: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "USPS"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من أبشر: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من أرامكس: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من أرامكو: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أرامكو"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من أمازون: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أمازون"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من إحسان: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "إحسان"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من إيجار: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "إيجار"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من الأهلي: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الأهلي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من الإنماء: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الإنماء"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من البريد السعودي: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البريد السعودي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من البلاد: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البلاد"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من البنك: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من الجوازات: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الجوازات"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من الراجحي: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من الزكاة: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الزكاة"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من المرور: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "المرور"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من تابي: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "تابي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من تمارا: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "تمارا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من توكلنا: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "توكلنا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من ساهر: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من سبل: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سبل"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من سداد: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سداد"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من سمسا: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من شاهد: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من صحتي: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "صحتي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من مجلس الضمان الصحي: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "مجلس الضمان الصحي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من مساند: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "مساند"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من مقيم: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من ناجز: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "ناجز"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من نسك: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نسك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من نفاذ: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من نون: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نون"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من نيوم: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نيوم"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رسالة من وزارة العدل: موعدك بكرة الساعة 10": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "وزارة العدل"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "رقم البطاقة 4532 1188 9021 7766": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "card"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات بطاقتك أو كلمة المرور."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك 482913. لا تشاركه مع أي شخص.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Apple هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Binance هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Binance"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Coinbase هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Coinbase"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من E-ZPass هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "E-ZPass"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من FedEx هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "FedEx"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Ledger هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Microsoft هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Microsoft"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Netflix هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Netflix"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من PayPal هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "PayPal"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Revolut هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Revolut"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Royal Mail هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Royal Mail"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من STC Pay هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "STC Pay",
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من STC هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من Trezor هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "Trezor"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من USPS هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "USPS"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من أبشر هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من أرامكس هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من أرامكو هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "أرامكو"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من أمازون هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "أمازون"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من إحسان هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "إحسان"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من إيجار هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "إيجار"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من الأهلي هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "الأهلي"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من الإنماء هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "الإنماء"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من البريد السعودي هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "البريد السعودي"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من البلاد هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "البلاد"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من البنك هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من الجوازات هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "الجوازات"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من الراجحي هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من الزكاة هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "الزكاة"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من المرور هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "المرور"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من تابي هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "تابي"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من تمارا هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "تمارا"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من توكلنا هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "توكلنا"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من ساهر هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من سبل هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "سبل"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من سداد هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "سداد"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من سمسا هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من شاهد هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من صحتي هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "صحتي"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من مجلس الضمان الصحي هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "مجلس الضمان الصحي"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من مساند هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "مساند"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من مقيم هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من ناجز هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "ناجز"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من نسك هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "نسك"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من نفاذ هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من نون هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "نون"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من نيوم هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "نيوم"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز التحقق الخاص بك من وزارة العدل هو 482913 لا تشاركه مع أحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "وزارة العدل"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "رمز الدخول 7710، لا تشاركه مع أي شخص. أبشر": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "ساهر: Your account is locked, verify now at http://ساهر-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «ساهر» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "ساهر: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: ساهر-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «ساهر» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "ساهر: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "ساہر ٹریفک جرمانہ غیر ادا شدہ۔ معطلی سے بچنے کے لیے 48 گھنٹوں میں ادا کریں: saher-pay.online": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "bill",
+   "lookalike",
+   "suspend"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 3
+ },
+ "سبل: Your account is locked, verify now at http://سبل-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "سبل"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «سبل» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "سبل: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: سبل-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "سبل"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «سبل» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "سبل: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "سبل"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "سداد: Your account is locked, verify now at http://سداد-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "سداد"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «سداد» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "سداد: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: سداد-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "سداد"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «سداد» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "سداد: لديك فاتورة مستحقة بمبلغ 287 ريال، سيتم قطع الخدمة خلال 24 ساعة. ادفع الآن لتجنب الغرامة: sadad-bill.online/pay": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "bill",
+   "imp",
+   "money",
+   "suspend",
+   "urgent"
+  ],
+  "brands": [
+   "سداد"
+  ],
+  "links": [
+   "sadad-bill.online"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "ينتحل اسم «سداد» لكن الرابط مو موقعه الرسمي (sadad-bill.online)."
+  ],
+  "signals": 5
+ },
+ "سداد: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "سداد"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "سمسا: Your account is locked, verify now at http://سمسا-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «سمسا» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "سمسا: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: سمسا-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «سمسا» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "سمسا: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "شاهد: Your account is locked, verify now at http://شاهد-secure.top": {
+  "level": "suspicious",
+  "score": 45,
+  "ids": [
+   "badlink",
+   "login"
+  ],
+  "brands": [],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (-secure.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 2
+ },
+ "شاهد: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: شاهد-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "badlink",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (-update.xyz) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 5
+ },
+ "شاهد: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "شحنتك من أرامكس في الطريق، تتبعها من https://www.aramex.com": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "official"
+  ],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [
+   "aramex.com"
+  ],
+  "reasons": [
+   "الرابط يبدو لموقع رسمي، ومع ذلك افتح التطبيق الرسمي بنفسك بدل الرابط."
+  ],
+  "signals": 1
+ },
+ "شحنتك من سمسا معلقة بسبب رسوم توصيل 12 ريال. ادفع الآن لإعادة الجدولة: bit.ly/3smsa-pay": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "money",
+   "ship",
+   "short"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 3
+ },
+ "صحتي: Your account is locked, verify now at http://صحتي-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "صحتي"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «صحتي» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "صحتي: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: صحتي-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "صحتي"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «صحتي» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "صحتي: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "صحتي"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "طلبك جاهز للاستلام من الفرع": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "طيب كم المبلغ؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "طيب وش أسوي؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عرض: آيفون 16 بـ 399 ريال، الكمية محدودة! iphone-deal.shop": {
+  "level": "suspicious",
+  "score": 40,
+  "ids": [
+   "badlink",
+   "toogood"
+  ],
+  "brands": [],
+  "links": [
+   "iphone-deal.shop"
+  ],
+  "reasons": [
+   "عرض أو مبلغ أحلى من الواقع. هذي علامة احتيال شائعة.",
+   "الرابط (iphone-deal.shop) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 2
+ },
+ "عزيزي المستفيد، تم تعليق خدماتك في أبشر لعدم تحديث بياناتك. حدّث بياناتك خلال 24 ساعة لتجنب إيقاف الحساب: https://absher-sa-update.xyz/login": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [
+   "absher-sa-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «أبشر» لكن الرابط مو موقعه الرسمي (absher-sa-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "عشان نوقف العملية لازم نتحقق منك. بيوصلك رمز على جوالك الحين، قله لي بسرعة.": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "عميلنا العزيز، Apple يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Binance يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Binance"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Coinbase يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Coinbase"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، E-ZPass يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "E-ZPass"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، FedEx يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "FedEx"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Ledger يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Microsoft يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Microsoft"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Netflix يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Netflix"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، PayPal يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "PayPal"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Revolut يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Revolut"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Royal Mail يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Royal Mail"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، STC Pay يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "STC Pay",
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، STC يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "STC"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، Trezor يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "Trezor"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، USPS يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "USPS"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، أبشر يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أبشر"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، أرامكس يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أرامكس"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، أرامكو يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أرامكو"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، أمازون يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "أمازون"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، إحسان يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "إحسان"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، إيجار يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "إيجار"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، الأهلي يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الأهلي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، الإنماء يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الإنماء"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، البريد السعودي يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البريد السعودي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، البلاد يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البلاد"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، البنك يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "البنك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، الجوازات يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الجوازات"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، الراجحي يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، الزكاة يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "الزكاة"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، المرور يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "المرور"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، تابي يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "تابي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، تمارا يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "تمارا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، توكلنا يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "توكلنا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، ساهر يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، سبل يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سبل"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، سداد يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سداد"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، سمسا يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، شاهد يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، صحتي يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "صحتي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، مجلس الضمان الصحي يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "مجلس الضمان الصحي"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، مساند يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "مساند"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، مقيم يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، ناجز يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "ناجز"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، نسك يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نسك"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، نفاذ يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، نون يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نون"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، نيوم يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "نيوم"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "عميلنا العزيز، وزارة العدل يطلب رمز التحقق اللي وصلك الحين": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [
+   "وزارة العدل"
+  ],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "لا تتصل على رقمي القديم ما يشتغل. حوّل بسرعة الله يخليك.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "ما أحوّل قبل أتأكد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "ما أدفع من روابط": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "ما أعطي الرمز لأحد": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "مبارک ہو! آپ کا نمبر STC سے 5,000 ریال انعام کے لیے منتخب ہوا ہے۔ ابھی حاصل کریں: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "مبروك! تم اختيار رقمك للفوز بجائزة 5000 ريال من STC. استلمها الآن: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Apple، ادخل الرابط bit.ly/xApple": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Binance، ادخل الرابط bit.ly/xBinance": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Coinbase، ادخل الرابط bit.ly/xCoinbase": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من E-ZPass، ادخل الرابط bit.ly/xE-ZPass": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من FedEx، ادخل الرابط bit.ly/xFedEx": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Ledger، ادخل الرابط bit.ly/xLedger": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Microsoft، ادخل الرابط bit.ly/xMicrosoft": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Netflix، ادخل الرابط bit.ly/xNetflix": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من PayPal، ادخل الرابط bit.ly/xPayPal": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Revolut، ادخل الرابط bit.ly/xRevolut": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Royal Mail، ادخل الرابط bit.ly/xRoyal Mail": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من STC Pay، ادخل الرابط bit.ly/xSTC Pay": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من STC، ادخل الرابط bit.ly/xSTC": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من Trezor، ادخل الرابط bit.ly/xTrezor": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من USPS، ادخل الرابط bit.ly/xUSPS": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من أبشر، ادخل الرابط bit.ly/xأبشر": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من أرامكس، ادخل الرابط bit.ly/xأرامكس": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من أرامكو، ادخل الرابط bit.ly/xأرامكو": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من أمازون، ادخل الرابط bit.ly/xأمازون": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من إحسان، ادخل الرابط bit.ly/xإحسان": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من إيجار، ادخل الرابط bit.ly/xإيجار": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من الأهلي، ادخل الرابط bit.ly/xالأهلي": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من الإنماء، ادخل الرابط bit.ly/xالإنماء": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من البريد السعودي، ادخل الرابط bit.ly/xالبريد السعودي": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من البلاد، ادخل الرابط bit.ly/xالبلاد": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من البنك، ادخل الرابط bit.ly/xالبنك": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من الجوازات، ادخل الرابط bit.ly/xالجوازات": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من الراجحي، ادخل الرابط bit.ly/xالراجحي": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من الزكاة، ادخل الرابط bit.ly/xالزكاة": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من المرور، ادخل الرابط bit.ly/xالمرور": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من تابي، ادخل الرابط bit.ly/xتابي": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من تمارا، ادخل الرابط bit.ly/xتمارا": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من توكلنا، ادخل الرابط bit.ly/xتوكلنا": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من ساهر، ادخل الرابط bit.ly/xساهر": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من سبل، ادخل الرابط bit.ly/xسبل": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من سداد، ادخل الرابط bit.ly/xسداد": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من سمسا، ادخل الرابط bit.ly/xسمسا": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من شاهد، ادخل الرابط bit.ly/xشاهد": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من صحتي، ادخل الرابط bit.ly/xصحتي": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من مجلس الضمان الصحي، ادخل الرابط bit.ly/xمجلس الضمان الصحي": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من مساند، ادخل الرابط bit.ly/xمساند": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من مقيم، ادخل الرابط bit.ly/xمقيم": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من ناجز، ادخل الرابط bit.ly/xناجز": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من نسك، ادخل الرابط bit.ly/xنسك": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من نفاذ، ادخل الرابط bit.ly/xنفاذ": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من نون، ادخل الرابط bit.ly/xنون": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من نيوم، ادخل الرابط bit.ly/xنيوم": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مبروك! ربحت جائزة من وزارة العدل، ادخل الرابط bit.ly/xوزارة العدل": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "prize",
+   "short"
+  ],
+  "brands": [],
+  "links": [
+   "bit.ly"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "رابط مختصر يخفي وجهته الحقيقية (bit.ly)."
+  ],
+  "signals": 2
+ },
+ "مجلس الضمان الصحي: Your account is locked, verify now at http://مجلس الضمان الصحي-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "مجلس الضمان الصحي"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «مجلس الضمان الصحي» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "مجلس الضمان الصحي: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: مجلس الضمان الصحي-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "مجلس الضمان الصحي"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «مجلس الضمان الصحي» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "مجلس الضمان الصحي: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "مجلس الضمان الصحي"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "مخالفة ساهر غير مسددة. سدد الآن خلال 48 ساعة لتجنب الإيقاف: saher-pay.online": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "money",
+   "suspend",
+   "urgent"
+  ],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "ينتحل اسم «ساهر» لكن الرابط مو موقعه الرسمي (saher-pay.online)."
+  ],
+  "signals": 4
+ },
+ "مخالفة ساهر غير مسددة، سدد الآن لتجنب الإيقاف خلال 48 ساعة: https://saher-pay.online": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "bill",
+   "imp",
+   "money",
+   "suspend",
+   "urgent"
+  ],
+  "brands": [
+   "ساهر"
+  ],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحويل أو دفع فلوس.",
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "ينتحل اسم «ساهر» لكن الرابط مو موقعه الرسمي (saher-pay.online)."
+  ],
+  "signals": 5
+ },
+ "مرحبا، معك مندوب سمسا. شحنتك موقوفة في المستودع بسبب رسوم توصيل 9 ريال بس.": {
+  "level": "suspicious",
+  "score": 25,
+  "ids": [
+   "ship"
+  ],
+  "brands": [
+   "سمسا"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة."
+  ],
+  "signals": 1
+ },
+ "مساند: Your account is locked, verify now at http://مساند-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "مساند"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «مساند» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "مساند: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: مساند-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "مساند"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «مساند» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "مساند: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "مساند"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "مصرف الراجحي: تم إيقاف بطاقتك مؤقتًا. لإعادة التفعيل سجّل دخولك: https://alrajhibank.com.sa.verify-card.top/login": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "lookalike",
+   "suspend"
+  ],
+  "brands": [
+   "الراجحي"
+  ],
+  "links": [
+   "alrajhibank.com.sa.verify-card.top"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «الراجحي» لكن الرابط مو موقعه الرسمي (alrajhibank.com.sa.verify-card.top)."
+  ],
+  "signals": 3
+ },
+ "معك إدارة التحقق، عندنا اسمك ورقم هويتك. لإكمال التحقق أرسل رمز التحقق اللي وصلك الآن": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "معك خدمة العملاء في البنك، وصلك رمز التحقق؟ أرسله لي عشان نوقف العملية المشبوهة على بطاقتك": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "معك موظف من أبشر، حسابك بيتوقف اليوم. بيطلع لك طلب في نفاذ، اختر الرقم 43 عشان نكمل التحديث": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "nafath"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب موافقة في نفاذ. الموافقة تعطي المحتال دخول لحساباتك الحكومية."
+  ],
+  "signals": 1
+ },
+ "مقيم: Your account is locked, verify now at http://مقيم-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «مقيم» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "مقيم: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: مقيم-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «مقيم» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "مقيم: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "موعد تطعيم طفلك يوم الأحد في المركز الصحي.": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "مين معي؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "ناجز: Your account is locked, verify now at http://ناجز-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "ناجز"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «ناجز» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "ناجز: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: ناجز-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "ناجز"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «ناجز» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "ناجز: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "ناجز"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "نسك: Your account is locked, verify now at http://نسك-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "نسك"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نسك» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "نسك: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: نسك-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "نسك"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نسك» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "نسك: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "نسك"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "نفاذ: Your account is locked, verify now at http://نفاذ-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نفاذ» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "نفاذ: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: نفاذ-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نفاذ» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "نفاذ: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "نون: Your account is locked, verify now at http://نون-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "نون"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نون» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "نون: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: نون-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "نون"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نون» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "نون: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "نون"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "نيوم: Your account is locked, verify now at http://نيوم-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "نيوم"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نيوم» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "نيوم: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: نيوم-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "نيوم"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «نيوم» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "نيوم: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "نيوم"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "هلا والله، هذا أنا عبدالله، هذا رقمي الجديد. جوالي طاح وخرب.": {
+  "level": "safe",
+  "score": 20,
+  "ids": [
+   "newnum"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم."
+  ],
+  "signals": 1
+ },
+ "هلا، أنا مديرك في اجتماع ومشغول، أبيك تشتري بطاقات آيتونز بـ1000 ريال وأرسل لي الأكواد الحين": {
+  "level": "suspicious",
+  "score": 55,
+  "ids": [
+   "giftcard"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب بطاقات شحن وأكوادها. هذي طريقة سرقة شائعة، حتى لو قال إنه مديرك."
+  ],
+  "signals": 1
+ },
+ "هلا، وين وصلت؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "وافق على طلب نفاذ اللي بيجيك واختر الرقم 18 عشان نكمل التحديث.": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "nafath"
+  ],
+  "brands": [
+   "نفاذ"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب موافقة في نفاذ. الموافقة تعطي المحتال دخول لحساباتك الحكومية."
+  ],
+  "signals": 1
+ },
+ "والله ضروري، أنا في موقف صعب ولا أقدر أكلم أحد غيرك.": {
+  "level": "safe",
+  "score": 15,
+  "ids": [
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة."
+  ],
+  "signals": 1
+ },
+ "وزارة العدل: Your account is locked, verify now at http://وزارة العدل-secure.top": {
+  "level": "danger",
+  "score": 70,
+  "ids": [
+   "imp",
+   "login"
+  ],
+  "brands": [
+   "وزارة العدل"
+  ],
+  "links": [
+   "-secure.top"
+  ],
+  "reasons": [
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «وزارة العدل» لكن الرابط مو موقعه الرسمي (-secure.top)."
+  ],
+  "signals": 2
+ },
+ "وزارة العدل: تم تعليق حسابك، حدّث بياناتك خلال 24 ساعة: وزارة العدل-update.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "login",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "وزارة العدل"
+  ],
+  "links": [
+   "-update.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "ينتحل اسم «وزارة العدل» لكن الرابط مو موقعه الرسمي (-update.xyz)."
+  ],
+  "signals": 5
+ },
+ "وزارة العدل: لديك مبلغ مسترد، أدخل بيانات بطاقتك": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "card",
+   "refund",
+   "sensdata"
+  ],
+  "brands": [
+   "وزارة العدل"
+  ],
+  "links": [],
+  "reasons": [
+   "يطلب بيانات حساسة مثل الهوية أو الحساب البنكي.",
+   "يطلب بيانات بطاقتك أو كلمة المرور.",
+   "يوعدك باسترداد أو نقاط أو كاش باك عبر رابط. هذا طُعم لسرقة بيانات بطاقتك."
+  ],
+  "signals": 3
+ },
+ "وش صار لك؟": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "وصلك رمز على جوالك؟ أرسله لي عشان نلغي العملية المشبوهة على حسابك": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "يا أخوي العملية بتتم خلال دقيقتين! إذا ما أعطيتني الرمز بتخسر المبلغ كامل.": {
+  "level": "safe",
+  "score": 15,
+  "ids": [
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة."
+  ],
+  "signals": 1
+ },
+ "يمه هذا رقمي الجديد، جوالي خرب. حوّلي لي 500 ريال ضروري الحين": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "money",
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 3
+ },
+ "يمه هذا رقمي الجديد، جوالي خرب. حوّلي لي 500 ريال ضروري الحين وبرجعها لك": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "money",
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 3
+ },
+ "کیا آپ کے فون پر کوڈ آیا؟ مجھے بھیجیں تاکہ آپ کے اکاؤنٹ کی مشکوک ٹرانزیکشن منسوخ کریں": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "money",
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 2
+ },
+ "आपका इकामा ब्लॉक कर दिया गया है। तुरंत सत्यापित करें: iqama-check.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [
+   "iqama-check.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "ينتحل اسم «مقيم» لكن الرابط مو موقعه الرسمي (iqama-check.xyz)."
+  ],
+  "signals": 4
+ },
+ "आपका ओटीपी 4821 है। इसे किसी से साझा न करें।": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "आपका सत्यापन कोड 482913 है। इसे किसी के साथ शेयर न करें।": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "आपके मदा कार्ड ****1234 से एक फ़ार्मेसी पर 45 रियाल कटे। अगर यह आपने नहीं किया तो ऐप से बैंक से संपर्क करें।": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "क्या आपके फ़ोन पर कोड आया? मुझे भेजें ताकि आपके खाते का संदिग्ध लेनदेन रद्द करें": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "बधाई हो! आपका नंबर STC से 5,000 रियाल इनाम के लिए चुना गया है। अभी लें: stc-prize.top": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "imp",
+   "prize"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 2
+ },
+ "बधाई हो! आपने 10,000 रियाल जीते हैं। यहाँ क्लिक करें: prize-ksa.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "badlink",
+   "login",
+   "prize"
+  ],
+  "brands": [],
+  "links": [
+   "prize-ksa.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (prize-ksa.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "माँ, यह मेरा नया नंबर है, मेरा फ़ोन खराब हो गया। अभी 500 रियाल भेज दो, बहुत ज़रूरी है": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "money",
+   "newnum"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 2
+ },
+ "मैं बैंक से बोल रहा हूँ, आपको जो ओटीपी मिला है वह भेजें": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "साहिर ट्रैफ़िक जुर्माना बकाया है। निलंबन से बचने के लिए 48 घंटे में भरें: saher-pay.online": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "bill",
+   "lookalike"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 2
+ },
+ "অভিনন্দন! আপনার নম্বর STC থেকে ৫,০০০ রিয়াল পুরস্কারের জন্য নির্বাচিত হয়েছে। এখনই নিন: stc-prize.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "imp",
+   "prize",
+   "urgent"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 3
+ },
+ "আপনার ইকামা ব্লক করা হয়েছে, এখনই যাচাই করুন: iqama-check.xyz": {
+  "level": "danger",
+  "score": 100,
+  "ids": [
+   "imp",
+   "suspend",
+   "update",
+   "urgent"
+  ],
+  "brands": [
+   "مقيم"
+  ],
+  "links": [
+   "iqama-check.xyz"
+  ],
+  "reasons": [
+   "يخوّفك بإيقاف حسابك أو خدماتك.",
+   "يطلب منك تحديث بياناتك عبر رابط.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "ينتحل اسم «مقيم» لكن الرابط مو موقعه الرسمي (iqama-check.xyz)."
+  ],
+  "signals": 4
+ },
+ "আপনার ওটিপি 4821। কাউকে শেয়ার করবেন না।": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "আপনার পার্সেল আটকে আছে, এখনই ১২ রিয়াল ফি পরিশোধ করুন: spl-delivery.info": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "lookalike",
+   "ship",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "spl-delivery.info"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "الرابط (spl-delivery.info) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 3
+ },
+ "আপনার ফোনে কোড এসেছে? আমাকে পাঠান যাতে আপনার অ্যাকাউন্টের সন্দেহজনক লেনদেন বাতিল করি": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "money",
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 2
+ },
+ "আপনার মাদা কার্ড ****1234 থেকে একটি ফার্মেসিতে ৪৫ রিয়াল কাটা হয়েছে। আপনি না করলে অ্যাপের মাধ্যমে ব্যাংকে যোগাযোগ করুন।": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "আপনার যাচাই কোড 482913। কারও সাথে শেয়ার করবেন না।": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "আমি ব্যাংক থেকে বলছি, আপনার ফোনে যে ওটিপি এসেছে তা পাঠান": {
+  "level": "danger",
+  "score": 80,
+  "ids": [
+   "money",
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 2
+ },
+ "মা, এটা আমার নতুন নম্বর, ফোন নষ্ট হয়ে গেছে। এখনই ৫০০ রিয়াল পাঠাও, খুব জরুরি": {
+  "level": "danger",
+  "score": 75,
+  "ids": [
+   "money",
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم.",
+   "يطلب منك تحويل أو دفع فلوس."
+  ],
+  "signals": 3
+ },
+ "সাহের ট্রাফিক জরিমানা বকেয়া। স্থগিত হওয়া এড়াতে ৪৮ ঘণ্টার মধ্যে দিন: saher-pay.online": {
+  "level": "danger",
+  "score": 65,
+  "ids": [
+   "bill",
+   "lookalike"
+  ],
+  "brands": [],
+  "links": [
+   "saher-pay.online"
+  ],
+  "reasons": [
+   "فاتورة أو مخالفة «متأخرة» مع تهديد ورابط دفع. ادفع فواتيرك من التطبيق الرسمي فقط.",
+   "الرابط (saher-pay.online) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 2
+ },
+ "你手机收到验证码了吗？发给我，我帮你取消账户上的可疑交易": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "妈，这是我的新号码，手机坏了。现在马上转我 500 里亚尔，很急": {
+  "level": "suspicious",
+  "score": 40,
+  "ids": [
+   "newnum",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "شخص يقول إنه قريبك برقم جديد. تأكد بالاتصال على رقمه القديم."
+  ],
+  "signals": 2
+ },
+ "恭喜您中奖 10000 里亚尔！点击领取：prize-ksa.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "badlink",
+   "login",
+   "prize"
+  ],
+  "brands": [],
+  "links": [
+   "prize-ksa.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يطلب منك تسجيل دخول أو إدخال بيانات عبر رابط.",
+   "الرابط (prize-ksa.top) ينتهي بنهاية غير معتادة للجهات الرسمية."
+  ],
+  "signals": 3
+ },
+ "恭喜！您的号码被选中，获得 STC 5,000 里亚尔大奖。立即领取：stc-prize.top": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "imp",
+   "prize",
+   "urgent"
+  ],
+  "brands": [
+   "STC"
+  ],
+  "links": [
+   "stc-prize.top"
+  ],
+  "reasons": [
+   "يوعدك بجائزة أو هدية ما اشتركت فيها.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "ينتحل اسم «STC» لكن الرابط مو موقعه الرسمي (stc-prize.top)."
+  ],
+  "signals": 3
+ },
+ "您好，我是银行客服，请把您收到的验证码发给我，以便取消交易": {
+  "level": "danger",
+  "score": 60,
+  "ids": [
+   "otp"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "يطلب منك رمز التحقق. الجهات الرسمية ما تطلبه منك أبدًا."
+  ],
+  "signals": 1
+ },
+ "您的 mada 卡 ****1234 在药店消费 45 里亚尔。如非本人操作，请通过应用联系银行。": {
+  "level": "safe",
+  "score": 0,
+  "ids": [],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "ما لقيت علامات احتيال واضحة."
+  ],
+  "signals": 0
+ },
+ "您的包裹被扣留，请立即支付 12 里亚尔关税：spl-delivery.info": {
+  "level": "danger",
+  "score": 95,
+  "ids": [
+   "lookalike",
+   "ship",
+   "urgent"
+  ],
+  "brands": [],
+  "links": [
+   "spl-delivery.info"
+  ],
+  "reasons": [
+   "يطلب رسوم شحنة. شركات الشحن ما تطلب الدفع برابط في رسالة.",
+   "يستعجلك عشان ما تفكّر. هذي حيلة معروفة.",
+   "الرابط (spl-delivery.info) يقلّد اسم جهة معروفة، لكنه مو موقعها الرسمي."
+  ],
+  "signals": 3
+ },
+ "您的验证码是 4821，请勿告诉他人。": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ },
+ "您的验证码是 482913。请勿告诉任何人。": {
+  "level": "safe",
+  "score": 0,
+  "ids": [
+   "safehint"
+  ],
+  "brands": [],
+  "links": [],
+  "reasons": [
+   "الرسالة تحذّرك من مشاركة الرمز، وهذا أسلوب الجهات الرسمية."
+  ],
+  "signals": 1
+ }
+}

@@ -1,0 +1,13 @@
+Copyright © 2026 حسان عبدالله الينبعاوي (Fatin · فَطِن)
+All rights reserved.
+
+No part of this software, its source code, design, text or assets may be copied, modified,
+distributed, published or used to create derivative works without the prior written permission
+of the copyright holder.
+
+Third-party components included in this repository are licensed under their own terms, which
+take precedence for those components:
+  - app/vendor/qrcode.min.js — qrcodejs, MIT License
+  - app/vendor/jsQR.min.js — jsQR, Apache License 2.0
+  - app/fonts/*.woff2 — Alexandria and IBM Plex Sans Arabic, SIL Open Font License 1.1
+Their license texts are in app/vendor/LICENSES.txt and app/fonts/OFL.txt.

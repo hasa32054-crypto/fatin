@@ -1,0 +1,19 @@
+# Test-only configuration: the worker with KV and the Durable Object, run locally by `wrangler dev`.
+name = "fatin-test-state"
+main = "../../../server/worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://site.test"
+
+[[kv_namespaces]]
+binding = "FATIN_KV"
+id = "test-kv"
+
+[[durable_objects.bindings]]
+name = "FATIN_STATE"
+class_name = "FatinState"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["FatinState"]

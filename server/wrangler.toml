@@ -10,6 +10,15 @@ binding = "AI"
 binding = "FATIN_KV"
 id = "PUT_YOUR_KV_ID_HERE"
 
+# حالة مشتركة بدون ضياع: الرادار ولوحة الأسرة (Durable Object). البيانات القديمة في KV تنتقل تلقائيًا أول مرة.
+[[durable_objects.bindings]]
+name = "FATIN_STATE"
+class_name = "FatinState"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["FatinState"]
+
 # حد الطلبات لكل IP في الدقيقة (Cloudflare Rate Limiting). اختياري: بدونها الخادم يستخدم حد داخلي أبسط.
 [[ratelimits]]
 name = "RL_AI"
@@ -30,6 +39,11 @@ simple = { limit = 30, period = 60 }
 name = "RL_WRITE"
 namespace_id = "1004"
 simple = { limit = 20, period = 60 }
+
+[[ratelimits]]
+name = "RL_RADAR"
+namespace_id = "1006"
+simple = { limit = 6, period = 60 }
 
 [[ratelimits]]
 name = "RL_READ"
