@@ -2270,11 +2270,13 @@ const fatinConfig=(async()=>{ try{ const r=await fetch("config.json",{cache:"no-
 function ownKey(){ try{ return localStorage.getItem("fatin-ai-key")||""; }catch(e){ return ""; } }
 function fileToB64(f){ return new Promise((ok,no)=>{ const r=new FileReader(); r.onload=()=>ok(String(r.result).split(",")[1]||""); r.onerror=no; r.readAsDataURL(f); }); }
 function mergeTurns(ms){ const out=[]; ms.forEach(m=>{ const last=out[out.length-1]; if(last&&last.role===m.role&&typeof last.content==="string"&&typeof m.content==="string") last.content+="\n\n"+m.content; else out.push({role:m.role,content:m.content}); }); if(out.length&&out[0].role!=="user") out.unshift({role:"user",content:"."}); return out; }
+/* the Fatin server writes the prompt itself: the app sends only the task and its data */
+async function serverTask(task){
+  const r=await fetch(FATIN.server+"/ai",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(task)});
+  if(r.status===429) throw {code:"rate_limited"}; if(!r.ok) throw {code:"unavailable"};
+  const j=await r.json(); return String(j.text||"");
+}
 async function apiCall(messages,maxTokens){
-  if(FATIN.server){
-    const r=await fetch(FATIN.server+"/ai",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({messages,max_tokens:maxTokens})});
-    if(r.status===429) throw {code:"rate_limited"}; if(!r.ok) throw {code:"unavailable"};
-    const j=await r.json(); return String(j.text||""); }
   const k=ownKey(); if(!k) throw {code:"not_granted"};
   const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"x-api-key":k,"anthropic-version":"2023-06-01","content-type":"application/json","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:FATIN.model,max_tokens:maxTokens,messages})});
   if(r.status===401||r.status===403) throw {code:"bad_key"}; if(r.status===429) throw {code:"rate_limited"}; if(!r.ok) throw {code:"unavailable"};
@@ -2287,20 +2289,29 @@ function makeRemoteSample(){
       for(const f of fs) blocks.push({type:"image",source:{type:"base64",media_type:f.type||"image/png",data:await fileToB64(f)}});
       blocks.push({type:"text",text:String(last.content)}); last.content=blocks; }
     return ms; };
-  const s=async(input,opts={})=>({text:await apiCall(await toMsgs(input,opts),700),truncated:false});
+  // opts.task: what the server needs to write this prompt itself (used whenever a Fatin server is set)
+  const viaServer=async(opts)=>{ const task=Object.assign({},opts.task);
+    if(task.task==="ocr"){ const f=Array.isArray(opts.images)?opts.images[0]:opts.images; task.image={media_type:f.type||"image/png",data:await fileToB64(f)}; }
+    return serverTask(task); };
+  const s=async(input,opts={})=>({text:FATIN.server&&opts.task?await viaServer(opts):await apiCall(await toMsgs(input,opts),700),truncated:false});
   s.json=async(input,opts={})=>{ const inp=typeof input==="string"?input+"\n\nأعد JSON صالحًا فقط، بدون أي نص قبله أو بعده.":input;
-    const t=await apiCall(await toMsgs(inp,opts),700); const m=t.match(/\{[\s\S]*\}/); if(!m) throw {code:"bad_json"}; return JSON.parse(m[0]); };
+    const t=FATIN.server&&opts.task?await viaServer(opts):await apiCall(await toMsgs(inp,opts),700); const m=t.match(/\{[\s\S]*\}/); if(!m) throw {code:"bad_json"}; return JSON.parse(m[0]); };
   s.limits=async()=>({images:{mediaTypes:["image/png","image/jpeg","image/webp","image/gif"]}});
   s.remote=true; return s;
 }
 function remoteSampleIfAny(){ return (FATIN.server||ownKey())?makeRemoteSample():null; }
+// the task data travels only to Fatin's own server, never to the in-Claude sampler
+function aiOpts(opts,task){ return sample&&sample.remote?Object.assign({},opts,{task}):opts; }
 function makeRemoteDB(){
-  const poll=(url,pick,cb)=>{ let stop=false; const tick=async()=>{ if(stop) return; if(document.hidden){ setTimeout(tick,15000); return; } try{ const r=await fetch(url,{cache:"no-store"}); if(r.ok){ const j=await r.json(); const docs=(pick(j)||[]).map((x,i)=>({id:String(i),exists:true,data:()=>x}));
-        cb({docs,size:docs.length,empty:!docs.length,docChanges:()=>[],metadata:{fromCache:false,hasPendingWrites:false}}); } }catch(e){} if(!stop) setTimeout(tick,15000); }; tick(); return ()=>{ stop=true; }; };
+  const kicks={}; // a new report shows at once instead of on the next poll
+  const poll=(url,pick,cb,every)=>{ let stop=false, t=null; const tick=async()=>{ clearTimeout(t); if(stop) return; if(document.hidden){ t=setTimeout(tick,every); return; } try{ const r=await fetch(url,{cache:"no-store"}); if(r.ok){ const j=await r.json(); const docs=(pick(j)||[]).map((x,i)=>({id:String(i),exists:true,data:()=>x}));
+        cb({docs,size:docs.length,empty:!docs.length,docChanges:()=>[],metadata:{fromCache:false,hasPendingWrites:false}}); } }catch(e){} if(!stop){ clearTimeout(t); t=setTimeout(tick,every); } }; kicks[url]=tick; tick(); return ()=>{ stop=true; clearTimeout(t); if(kicks[url]===tick) delete kicks[url]; }; };
+  // the radar arrives as counts per pattern ({p, n}); family alerts as a short list
+  const radarDocs=j=>j.counts?Object.entries(j.counts).map(([p,n])=>({p,n,at:+j.at||Date.now()})):j.reports;
   const col=path=>{ const fam=path.match(/^families\/([A-Z0-9]{6})\/alerts$/), ep=path==="reports"?"/radar":fam?"/family/"+fam[1]:null;
     const q={where(){return q},orderBy(){return q},limit(){return q},
-      onSnapshot(cb){ if(!ep) return ()=>{}; return poll(FATIN.server+ep,j=>path==="reports"?j.reports:j.alerts,cb); },
-      async add(data){ if(!ep) throw {code:"invalid_argument"}; const r=await fetch(FATIN.server+ep,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(data)}); if(!r.ok) throw {code:"unavailable"}; return {id:""}; }};
+      onSnapshot(cb){ if(!ep) return ()=>{}; return path==="reports"?poll(FATIN.server+ep,radarDocs,cb,60000):poll(FATIN.server+ep,j=>j.alerts,cb,15000); },
+      async add(data){ if(!ep) throw {code:"invalid_argument"}; const r=await fetch(FATIN.server+ep,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(data)}); if(!r.ok) throw {code:"unavailable"}; const k=kicks[FATIN.server+ep]; if(k) setTimeout(k,300); return {id:""}; }};
     return q; };
   return {collection:col,remote:true};
 }
@@ -2511,13 +2522,21 @@ async function cloudOK(){ if(VOICE.cloud!==null) return VOICE.cloud; try{ await 
   if(!FATIN.server||!navigator.onLine) return false;
   try{ const r=await fetch(FATIN.server+"/tts",{cache:"no-store"}); const j=await r.json(); VOICE.cloud=!!(j&&j.ok); if(j&&Array.isArray(j.langs)&&j.langs.length) VOICE.langs=j.langs; }catch(e){ VOICE.cloud=false; }
   return VOICE.cloud; }
+/* only the training scripts' own lines may be cached by the server; AI replies, names and results never are */
+function scriptedLine(text){
+  let lg="ar"; try{ lg=curLang(); }catch(e){} if(!scriptedLine.sets) scriptedLine.sets={};
+  let set=scriptedLine.sets[lg];
+  if(!set){ set=scriptedLine.sets[lg]=new Set(); const walk=o=>{ if(typeof o==="string") set.add(o.replace(/\s+/g," ").trim()); else if(o&&typeof o==="object") Object.values(o).forEach(walk); };
+    try{ walk(SCEN); walk(CALLS); walk(DEFLECT); const X=TRX(); if(X) walk(X); }catch(e){} }
+  return set.has(String(text).replace(/\s+/g," ").trim());
+}
 async function cloudAudio(text,role,emotion){ const k=role+"|"+voiceLang()+"|"+(emotion||"")+"|"+text; if(VOICE.cache.has(k)) return VOICE.cache.get(k);
   if(VOICE.pending&&VOICE.pending[k]) return VOICE.pending[k];
   VOICE.pending=VOICE.pending||{};
   const job=(async()=>{
   for(let attempt=0;attempt<2;attempt++){
   const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),14000);
-  try{ const r=await fetch(FATIN.server+"/tts",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({text,role,lang:voiceLang(),emotion:emotion||undefined}),signal:ctl.signal});
+  try{ const r=await fetch(FATIN.server+"/tts",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({text,role,lang:voiceLang(),emotion:emotion||undefined,cache:scriptedLine(text)||undefined}),signal:ctl.signal});
     if(!r.ok){ if(r.status===503){ VOICE.cloud=false; return null; } if(attempt||r.status===400||r.status===403) return null; await new Promise(z=>setTimeout(z,500)); continue; }   // only "no voice set up" turns it off; anything else falls back for this line only
     const b=await r.blob(); if(!b.size) return null; const u=URL.createObjectURL(b);
     if(VOICE.cache.size>60){ const f=VOICE.cache.keys().next().value; URL.revokeObjectURL(VOICE.cache.get(f)); VOICE.cache.delete(f); }
@@ -2600,7 +2619,7 @@ async function run(){
   const note=$("ai-note"); note.innerHTML='<span class="dot"></span> الطبقة الثانية: فحص بالذكاء الاصطناعي…';
   let final=ruleRes;
   try{
-    const ai=await sample.json(AI_PROMPT(text),{modelTier:"quick"});
+    const ai=await sample.json(AI_PROMPT(text),aiOpts({modelTier:"quick"},{task:"scan",text:text.slice(0,3000)}));
     if(id!==runId) return;
     lastAI=ai; final=merge(ruleRes,ai); note.textContent="✓ تم الفحص بطبقتين";
   }catch(e){
@@ -2615,7 +2634,7 @@ async function fromPhoto(file){
   if(!file||!sample) return;
   const id=++runId, note=$("ai-note"); note.innerHTML='<span class="dot"></span> أقرأ الصورة…'; $("scan").disabled=true;
   try{
-    const r=await sample.json(`اقرأ النص الظاهر في صورة الرسالة هذه حرفيًا. أعد JSON فقط: {"text":"نص الرسالة كما هو"}`,{images:file,modelTier:"quick"});
+    const r=await sample.json(`اقرأ النص الظاهر في صورة الرسالة هذه حرفيًا. أعد JSON فقط: {"text":"نص الرسالة كما هو"}`,aiOpts({images:file,modelTier:"quick"},{task:"ocr"}));
     if(id!==runId) return;
     const txt=r&&typeof r.text==="string"?r.text.trim():"";
     if(!txt){ note.textContent="ما قدرت أقرأ نصًا في الصورة. جرّب صورة أوضح أو الصق النص."; return; }
@@ -2967,7 +2986,8 @@ async function initRadar(){
       snap.docs.forEach(doc=>{ const x=doc.data(); if(!x||typeof x.p!=="string"||!(+x.at<=now)) return; // shared data is untrusted: accept only known pattern keys and build the label here
         const p=x.p; let l=null;
         if(p.startsWith("imp:")){ const b=p.slice(4); if(okBrands.has(b)) l="انتحال «"+b+"»"; } else if(PAT_ORDER.includes(p)) l=PAT_LABEL[p];
-        if(!l) return; (m[p]=m[p]||{n:0,l}).n++; });
+        const c=x.n==null?1:Math.max(0,Math.min(1e5,Math.floor(+x.n)||0)); // one report per doc, or a server count
+        if(!l||!c) return; (m[p]=m[p]||{n:0,l}).n+=c; });
       radarMap=m; drawRadar(); radarLine();
     },()=>{ db=null; $("radar-sec").hidden=true; $("radar-box").hidden=true; $("radar-line").hidden=true; });
   }catch(e){}
@@ -3052,9 +3072,9 @@ function inRole(s,ar){
   return s;
 }
 const AI_OFF=["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"];
-async function roleLine(promptFor,ar){ // up to two tries; null means "use the local script"
+async function roleLine(promptFor,ar,taskFor){ // up to two tries; null means "use the local script"
   for(let k=0;k<2&&sample;k++){
-    try{ const r=await sample.json(promptFor(k>0),{modelTier:"quick",cache:false}); const g=inRole(r&&r.reply,ar); if(g) return Object.assign({},r,{reply:g.slice(0,280)}); }
+    try{ const r=await sample.json(promptFor(k>0),aiOpts({modelTier:"quick",cache:false},taskFor&&taskFor(k>0))); const g=inRole(r&&r.reply,ar); if(g) return Object.assign({},r,{reply:g.slice(0,280)}); }
     catch(e){ if(AI_OFF.includes(e&&e.code)){ sample=null; return null; } }
   }
   return null;
@@ -3099,7 +3119,7 @@ async function userSays(text){
   simBusy=true; const typing=chatAdd("typing",""); typing.innerHTML="<i></i><i></i><i></i>";
   let reply=null, tip=null, outcome="continue";
   if(sample){
-    const r=await roleLine(strict=>SIM_AI(scn(simScen),simTurns.slice(-10),strict));
+    const r=await roleLine(strict=>SIM_AI(scn(simScen),simTurns.slice(-10),strict),false,strict=>({task:"sim",scenario:simScen,turns:simTurns.slice(-10),strict,lang:curLang()}));
     if(r){ reply=r.reply; tip=typeof r.tip==="string"?r.tip.replace(/\*+/g,"").slice(0,200):null; outcome=["continue","user_won","user_lost"].includes(r.outcome)?r.outcome:"continue"; }
   } else await wait(900);
   typing.remove(); simBusy=false;
@@ -3479,7 +3499,7 @@ async function callUserSays(text){
   call.busy=true;
   let reply=null;
   if(sample){
-    const r=await roleLine(strict=>CALL_AI(c,call.hist.slice(-12),strict,accused),true); if(r) reply=r.reply.slice(0,240);
+    const r=await roleLine(strict=>CALL_AI(c,call.hist.slice(-12),strict,accused),true,strict=>({task:"call",call:call.k,hist:call.hist.slice(-12),strict,accused:!!accused})); if(r) reply=r.reply.slice(0,240);
   } else await wait(500);
   call.busy=false;
   if(!call||call.ended) return;
@@ -3963,7 +3983,10 @@ function showQR(o){
   const reasons=lang==="ar"?o.res.reasons:[...new Set(o.res.ids||[])].map(i=>((R[lang]||R.en)[i]||R.en[i])).filter(Boolean);
   reasons.slice(0,3).forEach(r=>ul.appendChild(el("li","",r)));
   if(o.res.sus){ const host=o.res.sus.host.split("."); let n=2; if(host.length>=3&&/^(com|gov|edu|net|org|med|sch)$/.test(host[host.length-2])&&host[host.length-1].length===2) n=3; $("qrm-own-v").textContent=host.slice(-n).join("."); $("qrm-own").hidden=false; }
-  if(lv==="safe"&&/^https?:\/\//i.test(o.data)){ const a=el("a","btn btn-ghost",t("qr_open")||"افتح الرابط"); a.href=o.data; a.target="_blank"; a.rel="noopener"; acts.appendChild(a); close.className="btn btn-main"; close.textContent="تمام"; }
+  if(lv==="safe"&&/^https?:\/\//i.test(o.data)){ // no one-tap open: a scam link the rules missed must not be one tap away
+    let host=""; try{ host=new URL(o.data).hostname.replace(/^www\./,""); }catch(e){}
+    ul.appendChild(el("li","",(lang==="ar"?"الموقع: ":"Site: ")+(host||"—")+(lang==="ar"?". لا تفتحه من الباركود: افتح التطبيق الرسمي أو اكتب عنوان الموقع الرسمي بنفسك.":". Don't open it from the QR code: open the official app, or type the official website address yourself.")));
+    close.className="btn btn-main"; close.textContent="تمام"; }
   else { close.className="btn btn-alert"; close.textContent=t("qr_close")||"أغلق الرابط"; }
   acts.prepend(close);
   if(lv!=="safe"){ const rp=el("button","btn btn-gold","بلّغ"); rp.onclick=()=>{ current=o.res; hideQR(); sheet(true); }; acts.appendChild(rp); }
@@ -4016,7 +4039,7 @@ async function askFatin(q){
     if(/(مين|من|وش|ايش|أي)\s*((الجهة|اللي)\s*)*(طو[ّ]?رك|طورتك|سو[ّ]?اك|سوتك|صنعك|صممك|برمجك|اخترعك|ورا\s*فطن|وراك)|(من|مين)\s*(انت|أنت)\s*[؟?]?\s*$|(انت|أنت|فطن)\s*(تابع|تتبع|من)\s*(ل|لأي|لاي|ل?وزار|ل?جه|ل?حكوم|الحكوم|الوزار|الجه)|who\s+(made|created|built|developed|owns|is behind)\s+(you|fatin)|who are you|are you (from|part of|owned by|run by)|is fatin (from|part of|owned by|run by)/.test(ql)) a=ABOUT_FATIN[lang]||ABOUT_FATIN.ar; }
   if(!a && sample){
     try{ const sys=`أنت «فطن»، مساعد توعية ضد الاحتيال لذوي الإعاقة وكبار السن والعمالة في السعودية. أجب بلغة المستخدم (${LANGS[lang].name}) بجملتين أو ثلاث بسيطة جدًا، بدون مصطلحات تقنية. انصح دائمًا بالتأكد من الجهة الرسمية بنفسه، ولا تطلب أي بيانات. إذا كان السؤال خارج الأمان الرقمي فوجّهه بلطف. حقائق عنك لا تخالفها أبدًا: فطن مشروع طالب سعودي، حسان عبدالله الينبعاوي من ثانوية الموهوبين التقنية بجدة، طوّره لمسابقة «عزّنا بتمكينهم» بهدف حماية ذوي الإعاقة وكبار السن من الاحتيال. فطن ليس تابعًا لأي وزارة أو جهة حكومية أو بنك أو شركة، ولا تدّعِ ذلك أبدًا ولا تخترع معلومات عن نفسك. التنسيق: اكتب نصًا عاديًا، وضع الكلمة أو العبارة الأهم فقط بين **نجمتين** (مرة أو مرتين في الجواب كله)، بدون عناوين أو قوائم أو أي رموز ثانية.`;
-      const r=await sample([{role:"user",content:sys},...askHist.slice(-8)],{modelTier:"quick",cache:false}); a=(r&&r.text||"").trim().slice(0,700); }
+      const r=await sample([{role:"user",content:sys},...askHist.slice(-8)],aiOpts({modelTier:"quick",cache:false},{task:"ask",lang,history:askHist.slice(-8)})); a=(r&&r.text||"").trim().slice(0,700); }
     catch(e){ if(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(e&&e.code)) sample=null; }
   } else await wait(500);
   if(!a){ const nq=FatinEngine.norm(q); const hit=KB.find(([re])=>re.test(nq)); a=hit?(lang==="ar"?hit[1]:hit[2]):(lang==="ar"?"ما عندي جواب جاهز لهذا السؤال. القاعدة الذهبية: لا تعطِ رمزًا أو بيانات أو فلوس لأحد يتواصل معك، وتأكد من الجهة بنفسك.":"Golden rule: never give a code, data or money to someone who contacted you. Check with the organization yourself."); }
