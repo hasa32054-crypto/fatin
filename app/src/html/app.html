@@ -1,0 +1,715 @@
+
+<div class="aurora" aria-hidden="true"></div>
+<div class="stage">
+
+  <!-- desktop: pitch column -->
+  <aside class="side pitch" aria-label="عن فطن">
+    <span class="badge"><i></i>عزّنا بتمكينهم · المسار ٠٣ وطن يبتكر</span>
+    <h1>فَطِن<br><em>أذكى من الرسالة، وأسرع من الضغطة.</em></h1>
+    <p class="tag">سندك الذكي ضد الاحتيال</p>
+    <p class="lead">تطبيق بالذكاء الاصطناعي يكشف رسائل الاحتيال، ويحذّر ذوي الإعاقة بالطريقة التي تناسبهم: بالصوت، أو باللون، أو بجملة بسيطة. جرّبه في الجوال المجاور، والشرح الكامل في موقع فطن.</p>
+    <button class="tour-big tour-go" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><span><b>شاهد فطن في 60 ثانية</b><small>تنقّل بالأسهم بين كل الميزات</small></span></button>
+  </aside>
+
+  <!-- THE APP -->
+  <div class="device" id="device">
+
+    <main class="screen" id="screen">
+      <div class="appbar">
+        <div class="logo">
+          <span class="mk" aria-hidden="true"><svg class="emb" viewBox="19 26 162 162" aria-hidden="true"><path d="M40 49 50 35 60 49ZM65 49 75 35 85 49ZM90 49 100 30 110 49ZM115 49 125 35 135 49ZM140 49 150 35 160 49Z" fill="#E0BC5E"/><path d="M36 48H164C166 110 142 152 100 184 58 152 34 110 36 48Z" fill="#E0BC5E"/><path d="M100 48H164C166 110 142 152 100 184Z" fill="#F4DA94"/><path d="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9ZM64 102.8 67.24 106.05 64 109.29 60.76 106.05ZM120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z" fill="#03130D"/><circle cx="136" cy="84.9" r="4.68" fill="#E0BC5E"/></svg></span>
+          <div><b>فَطِن</b><small id="bar-sub">سندك الذكي ضد الاحتيال</small></div>
+        </div>
+        <div class="a11y">
+          <button class="mode-chip" id="mode-chip" aria-label="وضعك، اضغط للتغيير"><span id="mode-chip-t">بصري</span></button>
+          <button class="globe" aria-label="اللغة · Language"><span class="ge" aria-hidden="true">🌍</span></button>
+          <button id="hc" aria-pressed="false" aria-label="تباين عالٍ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18z" fill="currentColor"/></svg></button>
+          <a href="../" target="_blank" rel="noopener" aria-label="موقع فطن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg></a>
+        </div>
+      </div>
+
+      <!-- ===== SCAN ===== -->
+      <section class="view" id="v-scan" aria-label="افحص">
+        <div class="greet-row"><p class="greet" id="greet" hidden></p><button class="medal-chip" id="medal-chip" type="button" data-go="badges" hidden><span aria-hidden="true">🏅</span><span id="medal-t">أوسمتي</span> <b id="medal-n">0</b></button></div>
+        <div class="eld" id="eld">
+          <button class="eld-b check" id="eld-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>افحص رسالة</button>
+          <a class="eld-b call" id="eld-call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span><b id="eld-call-t">اتصل بولدي/بنتي</b><small id="eld-num"></small></span></a>
+        </div>
+        <div class="radar">
+          <div class="radar-v" aria-hidden="true">
+            <svg viewBox="0 0 100 100"><circle class="ring" cx="50" cy="50" r="48"/><circle class="ring r2" cx="50" cy="50" r="48"/><circle class="ring r3" cx="50" cy="50" r="48"/>
+              <g class="sweep"><path d="M50 50 L50 3 A47 47 0 0 1 90 26 Z" fill="url(#sw)"/></g>
+              <defs><linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22B573" stop-opacity=".0"/><stop offset="1" stop-color="#22B573" stop-opacity=".45"/></linearGradient></defs></svg>
+            <div class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg></div>
+          </div>
+          <div>
+            <h2 class="h">افحص أي رسالة<br>قبل ما تضغط</h2>
+            <p class="sub">SMS أو واتساب أو إيميل</p>
+          </div>
+        </div>
+
+
+        <div class="panel">
+          <div class="msg-head"><label class="label" for="msg">الرسالة اللي وصلتك</label>
+            <button type="button" class="paste-btn" id="paste-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1.2"/><path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><path d="M9 13l2 2 4-4"/></svg>الصق وافحص</button>
+          </div>
+          <div class="inbox" id="inbox">
+            <textarea id="msg" maxlength="4000" placeholder="الصق هنا الرسالة…"></textarea>
+            <div class="beam" aria-hidden="true"></div>
+          </div>
+          <div class="row">
+            <button class="btn btn-main" id="scan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>افحص الرسالة</button>
+            <label class="btn btn-ghost file-btn" id="photo-wrap" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-7 7"/></svg>ارفع صورة<input type="file" id="photo" accept="image/*" aria-label="ارفع صورة الرسالة أو لقطة شاشة من جهازك"></label>
+          </div>
+          <div class="row row2">
+            <button class="btn btn-ghost" id="qr-btn" data-go="qr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3M21 14v.01M14 21h3M21 18v3"/></svg>امسح باركود</button>
+            <button class="btn btn-panic" id="panic-btn" data-go="panic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5h.01"/></svg>انخدعت؟</button>
+          </div>
+          <div class="hs"><button class="hs-btn hs-prev" type="button" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="examples" aria-label="أمثلة">
+            <button class="chip" data-ex="0">أبشر مزيّف</button>
+            <button class="chip" data-ex="7">طلب نفاذ</button>
+            <button class="chip" data-ex="8">تحويل بالغلط</button>
+            <button class="chip" data-ex="9">بطاقات شحن</button>
+            <button class="chip" data-ex="1">رسوم شحنة</button>
+            <button class="chip" data-ex="2">طلب الرمز</button>
+            <button class="chip" data-ex="3">رقم جديد</button>
+            <button class="chip" data-ex="4">مخالفة ساهر</button>
+            <button class="chip" data-ex="6">رابط مخادع</button>
+            <button class="chip" data-ex="5">رسالة سليمة</button>
+          </div><button class="hs-btn hs-next" type="button" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button></div>
+        </div>
+
+        <div class="panel verdict" id="verdict" data-level="danger">
+          <div class="v-top">
+            <div class="gauge" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="g-fg" cx="60" cy="60" r="52"/></svg>
+              <div class="num"><div><b id="g-num">0</b><small>درجة الخطر</small></div></div>
+            </div>
+            <div>
+              <h3 class="v-title" id="v-title">خطير</h3>
+              <p class="v-sub" id="v-sub">مثال</p>
+            </div>
+          </div>
+          <p class="v-simple" id="v-simple">لا تضغط على الرابط، ولا ترد، ولا تعطِ أي رمز.</p>
+          <div class="picto" id="picto" aria-label="رموز مصوّرة"></div>
+          <p class="radar-line" id="radar-line" hidden></p>
+
+          <div>
+            <span class="sec-l">رسالتك، وما لقطه فطن فيها</span>
+            <div class="msgview" id="msgview"></div>
+            <div class="legend" aria-hidden="true"><span><i style="background:rgba(255,107,94,.5)"></i>خطر</span><span><i style="background:rgba(255,184,77,.5)"></i>اسم جهة منتحَلة</span><span><i style="background:rgba(62,224,155,.5)"></i>علامة أمان</span></div>
+          </div>
+
+          <div id="dis-wrap" hidden>
+            <span class="sec-l">تشريح الرابط</span>
+            <div class="dis">
+              <div class="dis-url" id="dis-url" dir="ltr"></div>
+              <div class="dis-owner"><small>صاحب الرابط الحقيقي</small><code id="dis-owner" dir="ltr"></code></div>
+              <ul class="dis-notes" id="dis-notes"></ul>
+            </div>
+          </div>
+          <div id="cmp-wrap" hidden>
+            <span class="sec-l">قارن الرابط</span>
+            <div class="compare">
+              <div class="cmp fake"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></span><div><small>الرابط في الرسالة</small><code id="cmp-fake"></code></div></div>
+              <div class="cmp real"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><small id="cmp-real-l">الموقع الرسمي</small><code id="cmp-real"></code></div></div>
+            </div>
+          </div>
+
+          <ul class="reasons" id="reasons"></ul>
+
+          <details class="how" id="how">
+            <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg>كيف قرّر فطن؟</summary>
+            <div class="how-body">
+              <div class="layer"><span class="n">١</span><div><b>قواعد فطن على جهازك</b><small id="l1-s">أنماط الاحتيال المعروفة في السعودية</small></div><em id="l1-v">—</em></div>
+              <div class="layer"><span class="n">٢</span><div><b>الذكاء الاصطناعي</b><small id="l2-s">يفهم سياق الرسالة واللهجة</small></div><em id="l2-v">—</em></div>
+              <p class="agree" id="agree"></p>
+            </div>
+          </details>
+
+          <div class="ai-note" id="ai-note"></div>
+          <div class="priv-note" id="priv-note" role="status" hidden>
+            <p id="priv-note-t"></p>
+            <div class="priv-acts"><button class="btn btn-ghost" type="button" id="priv-send">افحصها بالذكاء الاصطناعي بدون الأرقام الحساسة</button><button class="linkish" type="button" id="priv-why">وش يطلع من جوالي؟</button></div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-ghost" id="speak"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/></svg>اسمع</button>
+            <button class="btn btn-ghost" id="report"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h11l-2 4 2 4H5"/></svg>بلّغ</button>
+            <button class="btn btn-alert wide" id="alert-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="9.5" cy="7" r="4"/><path d="M20 8v4M20 16h.01"/></svg>أرسل لشخص أثق فيه</button>
+          </div>
+          <div class="trust-box" id="trust-box" hidden>
+            <p>رسالة جاهزة لشخص تثق فيه:</p>
+            <div class="copy-line"><code id="trust-text"></code><button class="small-btn" id="copy-trust">نسخ</button></div>
+            <p id="wa-wrap" hidden><a id="wa-link" href="#" target="_blank" rel="noopener">افتح واتساب برسالة جاهزة</a></p>
+            <p class="hint" id="trust-hint">أضف رقم الشخص من «الإعدادات» في «المزيد»، عشان يفتح واتساب مباشرة.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===== SETTINGS ===== -->
+      <section class="view" id="v-settings" aria-label="الإعدادات" hidden>
+        <button class="back" data-go="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>المزيد</button>
+        <div><span class="eyebrow">خصّص فطن</span><h2 class="h" style="margin-top:6px">الإعدادات</h2></div>
+        <div class="panel settings">
+          <div class="field" id="mode-field">
+            <span class="label" id="modes-l">وضعك</span>
+            <div class="modes" role="group" aria-labelledby="modes-l">
+            <button class="mode" data-mode="general" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><b>عام</b><small>بدون إعاقة</small></button>
+            <button class="mode" data-mode="visual" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>بصري</b><small>يقرأ بالصوت</small></button>
+            <button class="mode" data-mode="simple" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.2 9.6"/></svg><b>مبسّط</b><small>جملة ورمز</small></button>
+            <button class="mode" data-mode="hearing" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 1112 0c0 3-2 4-3 5.5S14 18.5 12 19.5 8 19 8 17"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.5-1.5 2-1.5 3"/></svg><b>سمعي</b><small>تنبيه بالألوان</small></button>
+            <button class="mode" data-mode="touch" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5.5a1.5 1.5 0 013 0V11"/><path d="M11 10.5V4.5a1.5 1.5 0 013 0v6"/><path d="M14 10.5V6a1.5 1.5 0 013 0v7c0 4-2.5 7-6 7-2.5 0-4-1.2-5.3-3.3L4 13.5a1.5 1.5 0 012.6-1.5L8 14"/></svg><b>لمسي</b><small>اهتزاز للصم المكفوفين</small></button>
+            <button class="mode" data-mode="elder" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="5" r="2.5"/><path d="M11 8v6l-3 7M11 14l3 7M8 11h6M17 12v9"/></svg><b>كبار السن</b><small>خط كبير وزرّين</small></button>
+            </div>
+            <p class="hint">فطن يتكيّف مع وضعك في كل الشاشات: الصوت والمكالمات والتنبيهات.</p>
+          </div>
+          <div class="field">
+            <label for="trust-num">رقم شخص تثق فيه (اختياري)</label>
+            <input id="trust-num" type="tel" inputmode="tel" placeholder="05xxxxxxxx" dir="ltr">
+            <p class="hint">يُحفظ في جهازك فقط.</p>
+          </div>
+          <div class="field">
+            <label for="rate">سرعة الصوت</label>
+            <select id="rate"><option value="0.9">هادئة</option><option value="1.1" selected>طبيعية</option><option value="1.3">سريعة</option></select>
+          </div>
+          <div class="field" id="lang-field">
+            <span class="label">🌍 اللغة · Language</span>
+            <button class="lang-cur globe"><b class="lang-cur-t">العربية</b><small>10 لغات · 10 languages</small></button>
+            <p class="hint" id="lang-note"></p>
+          </div>
+          <div class="field" id="ai-field" hidden>
+            <label class="label" for="ai-key">الذكاء الاصطناعي على هذا الجوال (اختياري)</label>
+            <input id="ai-key" type="password" dir="ltr" autocomplete="off" placeholder="sk-ant-…" aria-describedby="ai-hint">
+            <div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-main" type="button" id="ai-save" style="flex:1">احفظ وجرّب</button><button class="btn btn-ghost" type="button" id="ai-del">احذف المفتاح</button></div>
+            <p class="hint" id="ai-hint">إذا ما فيه خادم فطن، تقدر تحط مفتاح Claude الخاص فيك. يبقى لين تقفل فطن بس، ولا يُرسل لأي مكان غير Claude. لا تعطِ مفتاحك لأحد.</p>
+            <p class="hint" id="ai-status" aria-live="polite"></p>
+          </div>
+          <div class="field" id="priv-field">
+            <span class="label">الخصوصية</span>
+            <label class="sw"><input type="checkbox" id="cloud-ai" checked> فحص إضافي بالذكاء الاصطناعي</label>
+            <p class="hint">يرسل نص الرسالة لخادم فطن بعد إخفاء الرموز وأرقام البطاقات. بدونه يكمل الفحص في جوالك.</p>
+            <label class="sw"><input type="checkbox" id="cloud-voice" checked> الصوت الطبيعي من الإنترنت</label>
+            <p class="hint">بدونه يتكلم فطن بصوت جوالك.</p>
+            <button class="btn btn-ghost" type="button" id="priv-open">كيف نتعامل مع بياناتك</button>
+          </div>
+          <div class="field"><button class="btn btn-ghost" id="replay-onb">أعد عرض التعريف</button></div>
+          <div class="field"><button class="btn btn-ghost" id="logout">تسجيل الخروج</button></div>
+        </div>
+      </section>
+
+      <!-- ===== CALL GUARD ===== -->
+      <section class="view" id="v-call" aria-label="حارس المكالمات" hidden>
+        <div>
+          <span class="eyebrow">محاكاة: فطن أثناء المكالمة</span>
+          <h2 class="h" style="margin-top:6px">حارس المكالمات</h2>
+          <p class="sub">اختر المكالمة وطريقة التدريب، واضغط «ابدأ». لما المتصل يطلب شي ممنوع، فطن ينبّهك فورًا.</p>
+        </div>
+        <div class="panel call-setup" id="call-setup">
+          <p class="cst-step"><b>١</b>اختر المكالمة</p>
+          <div class="scen" id="call-scen">
+          <button class="chip on" data-call="bank">«البنك» يطلب الرمز</button>
+          <button class="chip" data-call="nafath">«أبشر» يطلب نفاذ</button>
+          <button class="chip" data-call="family">«قريب» في ورطة</button>
+          <button class="chip" data-call="safe">صديق يعزمك</button>
+        </div>
+          <p class="cst-step"><b>٢</b>كيف تبي تتدرّب؟</p>
+          <div class="cst-types" role="radiogroup" aria-label="طريقة التدريب">
+            <button type="button" class="cst-type" role="radio" aria-checked="true" data-ct="voice"><span class="cst-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15.2 15.2 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><b>اتصال صوتي</b><small>يرن جوالك وتكلّمه بصوتك، وتنبيهات فطن تطلع فوق المكالمة</small></button>
+            <button type="button" class="cst-type" role="radio" aria-checked="false" data-ct="chat"><span class="cst-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><b>شات</b><small>تكتب له وهو يرد عليك</small></button>
+          </div>
+          <button type="button" class="btn btn-main cst-go" id="call-go"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>ابدأ المحاكاة</button>
+        </div>
+        <div class="callscr" id="callscr">
+          <!-- chat practice: a lock screen with a notification, then the phone's own messages app -->
+          <div class="cn-lock">
+            <div class="cn-clock"><b id="cn-time">9:41</b><small id="cn-date"></small></div>
+            <button type="button" class="cn-banner" id="cn-banner">
+              <span class="cn-app"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.6 1.4 4.9 3.6 6.5-.2 1.3-.8 2.6-1.8 3.6 1.9-.1 3.6-.8 4.9-1.9 1 .3 2.1.4 3.3.4 5.5 0 10-3.8 10-8.6S17.5 3 12 3z"/></svg></span>
+              <span class="cn-body"><span class="cn-top"><b>الرسائل</b><small>الآن</small></span><b class="cn-from" id="cn-from">رقم غير معروف</b><span class="cn-prev" id="cn-prev"></span></span>
+            </button>
+            <p class="cn-tip">اضغط على الإشعار عشان تفتح المحادثة</p>
+          </div>
+          <div class="cn-head">
+            <button type="button" class="cn-back" id="cn-back" aria-label="إنهاء المحادثة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+            <span class="cn-av"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 20.5c1-4.2 4.3-6.5 8-6.5s7 2.3 8 6.5z"/></svg></span>
+            <span class="cn-who"><b id="cn-name">رقم غير معروف</b><small id="cn-num" dir="ltr"></small></span>
+          </div>
+          <div class="cs-top">
+            <span class="cs-av" id="cs-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4.3-7 8-7s7 2.5 8 7"/></svg></span>
+            <b id="cs-name">رقم غير معروف</b>
+            <small id="cs-num" dir="ltr">+966 11 4•• ••••</small>
+            <small id="cs-kind" class="cs-kind"></small>
+            <small id="cs-state">مكالمة واردة…</small>
+          </div>
+          <div class="cs-ext" aria-hidden="true"><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/></svg></i>ذكّرني</span><span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.8 7L4 20.5l1.5-4.6A8 8 0 1121 12z"/></svg></i>رسالة</span></div>
+          <div class="cs-btns" id="cs-in">
+            <button class="cs-b decline" id="cs-decline" aria-label="رفض"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-3.2 0-6.2.8-8.6 2.3-.7.4-.9 1.3-.5 2l1.2 2c.4.6 1.1.8 1.8.5l2.3-1c.6-.3.9-.9.8-1.5l-.2-1.5c2.1-.6 4.3-.6 6.4 0l-.2 1.5c-.1.6.2 1.2.8 1.5l2.3 1c.7.3 1.4.1 1.8-.5l1.2-2c.4-.7.2-1.6-.5-2C18.2 9.8 15.2 9 12 9z"/></svg></button>
+            <button class="cs-b accept" id="cs-accept" aria-label="رد"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></button>
+          </div>
+          <div class="cs-wave" id="cs-wave" aria-hidden="true"></div>
+          <div class="cs-cap" id="cs-cap" aria-live="polite"><p class="cs-hint" id="cs-hint0">كلام المكالمة يظهر هنا مكتوبًا أول بأول.</p></div>
+          <div class="cs-risk" id="cs-risk" aria-live="polite">
+            <div class="cr-top"><span class="cs-guard"><span class="dot"></span><span id="cs-guard-t">فطن جاهز يسمع معك</span></span><b id="cr-num">0%</b></div>
+            <div class="cr-bar"><i id="cr-fill"></i><span style="right:20%"></span><span style="right:60%"></span><span style="right:85%"></span></div>
+            <div class="cr-lab"><span>آمن</span><span>انتبه</span><span>خطر</span><span>أغلق</span></div>
+          </div>
+          <div class="cs-mode" id="cs-mode" role="radiogroup" aria-label="طريقة المكالمة" hidden>
+            <button type="button" role="radio" aria-checked="true" data-cm="voice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>مكالمة صوتية</button>
+            <button type="button" role="radio" aria-checked="false" data-cm="chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>شات</button>
+          </div>
+
+          <div class="cs-btns" id="cs-on" hidden>
+            <button class="cs-b decline" id="cs-end" aria-label="إنهاء المكالمة"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-3.2 0-6.2.8-8.6 2.3-.7.4-.9 1.3-.5 2l1.2 2c.4.6 1.1.8 1.8.5l2.3-1c.6-.3.9-.9.8-1.5l-.2-1.5c2.1-.6 4.3-.6 6.4 0l-.2 1.5c-.1.6.2 1.2.8 1.5l2.3 1c.7.3 1.4.1 1.8-.5l1.2-2c.4-.7.2-1.6-.5-2C18.2 9.8 15.2 9 12 9z"/></svg></button>
+          </div>
+          <div class="cs-talk" id="cs-talk" hidden>
+            <div class="hs"><button class="hs-btn hs-prev" type="button" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><div class="quick" id="cs-quick"></div><button class="hs-btn hs-next" type="button" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button></div>
+            <div class="mic-row">
+              <button type="button" class="mic" id="cs-mic" aria-label="تكلّم"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>
+              <div class="mic-txt"><b id="mic-state">ردّ على المتصل</b><span id="mic-heard"></span></div>
+            </div>
+            <form class="say" id="cs-say">
+              <input id="cs-text" autocomplete="off" placeholder="كلّم المتصل… اسأله أي شي" aria-label="كلامك للمتصل">
+              <button class="btn btn-main" aria-label="قل"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button>
+            </form>
+          </div>
+          <p class="cs-note" id="cs-note" hidden></p>
+          <div class="cs-result" id="cs-result" hidden></div>
+        </div>
+        <p class="hint">في نسخة المتاجر: شغّل السماعة الخارجية وفطن يسمع من المايك ويحلّل الكلام على جهازك. الأنظمة ما تسمح لأي تطبيق يسمع المكالمة مباشرة.</p>
+      </section>
+
+      <!-- ===== TRAIN ===== -->
+      <section class="view" id="v-train" aria-label="تدرّب" hidden>
+        <div class="seg" role="tablist" aria-label="أنواع التدريب">
+          <button role="tab" data-pane="quiz" aria-selected="true">اختبار الرسائل</button>
+          <button role="tab" data-pane="sim" aria-selected="false">محاكي المحتال</button>
+          <button role="tab" data-pane="vib" aria-selected="false">لغة الاهتزاز</button>
+        </div>
+        <div class="pane" id="pane-quiz">
+          <div>
+            <span class="eyebrow">تعلّم بنفسك</span>
+            <h2 class="h" style="margin-top:6px">هل تقدر تكشف الاحتيال؟</h2>
+            <p class="sub">6 رسائل. اختر: احتيال أو سليمة، وفطن يشرح لك السبب.</p>
+          </div>
+          <div class="prog" id="prog" aria-hidden="true"></div>
+          <div id="quiz"></div>
+        </div>
+        <div class="pane" id="pane-sim" hidden>
+          <div>
+            <span class="eyebrow">تدرّب في أمان</span>
+            <h2 class="h" style="margin-top:6px">محاكي المحتال</h2>
+            <p class="sub">محتال افتراضي يحاول يقنعك. ارفض، وفطن يهمس لك بالنصيحة. ما فيه أي خطر حقيقي.</p>
+          </div>
+          <div class="scen" id="scen">
+            <button class="chip on" data-scen="bank">موظف البنك</button>
+            <button class="chip" data-scen="ship">مندوب الشحن</button>
+            <button class="chip" data-scen="family">قريب برقم جديد</button>
+          </div>
+          <div class="chat" id="chat" aria-live="polite"></div>
+          <div class="hs"><button class="hs-btn hs-prev" type="button" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><div class="quick" id="quick"></div><button class="hs-btn hs-next" type="button" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button></div>
+          <form class="say" id="say">
+            <input id="say-in" autocomplete="off" placeholder="اكتب ردّك على المحتال…" aria-label="ردّك">
+            <button class="btn btn-main" id="say-go" aria-label="أرسل"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button>
+          </form>
+          <p class="hint" id="sim-note"></p>
+        </div>
+        <div class="pane" id="pane-vib" hidden>
+          <div>
+            <span class="eyebrow">للصم المكفوفين</span>
+            <h2 class="h" style="margin-top:6px">لغة الاهتزاز</h2>
+            <p class="sub">لكل حكم نبضة مختلفة يحسّها الشخص بيده بدون صوت ولا صورة. جرّبها واحفظها.</p>
+          </div>
+          <div class="vibs" id="vibs"></div>
+          <div class="panel vquiz">
+            <b>اختبر نفسك</b>
+            <p class="hint">يهتز الجوال بنمط عشوائي، وأنت تعرف وش هو.</p>
+            <div class="vq-pad" id="vq-pad" aria-hidden="true"><span></span></div>
+            <button class="btn btn-gold" id="vq-play">شغّل نمطًا عشوائيًا</button>
+            <div class="vq-ans" id="vq-ans" hidden>
+              <button class="btn btn-ghost" data-v="safe">آمنة</button>
+              <button class="btn btn-ghost" data-v="suspicious">مشبوهة</button>
+              <button class="btn btn-ghost" data-v="danger">خطر</button>
+            </div>
+            <p class="vq-res" id="vq-res" aria-live="polite"></p>
+          </div>
+          <p class="hint" id="vib-note"></p>
+        </div>
+      </section>
+
+      <!-- ===== PATTERNS ===== -->
+      <section class="view" id="v-pats" aria-label="الأنماط" hidden>
+        <button class="back" data-go="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>المزيد</button>
+        <div>
+          <span class="eyebrow">مكتبة أنماط الاحتيال في السعودية</span>
+          <h2 class="h" style="margin-top:6px">اعرف الحيلة قبل ما توصلك</h2>
+          <p class="sub">8 أساليب منتشرة، مع علامتها وماذا تفعل.</p>
+        </div>
+        <div class="panel radar-sec" id="radar-sec" hidden>
+          <div class="rs-h"><span class="live-dot"></span><b>رادار فطن · هذا الأسبوع</b></div>
+          <p class="hint">أنماط الاحتيال اللي بلّغ عنها مستخدمو فطن. تتحدّث مباشرة.</p>
+          <div id="radar-list"></div>
+        </div>
+        <div class="pats" id="pats"></div>
+        <div class="panel">
+          <h3 style="font-size:17px;margin-bottom:8px">وصلتك رسالة احتيال؟</h3>
+          <ol class="report" style="margin:0;padding-right:20px;color:var(--muted);font-size:14.5px">
+            <li>لا تضغط الرابط ولا ترد.</li>
+            <li>إذا أعطيت بيانات بنكية، كلّم بنكك فورًا من الرقم الرسمي.</li>
+            <li>بلّغ عبر تطبيق «كلنا أمن».</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== MORE HUB ===== -->
+      <section class="view" id="v-more" aria-label="المزيد" hidden>
+        <div><span class="eyebrow">كل أدوات فطن</span><h2 class="h" style="margin-top:6px">وش تبي تسوي؟</h2></div>
+        <div class="tiles"><button class="tile gold tour-go tile-wide" type="button"><span class="ti"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span><b>شاهد فطن في 60 ثانية</b><small>تنقّل بالأسهم بين كل الميزات</small></button><button class="tile red" data-go="panic"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5h.01"/></svg></span><b>انخدعت؟</b><small>خطة إنقاذ خطوة بخطوة</small></button><button class="tile " data-go="ask"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M9.5 9a2.5 2.5 0 015 .5c0 1.5-2.5 1.5-2.5 3M12 14.5h.01"/></svg></span><b>اسأل فطن</b><small>أي سؤال عن الاحتيال</small></button><button class="tile " data-go="qr"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3M21 14v.01M14 21h3M21 18v3"/></svg></span><b>امسح باركود</b><small>قبل ما تدفع</small></button><button class="tile " data-go="family"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c.6-3.4 2.8-5.5 5.5-5.5s4.9 2.1 5.5 5.5M14 15.3c.9-.5 1.9-.8 3-.8 2.3 0 4 1.7 4.5 4.5"/></svg></span><b>لوحة الأسرة</b><small>تنبيهات وكلمة سر العائلة</small></button><button class="tile " data-go="report"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><b>تقرير حمايتك</b><small>كم احتيال كشفت</small></button><button class="tile " data-go="badges"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"/></svg></span><b>ملفي الشخصي</b><small>أوسمتي ومستواي</small></button><button class="tile gold" data-go="class"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span><b>وضع المعلّم</b><small>حصة توعية للفصل</small></button><button class="tile " data-go="pats"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span><b>أنماط الاحتيال</b><small>8 حيل ورادار المجتمع</small></button><button class="tile " data-go="settings"><span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></span><b>الإعدادات</b><small>وضعك، والصوت، والشخص الموثوق</small></button><button class="tile " data-go="lang"><span class="ti ti-emoji" aria-hidden="true">🌍</span><b>اللغة</b><small id="lang-tile-s">العربية · 10 لغات</small></button></div>
+      </section>
+
+      <!-- ===== NEWS ===== -->
+      <section class="view" id="v-news" aria-label="نشرة فطن" hidden>
+        <div class="nw-head"><span class="eyebrow">نشرة فطن · العالم السيبراني بلغة بسيطة</span><h2 class="h" style="margin:0">وش صاير في عالم الاحتيال والاختراقات؟</h2><span class="nw-upd"><i></i><span id="nw-upd-t"></span></span></div>
+        <p class="hint" id="nw-note" hidden>The bulletin is in Arabic for now · النشرة بالعربية حاليًا</p>
+        <div class="nw-ticker" aria-hidden="true"><b>عاجل</b><div class="tw"><div class="tr" id="nw-tr"></div></div></div>
+        <div class="nw-filters" id="nw-filters" role="group" aria-label="تصفية"><button class="chip" data-f="all" aria-pressed="true">الكل</button><button class="chip" data-f="warn" aria-pressed="false">⚠ احذر</button><button class="chip" data-f="breach" aria-pressed="false">اختراقات</button><button class="chip" data-f="upd" aria-pressed="false">حدّث جهازك</button><button class="chip" data-f="dev" aria-pressed="false">تطوّرات</button><button class="chip" data-f="tip" aria-pressed="false">نصائح</button></div>
+        <div class="nw-hero" id="nw-hero" role="alert"></div>
+        <div class="nw-list" id="nw-list"></div>
+        <div class="nw-term"><span class="eyebrow">مصطلح اليوم</span><b id="nw-term-t"></b><p id="nw-term-p"></p><button class="chip" id="nw-term-next" type="button">مصطلح ثاني</button></div>
+        <p class="nw-honest">النشرة مُعدّة من مصادر موثوقة مع رابط كل خبر، وتتجدد مع كل إصدار من فطن. في النسخة المنشورة على المتاجر تتحدّث تلقائيًا من مصادر رسمية مثل الهيئة الوطنية للأمن السيبراني.</p>
+      </section>
+
+      <!-- ===== ASK FATIN ===== -->
+      <section class="view" id="v-ask" aria-label="اسأل فطن" hidden>
+        <button class="back" data-go="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>المزيد</button>
+        <div><span class="eyebrow">مساعد التوعية</span><h2 class="h" style="margin-top:6px">اسأل فطن</h2><p class="sub">اسأل بلغتك، ويجاوبك بجملة بسيطة.</p></div>
+        <div class="chat ask-chat" id="ask-chat" aria-live="polite"><div class="cm them"><small>فطن</small>هلا! اسألني أي شي عن الاحتيال: رسالة وصلتك، اتصال غريب، أو وش أسوي إذا انخدعت.</div></div>
+        <div class="hs"><button class="hs-btn hs-prev" type="button" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><div class="quick" id="ask-sug"></div><button class="hs-btn hs-next" type="button" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button></div>
+        <form class="say" id="ask-form"><input id="ask-in" autocomplete="off" aria-label="سؤالك"><button class="btn btn-main" aria-label="اسأل"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button></form>
+      </section>
+
+      <!-- ===== REPORT ===== -->
+      <section class="view" id="v-report" aria-label="تقرير حمايتك" hidden>
+        <button class="back" data-go="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>المزيد</button>
+        <div><span class="eyebrow">قياس الأثر</span><h2 class="h" style="margin-top:6px">تقرير حمايتك</h2><p class="sub">كل اللي سويته مع فطن، على هذا الجهاز.</p></div>
+        <div class="rep-grid" id="rep-grid"></div>
+        <div class="panel"><span class="sec-l">نتائجك في «اختبار الرسائل»</span><div id="rep-chart"></div></div>
+      </section>
+
+      <!-- ===== FAMILY ===== -->
+      <section class="view" id="v-family" aria-label="لوحة الأسرة" hidden>
+        <button class="back" data-go="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>المزيد</button>
+        <div><span class="eyebrow">الشخص الموثوق صار نظام حماية</span><h2 class="h" style="margin-top:6px">لوحة الأسرة</h2></div>
+        <p class="cs-note" id="fam-nodb" hidden>لوحة الأسرة تحتاج اتصال بخادم فطن، وما هو متاح الحين. وكلمة سر العائلة تشتغل في كل مكان.</p>
+        <div class="panel fam">
+          <b class="fam-h">أنا اللي يحميني فطن</b>
+          <p class="hint">أنشئ رمز العائلة وشاركه مع أهلك. لما تواجه رسالة أو مكالمة خطيرة، يوصلهم تنبيه فيه نوع الخطر والوقت فقط، بدون نص رسائلك. ويشوفون كمان تقدّمك: أوسمتك ومستواك وتحدي الأسبوع.</p>
+          <div class="fam-code"><code id="fam-code">—</code><button class="btn btn-gold" id="fam-make">أنشئ رمز العائلة</button></div>
+          <p class="hint fam-claim-err" id="fam-claim-err" role="alert" hidden>رمز العائلة هذا صار مستخدم من جهاز ثاني، فوقفنا تنبيهاته. أنشئ رمز جديد وشاركه مع أهلك.</p>
+          <label class="sw"><input type="checkbox" id="fam-on" checked> أرسل تنبيهاتي لأسرتي</label>
+        </div>
+        <div class="panel fam">
+          <b class="fam-h">أنا من الأسرة وأتابع</b>
+          <p class="hint">لولي الأمر: تابع تنبيهات قريبك، وشوف هل يتدرّب ويتقدّم في الأوسمة والتحديات.</p>
+          <div class="say"><input id="fam-in" maxlength="6" dir="ltr" placeholder="ABC123" aria-label="رمز العائلة"><button class="btn btn-main" id="fam-watch">تابع</button></div>
+          <div id="fam-list" class="fam-list"></div>
+        </div>
+        <div class="panel fam secret">
+          <b class="fam-h">كلمة سر العائلة · ضد الصوت المزيّف</b>
+          <p class="hint">المحتال يقدر يقلّد صوت قريبك بالذكاء الاصطناعي، لكنه ما يعرف كلمة سركم. اتفقوا على كلمة، واطلبوها في أي مكالمة فيها طلب فلوس. فطن يذكّرك فيها وقت الخطر.</p>
+          <input id="fam-secret" maxlength="30" placeholder="مثلًا: نخلة الجدة" aria-label="كلمة سر العائلة">
+          <small class="hint" id="fam-secret-ok"></small>
+        </div>
+      </section>
+
+      <!-- ===== BADGES ===== -->
+      <section class="view" id="v-badges" aria-label="ملفي الشخصي" hidden>
+        <button class="back" data-go="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>المزيد</button>
+        <div class="pf-card">
+          <div class="pf-av" id="pf-av" aria-hidden="true"></div>
+          <div class="pf-id"><b id="pf-name"></b><small id="pf-meta"></small><small id="pf-since"></small></div>
+          <button class="small-btn" id="pf-edit" type="button">تعديل</button>
+        </div>
+        <div class="pf-stats" id="pf-stats"></div>
+        <div class="pf-level" id="pf-level"></div>
+        <button class="btn btn-gold pf-share" id="pf-share" type="button">🏅 شارك إنجازك</button>
+        <div><span class="eyebrow" id="pf-med-eye">أوسمتي</span><h2 class="h" style="margin-top:6px" id="pf-med-h">3 مستويات، 15 وسام</h2></div>
+        <div id="pf-levels" class="pf-levels"></div>
+        <div><span class="eyebrow" id="ch-eye">تعلّم كل أسبوع</span><h2 class="h" style="margin-top:6px" id="ch-h">تحدي الأسبوع</h2><p class="sub"><span id="ch-sub">3 رسائل جديدة كل أسبوع.</span> <b id="ch-prog">0 من 3</b></p></div>
+        <div class="ch-list" id="ch-list"></div>
+      </section>
+      <!-- ===== MESSAGES SIMULATION ===== -->
+      <section class="view" id="v-sim" aria-label="الرسائل" hidden>
+        <div>
+          <span class="eyebrow">محاكاة: فطن داخل نظام الجوال</span>
+          <h2 class="h" style="margin-top:6px">حدّد أي رسالة… واضغط «تحقق»</h2>
+          <p class="sub">بدون ما تفتح فطن ولا تلصق شي. حدّد أي كلمة منها، وفطن يحدّد الرسالة كاملة تلقائيًا. أو اضغط مطولًا عليها.</p>
+        </div>
+        <div class="sim" id="sim">
+          <div class="sim-head"><span class="av">SMS</span><div><b>الرسائل</b><small>واجهة تشبه تطبيق الرسائل في جوالك</small></div></div>
+          <div class="sim-body" id="sim-body"></div>
+        </div>
+        <p class="hint" style="text-align:center">في نسخة المتاجر يظهر «تحقق بفطن» في قائمة النسخ بكل التطبيقات.</p>
+      </section>
+    </main>
+
+    <!-- tab bar -->
+    <nav class="tabbar" aria-label="التنقل">
+      <div class="tabs" role="tablist">
+        <span class="pill" id="pill" aria-hidden="true"></span>
+        <button class="tab" role="tab" data-tab="scan" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>افحص</button>
+        <button class="tab" role="tab" data-tab="sim" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>الرسائل</button>
+        <button class="tab" role="tab" data-tab="call" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>مكالمة</button>
+        <button class="tab" role="tab" data-tab="train" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>تدرّب</button>
+        <button class="tab" role="tab" data-tab="news" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11v16H6a2 2 0 01-2-2V5a1 1 0 011-1z"/><path d="M16 8h3a1 1 0 011 1v9a2 2 0 01-2 2h-2"/><path d="M8 8h5M8 12h5M8 16h3"/></svg>النشرة</button>
+        <button class="tab" role="tab" data-tab="more" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/></svg>المزيد</button>
+        
+      </div>
+    </nav>
+    <button class="ask-fab" id="ask-fab" type="button" aria-label="اسأل فطن"><span class="af-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M9.5 9a2.5 2.5 0 015 .5c0 1.5-2.5 1.5-2.5 3M12 14.5h.01"/></svg></span><span class="af-t" id="ask-fab-t">اسأل فطن</span></button>
+
+    <!-- report sheet -->
+    <div class="scrim lscrim" id="lang-scrim"></div>
+    <div class="sheet lsheet" id="lang-sheet" role="dialog" aria-modal="true" aria-label="Language">
+      <div class="grab" aria-hidden="true"></div>
+      <h3><span aria-hidden="true">🌍</span> اللغة · Language</h3>
+      <p>يبدأ فطن بلغة جهازك ومنطقته تلقائيًا · Fatin starts in your device's language</p>
+      <div id="lang-list"></div>
+      <button class="btn btn-ghost" id="lang-done">تم · Done</button>
+    </div>
+    <div class="scrim lscrim" id="priv-scrim"></div>
+    <div class="sheet lsheet psheet" id="priv-sheet" role="dialog" aria-modal="true" aria-labelledby="priv-h">
+      <div class="grab" aria-hidden="true"></div>
+      <h3 id="priv-h"><span aria-hidden="true">🔒</span> خصوصيتك في فطن</h3>
+      <p>فطن يفحص الرسالة في جوالك أول. بعض الميزات تحتاج الإنترنت، وهذا بالضبط وش يطلع ووين يروح.</p>
+      <h4>يبقى في جوالك ولا يطلع</h4>
+      <ul>
+        <li>الفحص الأول للرسائل بقواعد فطن.</li>
+        <li>اسمك ولغتك ووضعك وأوسمتك وإعداداتك.</li>
+        <li>رقم الشخص اللي تثق فيه، وكلمة سر العائلة.</li>
+      </ul>
+      <h4>يطلع من جوالك بس لما تستخدم الميزة</h4>
+      <ul>
+        <li>الفحص الإضافي بالذكاء الاصطناعي: نص الرسالة بعد إخفاء الرموز وأرقام البطاقات والحسابات وكلمات المرور.</li>
+        <li>إذا كانت الرسالة فيها رمز أو رقم بطاقة، ما تطلع إلا إذا طلبت أنت.</li>
+        <li>قراءة صورة الرسالة: الصورة نفسها.</li>
+        <li>اسأل فطن والتدريب: كلامك في المحادثة بعد إخفاء الأرقام الحساسة.</li>
+        <li>الصوت الطبيعي: الجملة اللي بيقولها فطن أو المتصل.</li>
+        <li>المايك في تدريب المكالمة: تسجيل قصير لكلامك عشان ينكتب.</li>
+        <li>رادار البلاغات: نوع النمط فقط، بدون نص الرسالة.</li>
+        <li>لوحة الأسرة: نوع التنبيه والوقت واسمك الأول، لرمز عائلتك فقط.</li>
+      </ul>
+      <h4>مين يعالجها</h4>
+      <ul>
+        <li>خادم فطن على Cloudflare يمرّر الطلب، وما يحفظ نص رسائلك ولا صورها ولا تسجيلاتك.</li>
+        <li>الذكاء الاصطناعي: Cloudflare Workers AI، أو Claude من Anthropic إذا شغّله صاحب الخادم.</li>
+        <li>الصوت: Microsoft Azure أو ElevenLabs. وكتابة الكلام من الصوت: Cloudflare Workers AI.</li>
+        <li>في بعض الجوالات يكتب المتصفح نفسه كلامك من المايك، وقد يعالجه صاحب المتصفح مثل Google أو Apple.</li>
+        <li>قد يحتفظ مزوّد الخدمة بالطلب مدة قصيرة حسب سياسته.</li>
+        <li>عنوان جهازك على الإنترنت يُستخدم لحظيًا عشان نمنع إساءة الاستخدام.</li>
+      </ul>
+      <h4>كم يبقى محفوظ</h4>
+      <ul>
+        <li>رادار البلاغات: عدد البلاغات لكل نمط، 7 أيام.</li>
+        <li>لوحة الأسرة: آخر 30 تنبيه، وتنحذف بعد 14 يوم.</li>
+        <li>جمل التدريب الجاهزة بالصوت: 30 يوم، وما فيها أي كلام منك.</li>
+        <li>غير كذا ما ينحفظ شي.</li>
+      </ul>
+      <h4>تحكّم فيها</h4>
+      <ul>
+        <li>توقف الذكاء الاصطناعي والصوت الطبيعي من الإعدادات، وفطن يكمل يفحص في جوالك.</li>
+        <li>لا تعطِ رموزك أو كلمات مرورك لأحد، حتى لفطن.</li>
+      </ul>
+      <button class="btn btn-ghost" id="priv-done">تم</button>
+    </div>
+    <div class="scrim" id="scrim"></div>
+    <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-t">
+      <span class="grab"></span>
+      <h3 id="sheet-t">بلّغ عن الرسالة</h3>
+      <ol>
+        <li><b>لا تضغط الرابط ولا ترد</b> على الرسالة.</li>
+        <li>إذا أعطيت أي بيانات بنكية، <b>كلّم بنكك فورًا</b> من الرقم الرسمي المكتوب على بطاقتك.</li>
+        <li><b>بلّغ عبر تطبيق «كلنا أمن»</b>، وأرفق لقطة شاشة للرسالة.</li>
+        <li>احذف الرسالة بعد التبليغ.</li>
+      </ol>
+      <div class="radar-box" id="radar-box" hidden>
+        <p>ساعد غيرك: أضف نمط هذي الرسالة لرادار فطن. نحفظ النمط فقط، بدون نص الرسالة.</p>
+        <button class="btn btn-gold" id="radar-add">أضف للرادار</button>
+        <p class="hint" id="radar-msg" aria-live="polite"></p>
+      </div>
+      <button class="btn btn-main" id="sheet-close">تم</button>
+    </div>
+
+    <div class="chk" id="chk" role="toolbar" aria-label="قائمة التحديد" hidden>
+      <button id="chk-copy">نسخ</button>
+      <button id="chk-go" class="fat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg>تحقق بفطن</button>
+    </div>
+    <div class="csoft" id="csoft" role="status" aria-live="polite" hidden><span class="cs-dot" aria-hidden="true"></span><span><b id="csoft-t"></b><small id="csoft-s"></small></span></div>
+    <div class="calert" id="calert" data-level="danger" role="alertdialog" aria-live="assertive" aria-labelledby="ca-t">
+      <div class="ca-tp"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg></i>فطن · تنبيه أثناء المكالمة<span class="ca-score" id="ca-score"></span></div>
+      <div class="ca-main"><div class="ca-i" id="ca-i"></div><div><b id="ca-t">خطر احتيال</b><span id="ca-type"></span></div></div>
+      <p class="ca-act" id="ca-act"></p>
+      <button class="btn ca-big" id="ca-big">أغلق المكالمة الآن</button>
+      <div class="ca-btns" id="ca-btns"></div>
+    </div>
+    <div class="osc" id="osc" data-level="danger" role="alertdialog" aria-live="assertive" aria-labelledby="osc-w">
+      <div class="osc-tp"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg></i>فطن · الآن</div>
+      <div class="osc-v"><div class="osc-i" id="osc-i"></div><div><b id="osc-w">خطر</b><small id="osc-l"></small></div></div>
+      <div class="osc-a"><button class="btn btn-ghost" id="osc-more">التفاصيل</button><button class="btn btn-main" id="osc-ok">تمام</button></div>
+    </div>
+        <div class="qs-ov" id="qs" hidden role="dialog" aria-modal="true" aria-labelledby="qs-h">
+      <div class="qs-card">
+        <h3 id="qs-h">امسح الباركود</h3>
+        <p class="qs-sub" id="qs-sub"></p>
+        <label class="btn btn-main qs-btn" id="qs-cam-l"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span id="qs-cam"></span><input type="file" id="qs-cam-in" accept="image/*" capture="environment"></label>
+        <label class="btn btn-ghost qs-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5"/><path d="M4 14v4a2 2 0 002 2h12a2 2 0 002-2v-4"/></svg><span id="qs-up"></span><input type="file" id="qs-up-in" accept="image/*"></label>
+        <button class="btn btn-ghost qs-x" id="qs-x" type="button"></button>
+      </div>
+    </div>
+    <input type="file" id="qr-file" class="vh" accept="image/*" capture="environment" tabindex="-1" aria-hidden="true">
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="tour" id="tour" hidden role="region" aria-label="جولة فطن">
+      <div class="tour-bar"><i id="tour-fill"></i></div>
+      <div class="tour-row"><span class="tour-n" id="tour-n">1/9</span><p id="tour-t" aria-live="polite"></p></div>
+      <div class="tour-nav">
+        <button class="tour-btn" id="tour-prev" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>السابق</button>
+        <button class="tour-x" id="tour-x" type="button">إيقاف الجولة</button>
+        <button class="tour-btn main" id="tour-next" type="button"><span id="tour-next-t">التالي</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="tour-end" id="tour-end" hidden role="dialog" aria-modal="true" aria-labelledby="te-h">
+      <div class="te-card">
+        <span class="te-mk" aria-hidden="true"><svg class="emb" viewBox="19 26 162 162" aria-hidden="true"><path d="M40 49 50 35 60 49ZM65 49 75 35 85 49ZM90 49 100 30 110 49ZM115 49 125 35 135 49ZM140 49 150 35 160 49Z" fill="#E0BC5E"/><path d="M36 48H164C166 110 142 152 100 184 58 152 34 110 36 48Z" fill="#E0BC5E"/><path d="M100 48H164C166 110 142 152 100 184Z" fill="#F4DA94"/><path d="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9ZM64 102.8 67.24 106.05 64 109.29 60.76 106.05ZM120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z" fill="#03130D"/><circle cx="136" cy="84.9" r="4.68" fill="#E0BC5E"/></svg></span>
+        <h3 id="te-h">هذا فطن</h3>
+        <div class="te-stats"><div><b>99.98%</b><span>كشف في 10,534 اختبار تحايل</span></div><div><b>12/12</b><span>حالة احتيال حقيقية</span></div><div><b>10</b><span>لغات تلقائيًا</span></div><div><b>6</b><span>أوضاع تناسب كل مستخدم</span></div></div>
+        <button class="btn btn-main" id="te-try" type="button">جرّبه بنفسك</button>
+        <button class="btn btn-ghost" id="te-again" type="button">أعد الجولة</button>
+      </div>
+    </div>
+    <p class="sr-only" id="sr-live" aria-live="assertive" aria-atomic="true"></p>
+    <div class="qrm" id="qrm" hidden>
+      <div class="qrm-card" id="qrm-card" role="alertdialog" aria-modal="true" aria-labelledby="qrm-t" data-level="none">
+        <div class="ca-tp"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg></i>فطن · فحص الباركود</div>
+        <div class="qrm-i" id="qrm-i"></div>
+        <h3 id="qrm-t"></h3>
+        <small id="qrm-sub"></small>
+        <code id="qrm-url" dir="ltr"></code>
+        <div class="qrm-own" id="qrm-own" hidden><small>صاحب الرابط الحقيقي</small><code id="qrm-own-v" dir="ltr"></code></div>
+        <ul class="reasons" id="qrm-why"></ul>
+        <div class="qrm-acts" id="qrm-acts"></div>
+      </div>
+    </div>
+    <div class="overlay panic" id="panic" hidden role="dialog" aria-modal="true" aria-labelledby="pn-h">
+      <div class="pn-top"><b id="pn-h">انخدعت؟ لا تخاف</b><button class="small-btn" id="pn-close">إغلاق</button></div>
+      <div class="pn-body">
+        <div id="pn-step1">
+          <h2>وش أعطيت المحتال؟</h2>
+          <p class="sub">اختر كل اللي ينطبق، وأعطيك خطة مرتبة.</p>
+          <div class="pn-gave" id="pn-gave"></div>
+          <button class="btn btn-alert pn-go" id="pn-go">أعطني خطتي الحين</button>
+        </div>
+        <div id="pn-step2" hidden>
+          <h2>خطتك، خطوة خطوة</h2>
+          <p class="sub">اضغط ✓ على كل خطوة تخلصها. <b id="pn-prog"></b></p>
+          <ol class="pn-steps" id="pn-steps"></ol>
+          <div class="pn-done" id="pn-done" hidden><b>أحسنت، سويت الصح.</b><span>الانخداع مو عيب. المحتالين محترفين، والمهم إنك تصرفت بسرعة.</span></div>
+          <button class="btn btn-gold" id="pn-trust">أرسل لشخص أثق فيه</button>
+        </div>
+      </div>
+    </div>
+    <!-- sign-in -->
+    <div class="overlay login" id="login" hidden role="dialog" aria-modal="true" aria-labelledby="li-h">
+      <div class="li-top"><button class="globe-pill globe" aria-label="Language"><span class="ge" aria-hidden="true">🌍</span><span class="lang-cur-t">العربية</span></button></div>
+      <div class="li-body">
+        <span class="mk li-mk" aria-hidden="true"><svg class="emb" viewBox="19 26 162 162" aria-hidden="true"><path d="M40 49 50 35 60 49ZM65 49 75 35 85 49ZM90 49 100 30 110 49ZM115 49 125 35 135 49ZM140 49 150 35 160 49Z" fill="#E0BC5E"/><path d="M36 48H164C166 110 142 152 100 184 58 152 34 110 36 48Z" fill="#E0BC5E"/><path d="M100 48H164C166 110 142 152 100 184Z" fill="#F4DA94"/><path d="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9ZM64 102.8 67.24 106.05 64 109.29 60.76 106.05ZM120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z" fill="#03130D"/><circle cx="136" cy="84.9" r="4.68" fill="#E0BC5E"/></svg></span>
+        <h2 id="li-h">أهلًا بك في فطن</h2>
+        <p class="sub">عرّفنا عليك عشان نرحب فيك ونخاطبك صح.</p>
+        <form id="li-form" class="li-form">
+          <label for="li-name" class="label">اسمك</label>
+          <input id="li-name" autocomplete="given-name" maxlength="30" placeholder="مثلًا: حسان">
+          <span class="label">أنت</span>
+          <div class="li-g" id="li-g" role="radiogroup"><button type="button" data-g="m" aria-pressed="false">رجل</button><button type="button" data-g="f" aria-pressed="false">امرأة</button></div>
+          <p class="li-err" id="li-err" aria-live="polite"></p>
+          <button class="btn btn-main" type="submit">ادخل</button>
+        </form>
+        <div class="li-or"><span>أو</span></div>
+        <button class="li-naf" id="li-nafath" type="button"><b>الدخول عبر نفاذ</b><em>قريبًا</em></button>
+        <p class="li-info" id="li-naf-info" hidden>بعد الاعتماد الرسمي من مركز المعلومات الوطني، تدخل بنفاذ بضغطة، وتنقرأ بياناتك الأساسية تلقائيًا من أبشر بموافقتك، بدون ما تكتب شي. هذي خطوة في خطة تطوير فطن.</p>
+        <button class="tour-li tour-go" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>شاهد فطن في 60 ثانية · بدون تسجيل</button>
+        <p class="li-safe"><b>فطن ما يطلب رقم هويتك أبدًا.</b> ولو أحد طلبه منك باسم فطن، فهو محتال. واسمك يبقى في جهازك فقط.</p>
+      </div>
+    </div>
+    <div class="share-ov" id="share-ov" hidden role="dialog" aria-modal="true" aria-label="بطاقة إنجازك">
+      <img id="share-img" alt="بطاقة إنجازك في فطن">
+      <div class="row"><button class="btn btn-main" id="share-save" type="button">حفظ أو مشاركة</button><button class="btn btn-ghost" id="share-close" type="button">إغلاق</button></div>
+      <p id="share-msg"></p>
+    </div>
+    <div class="flash" id="flash" aria-hidden="true"><div id="flash-t"></div></div>
+
+    <!-- onboarding -->
+    <div class="overlay onb" id="onb" hidden role="dialog" aria-modal="true" aria-labelledby="onb-h">
+      <div class="onb-top"><span class="badge"><i></i>عزّنا بتمكينهم</span><button id="onb-skip">تخطّي</button></div>
+      <div class="slides" id="slides">
+        <div class="track" id="track">
+          <div class="slide">
+            <div class="art"><div class="threat" aria-hidden="true"><div class="ph"></div>
+              <div class="bub b1"><b>تم تعليق</b> خدماتك في أبشر</div>
+              <div class="bub b2">ربحت <b>جائزة</b> 10,000 ريال</div>
+              <div class="bub b3">أرسل لي <b>رمز التحقق</b></div></div></div>
+            <h2 id="onb-h">رسائل الاحتيال <em>تستهدفنا كلنا</em></h2>
+            <p>لكن ذوي الإعاقة أكثر عرضة لها: رابط ما يتشاف، أو رسالة مستعجلة تربك، أو تحذير ما ينسمع.</p>
+          </div>
+          <div class="slide">
+            <div class="art"><div class="mini" aria-hidden="true">
+              <div class="beam" id="ob-beam"></div>
+              <div class="bubble out" id="ob-bubble"></div>
+              <div class="mv out" id="ob-v" data-l="danger"><span class="i" id="ob-i"></span><b id="ob-t">خطير</b><div class="wave"><span></span><span></span><span></span><span></span></div></div>
+            </div></div>
+            <h2>فطن <em>يقرأها قبلك</em></h2>
+            <p>يفحص الرسالة بطبقتين من الذكاء، ويظلّل الكلمات الخطيرة، ويقول لك وش تسوي.</p>
+          </div>
+          <div class="slide">
+            <h2><em>كيف تحب يوصلك تنبيه فطن؟</em></h2>
+            <p id="onb-qp">فطن يتكيّف مع كل شخص. إذا عندك إعاقة أو احتياج خاص، اختر الطريقة اللي تريحك، وتقدر تغيّرها أي وقت من الإعدادات.</p>
+            <div class="onb-dis" id="onb-dis" role="group" aria-label="كيف تحب يوصلك تنبيه فطن؟">
+              <button class="dis-btn" data-dis="yes" aria-pressed="false"><span class="dis-i" aria-hidden="true">♿</span><span><b>أحتاج طريقة تناسبني</b><small>عندي إعاقة أو احتياج خاص، أو أنا كبير سن</small></span></button>
+              <button class="dis-btn" data-dis="no" aria-pressed="false"><span class="dis-i" aria-hidden="true">👤</span><span><b>الطريقة العامة تناسبني</b><small>فطن بكل تفاصيله</small></span></button>
+            </div>
+            <p class="onb-sub" id="onb-sub" hidden>اختر الطريقة اللي تريحك، وفطن يتعامل معك على أساسها:</p>
+            <div class="onb-modes" id="onb-modes" role="group" aria-label="اختر الوضع" hidden>
+              <button class="mode" data-mode="visual" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span><b>بصري</b><small>يقرأ لي النتيجة بالصوت</small></span></button>
+              <button class="mode" data-mode="simple" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.2 9.6"/></svg><span><b>مبسّط</b><small>جملة واحدة ورمز كبير</small></span></button>
+              <button class="mode" data-mode="hearing" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 1112 0c0 3-2 4-3 5.5S14 18.5 12 19.5 8 19 8 17"/><path d="M9.5 9a2.5 2.5 0 015 0c0 1.5-1.5 2-1.5 3"/></svg><span><b>سمعي</b><small>تنبيه بالألوان والاهتزاز</small></span></button>
+              <button class="mode" data-mode="touch" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5.5a1.5 1.5 0 013 0V11"/><path d="M11 10.5V4.5a1.5 1.5 0 013 0v6"/><path d="M14 10.5V6a1.5 1.5 0 013 0v7c0 4-2.5 7-6 7-2.5 0-4-1.2-5.3-3.3L4 13.5a1.5 1.5 0 012.6-1.5L8 14"/></svg><span><b>لمسي</b><small>لغة اهتزاز للصم المكفوفين</small></span></button>
+              <button class="mode" data-mode="elder" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="5" r="2.5"/><path d="M11 8v6l-3 7M11 14l3 7M8 11h6M17 12v9"/></svg><span><b>كبار السن</b><small>خط كبير وزرّين بس</small></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="onb-bottom"><div class="dots" id="dots"><i class="on"></i><i></i><i></i></div><button class="btn btn-main" id="onb-next">التالي</button></div>
+    </div>
+
+    <!-- splash -->
+    <div class="overlay splash" id="splash" aria-hidden="true">
+      <svg class="emb" viewBox="19 26 162 162" aria-hidden="true"><path d="M40 49 50 35 60 49ZM65 49 75 35 85 49ZM90 49 100 30 110 49ZM115 49 125 35 135 49ZM140 49 150 35 160 49Z" fill="#E0BC5E"/><path d="M36 48H164C166 110 142 152 100 184 58 152 34 110 36 48Z" fill="#E0BC5E"/><path d="M100 48H164C166 110 142 152 100 184Z" fill="#F4DA94"/><path d="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9ZM64 102.8 67.24 106.05 64 109.29 60.76 106.05ZM120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z" fill="#03130D"/><circle cx="136" cy="84.9" r="4.68" fill="#E0BC5E"/></svg>
+      <h1>فَطِن</h1>
+      <p>سندك الذكي ضد الاحتيال</p>
+    </div>
+  </div>
+
+  <!-- desktop: QR column -->
+  <aside class="side" aria-label="موقع فطن">
+    <div class="qr-card">
+      <div class="qr-box" id="qr" aria-label="رمز QR لفتح موقع فطن"></div>
+      <b>امسح وتعرّف على فطن</b>
+      <small>يفتح موقع فطن ويشرح الفكرة كاملة</small>
+    </div>
+    <p class="credit"><b>إعداد الطالب: حسان عبدالله الينبعاوي</b><br>مسابقة «عزّنا بتمكينهم» · تعليم جدة</p>
+  </aside>
+</div>
+
+<div class="class" id="class" hidden role="dialog" aria-modal="true" aria-labelledby="cl-h">
+  <div class="cl-top"><span class="mk" aria-hidden="true"><svg class="emb" viewBox="19 26 162 162" aria-hidden="true"><path d="M40 49 50 35 60 49ZM65 49 75 35 85 49ZM90 49 100 30 110 49ZM115 49 125 35 135 49ZM140 49 150 35 160 49Z" fill="#E0BC5E"/><path d="M36 48H164C166 110 142 152 100 184 58 152 34 110 36 48Z" fill="#E0BC5E"/><path d="M100 48H164C166 110 142 152 100 184Z" fill="#F4DA94"/><path d="M50.5 102h9v27h-9ZM59.5 120h9v9h-9ZM68.5 102h9v27h-9ZM77.5 120h9v9h-9ZM86.5 75h9v54h-9ZM95.5 102h18v9h-18ZM95.5 120h27v9h-27ZM104.5 111h9v9h-9ZM122.5 102h27v9h-27ZM122.5 111h9v18h-9ZM131.5 120h9v9h-9ZM140.5 111h9v18h-9ZM64 102.8 67.24 106.05 64 109.29 60.76 106.05ZM120.7 84.9Q136 71.85 151.3 84.9 136 97.95 120.7 84.9Z" fill="#03130D"/><circle cx="136" cy="84.9" r="4.68" fill="#E0BC5E"/></svg></span><b id="cl-h">حصة فطن: نكشف الاحتيال سوا</b><span class="cl-count" id="cl-count"></span><button class="small-btn" id="cl-close">إنهاء الحصة</button></div>
+  <div class="cl-stage" id="cl-stage"></div>
+</div>

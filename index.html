@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-CIlRswyks2uIOBu6F7JCwPK1nkcmm3ihZhdUWkcA+0g='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#03130D">
 <meta name="description" content="فطن: تطبيق بالذكاء الاصطناعي يكشف رسائل ومكالمات الاحتيال، ويحذّر كل شخص بالطريقة اللي تناسبه.">
 <link rel="icon" type="image/png" href="app/icons/icon-192.png">
@@ -11,9 +13,9 @@
 </head>
 <body>
 <title>موقع فطن</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="preload" href="app/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app/fonts/fonts.css">
+<script src="app/vendor/qrcode.min.js"></script>
 <style>
 /* Layout: a single scrolling story — live scanner hero, the working app, then the entry file (problem → beneficiary → solution → AI → impact), criteria, nation, roadmap. Deliberate single dark theme: night green with palm gold, high contrast for low vision. */
 :root{
@@ -695,7 +697,7 @@ html{direction:rtl}
           <div class="card"><b>الصوت</b><span>يقرأ النتيجة بالعربية بالسرعة المناسبة.</span></div>
         </div>
         <div class="charter" aria-label="ميثاق الاستخدام المسؤول">
-          <div><b>الخصوصية أولًا</b><span>الفحص الأول على الجهاز، ولا يحفظ الرسائل.</span></div>
+          <div><b>الخصوصية أولًا</b><span>الفحص الأول على الجهاز. الذكاء الاصطناعي اختياري، والرموز وأرقام البطاقات ما تطلع من جوالك، وخادم فطن ما يحفظ رسائلك.</span></div>
           <div><b>بإذنك</b><span>يستأذن قبل استخدام الذكاء الاصطناعي.</span></div>
           <div><b>يشرح قراره</b><span>كل حكم معه سببه وطبقته.</span></div>
           <div><b>القرار لك</b><span>فطن ينصح، والإنسان يقرر.</span></div>

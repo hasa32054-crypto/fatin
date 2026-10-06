@@ -1,0 +1,11 @@
+# Test-only configuration: the worker with KV only (the dashboard-paste fallback), run locally by `wrangler dev`.
+name = "fatin-test-kv"
+main = "../../../server/worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://site.test"
+
+[[kv_namespaces]]
+binding = "FATIN_KV"
+id = "test-kv"

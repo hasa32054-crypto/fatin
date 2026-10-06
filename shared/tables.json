@@ -1,0 +1,186 @@
+{
+ "patterns": [
+  "shipaddr",
+  "otp",
+  "card",
+  "ship",
+  "newnum",
+  "prize",
+  "invest",
+  "suspend",
+  "update",
+  "money",
+  "short",
+  "badlink",
+  "ip"
+ ],
+ "brands": [
+  "جهة رسمية",
+  "مقيم",
+  "STC Pay",
+  "أبشر",
+  "ناجز",
+  "توكلنا",
+  "نفاذ",
+  "مساند",
+  "سداد",
+  "الراجحي",
+  "الأهلي",
+  "الإنماء",
+  "البلاد",
+  "STC",
+  "سمسا",
+  "أرامكس",
+  "سبل",
+  "البريد السعودي",
+  "الجوازات",
+  "المرور",
+  "ساهر",
+  "الزكاة",
+  "البنك",
+  "نيوم",
+  "أرامكو",
+  "تمارا",
+  "تابي",
+  "إحسان",
+  "مجلس الضمان الصحي",
+  "وزارة العدل",
+  "أمازون",
+  "نون",
+  "صحتي",
+  "إيجار",
+  "Netflix",
+  "PayPal",
+  "Revolut",
+  "USPS",
+  "Royal Mail",
+  "FedEx",
+  "E-ZPass",
+  "Trezor",
+  "Ledger",
+  "Binance",
+  "Coinbase",
+  "Apple",
+  "Microsoft",
+  "شاهد",
+  "نسك"
+ ],
+ "langs": {
+  "ar": [
+   "العربية",
+   "Arabic"
+  ],
+  "en": [
+   "English",
+   "English"
+  ],
+  "ur": [
+   "اردو",
+   "Urdu"
+  ],
+  "hi": [
+   "हिन्दी",
+   "Hindi"
+  ],
+  "bn": [
+   "বাংলা",
+   "Bengali"
+  ],
+  "tl": [
+   "Filipino",
+   "Filipino"
+  ],
+  "id": [
+   "Bahasa Indonesia",
+   "Indonesian"
+  ],
+  "zh": [
+   "中文",
+   "Chinese"
+  ],
+  "es": [
+   "Español",
+   "Spanish"
+  ],
+  "fr": [
+   "Français",
+   "French"
+  ]
+ },
+ "simWho": {
+  "bank": {
+   "ar": "«خدمة العملاء»",
+   "en": "“Customer service”",
+   "ur": "«کسٹمر سروس»",
+   "hi": "«ग्राहक सेवा»",
+   "bn": "«গ্রাহক সেবা»",
+   "tl": "«Customer service»",
+   "id": "«Layanan pelanggan»",
+   "zh": "「客服」",
+   "es": "«Atención al cliente»",
+   "fr": "« Service client »"
+  },
+  "ship": {
+   "ar": "«مندوب سمسا»",
+   "en": "“SMSA courier”",
+   "ur": "«سمسا کوریئر»",
+   "hi": "«SMSA कूरियर»",
+   "bn": "«SMSA কুরিয়ার»",
+   "tl": "«SMSA courier»",
+   "id": "«Kurir SMSA»",
+   "zh": "「SMSA 快递员」",
+   "es": "«Mensajero de SMSA»",
+   "fr": "« Livreur SMSA »"
+  },
+  "family": {
+   "ar": "«عبدالله» برقم جديد",
+   "en": "“Abdullah”, new number",
+   "ur": "«عبداللہ»، نیا نمبر",
+   "hi": "«अब्दुल्लाह», नया नंबर",
+   "bn": "«আব্দুল্লাহ», নতুন নম্বর",
+   "tl": "«Abdullah», bagong numero",
+   "id": "«Abdullah», nomor baru",
+   "zh": "「阿卜杜拉」新号码",
+   "es": "«Abdullah», número nuevo",
+   "fr": "« Abdullah », nouveau numéro"
+  }
+ },
+ "callChars": {
+  "bank": {
+   "scam": true,
+   "persona": "فيصل، يدّعي إنه موظف «قسم الحماية» في البنك",
+   "goal": "رمز التحقق اللي يوصل لجوال الضحية"
+  },
+  "nafath": {
+   "scam": true,
+   "persona": "شخص يدّعي إنه موظف في أبشر",
+   "goal": "موافقة الضحية على طلب نفاذ واختيار الرقم"
+  },
+  "family": {
+   "scam": true,
+   "persona": "شخص يدّعي إنه فهد ولد عم الضحية",
+   "goal": "تحويل ألف ريال بحجة حادث"
+  },
+  "safe": {
+   "scam": false,
+   "persona": "أبو خالد، صديق يعزم صاحبه على العشاء",
+   "goal": ""
+  }
+ },
+ "famLevels": [
+  "critical",
+  "danger",
+  "good",
+  "progress"
+ ],
+ "famStarts": [
+  "رسالة احتيال: ",
+  "انخدع في محاكي المحتال (تدريب)",
+  "مكالمة احتيال: ",
+  "ضغط «انخدعت؟» ويحتاج مساعدتك",
+  "حصل على وسام «",
+  "أنهى اختبار الرسائل: ",
+  "أنهى تحدي الأسبوع: ",
+  "المستوى "
+ ]
+}

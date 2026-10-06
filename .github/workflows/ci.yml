@@ -1,0 +1,64 @@
+# Every push and pull request: the built files match their sources, the code parses, no secrets are committed,
+# and the unit, worker (including the real Cloudflare runtime) and browser tests pass. Any failure fails the run.
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    name: Build, syntax, secrets, sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Built files are up to date (app, landing page, language packs, service worker)
+        run: npm run build:check
+      - name: Vendored libraries and fonts match their packages
+        run: npm run vendor:check
+      - name: Server tables match shared/tables.json
+        run: npm run check:sync
+      - name: Every script parses
+        run: npm run check:syntax
+      - name: News bulletin is valid
+        run: npm run check:news
+      - name: No secrets committed
+        run: npm run check:secrets
+      - name: Worker deploy dry run
+        run: npm run deploy:dry
+        env: { WRANGLER_SEND_METRICS: "false" }
+
+  unit-and-worker:
+    name: Unit and worker tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run test:unit
+      - name: Worker tests (in Node, and in the local Cloudflare runtime via wrangler dev)
+        run: npm run test:worker
+        env: { WRANGLER_SEND_METRICS: "false" }
+
+  e2e:
+    name: Browser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
