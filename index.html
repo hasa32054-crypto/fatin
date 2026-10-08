@@ -2,6 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-CIlRswyks2uIOBu6F7JCwPK1nkcmm3ihZhdUWkcA+0g='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#03130D">
 <meta name="description" content="فطن: تطبيق بالذكاء الاصطناعي يكشف رسائل ومكالمات الاحتيال، ويحذّر كل شخص بالطريقة اللي تناسبه.">
@@ -11,9 +13,8 @@
 </head>
 <body>
 <title>موقع فطن</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="fonts/fonts.css">
+<script src="vendor/qrcode.min.js"></script>
 <style>
 /* Layout: a single scrolling story — live scanner hero, the working app, then the entry file (problem → beneficiary → solution → AI → impact), criteria, nation, roadmap. Deliberate single dark theme: night green with palm gold, high contrast for low vision. */
 :root{
@@ -370,6 +371,7 @@ body.m-visual{--scale:1.08}
 
 footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px;color:var(--dim);font-size:13px;line-height:1.8}
 footer b{color:var(--ink);font-family:var(--f-display)}
+.f-links{display:flex;gap:6px 18px;flex-wrap:wrap}.f-links a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}.f-links a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
 
 /* hearing flash */
 .flash{position:fixed;inset:0;display:grid;place-items:center;z-index:50;pointer-events:none;opacity:0;transition:opacity .25s}
@@ -909,6 +911,9 @@ html{direction:rtl}
     <div><b>إعداد الطالب: حسان عبدالله الينبعاوي</b></div>
     <div>مسابقة «عزّنا بتمكينهم» · الإدارة العامة للتعليم بمحافظة جدة</div>
     <div>المصادر: الهيئة العامة للإحصاء (نشرة إحصاءات الإعاقة 2023، مسح ذوي الإعاقة 2017) · مكتب الإحصاء الأسترالي · وكالة الاتحاد الأوروبي للحقوق الأساسية.</div>
+    <div class="f-legal"><b>فطن مشروع طالب مستقل، وليس تابعًا لأي جهة حكومية أو بنك.</b></div>
+    <nav class="f-links" aria-label="روابط قانونية"><a href="privacy.html">سياسة الخصوصية</a><a href="terms.html">شروط الاستخدام</a><a href="security.html">الأمان والإبلاغ عن ثغرة</a></nav>
+    <div>© 2026 حسان عبدالله الينبعاوي. جميع الحقوق محفوظة.</div>
   </footer>
 </div>
 

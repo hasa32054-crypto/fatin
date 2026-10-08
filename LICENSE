@@ -1,0 +1,25 @@
+فَطِن (Fatin) — جميع الحقوق محفوظة
+Copyright © 2026 حسان عبدالله الينبعاوي (Hassan Abdullah Alyenbawi). All rights reserved.
+
+العربية
+-------
+هذا المستودع وكل ما فيه (الشيفرة، والتصميم، والنصوص، والسيناريوهات التدريبية، والشعار، واسم «فطن») ملك
+لحسان عبدالله الينبعاوي. لا يجوز نسخه أو تعديله أو إعادة نشره أو توزيعه أو استخدامه تجاريًا، كليًا أو جزئيًا،
+بدون إذن كتابي مسبق من المالك. إتاحة الشيفرة للاطلاع على GitHub لا تعني منح أي ترخيص.
+يُسمح بفتح الموقع والتطبيق واستخدامهما للتوعية الشخصية، ومشاركة روابطهما.
+
+English
+-------
+This repository and everything in it (source code, design, text, training scenarios, logo and the name
+"Fatin" / «فطن») are the property of Hassan Abdullah Alyenbawi. No part may be copied, modified,
+republished, distributed or used commercially without prior written permission from the owner.
+Making the source visible on GitHub does not grant any licence.
+You may open and use the website and app for personal awareness, and share links to them.
+
+Third-party components keep their own licences:
+- fonts/Alexandria.woff — SIL Open Font License 1.1 (fonts/OFL-Alexandria.txt)
+- fonts/IBMPlexSansArabic-*.woff — SIL Open Font License 1.1 (fonts/OFL-IBMPlexSansArabic.txt)
+- vendor/qrcode.min.js — MIT (vendor/LICENSE-qrcodejs.txt)
+- vendor/jsQR.js — Apache License 2.0 (vendor/LICENSE-jsQR.txt)
+
+Contact: business0xhassan@gmail.com

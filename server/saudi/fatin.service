@@ -1,0 +1,31 @@
+[Unit]
+Description=Fatin server (Saudi hosting)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=fatin
+Group=fatin
+WorkingDirectory=/opt/fatin/server/saudi
+EnvironmentFile=/etc/fatin.env
+ExecStart=/usr/bin/node server.mjs
+Restart=always
+RestartSec=3
+# حماية النظام: الخادم ما يقدر يكتب إلا في مجلد بياناته
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+ReadWritePaths=/var/lib/fatin
+CapabilityBoundingSet=
+AmbientCapabilities=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

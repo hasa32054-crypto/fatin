@@ -1,0 +1,10 @@
+{
+  "name": "fatin-saudi-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fatin server for in-Kingdom hosting (runs ../worker.js on Node)",
+  "scripts": { "start": "node server.mjs" },
+  "engines": { "node": ">=20" },
+  "dependencies": { "undici": "6.21.3" }
+}

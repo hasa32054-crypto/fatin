@@ -1,0 +1,21 @@
+# Caddy: شهادة HTTPS تلقائية + ترويسات أمان، ويمرّر الطلبات لخادم فطن على نفس السيرفر
+{$FATIN_DOMAIN} {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer"
+		X-Frame-Options "DENY"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+	}
+	request_body {
+		max_size 4MB
+	}
+	reverse_proxy 127.0.0.1:8787 {
+		header_up X-Real-IP {remote_host}
+	}
+	log {
+		output discard
+	}
+}

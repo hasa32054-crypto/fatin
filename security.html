@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#03130D">
+<meta name="description" content="كيف يحمي فطن بياناتك، وكيف تبلّغ عن ثغرة أمنية.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; script-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>الأمان · فطن</title>
+<link rel="icon" type="image/png" href="app/icons/icon-192.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="./"><img src="app/icons/icon-192.png" width="36" height="36" alt=""> فَطِن</a>
+  <nav aria-label="الصفحات القانونية"><a href="privacy.html">الخصوصية</a><a href="terms.html">الشروط</a><a href="security.html" aria-current="page">الأمان</a><a href="app/">التطبيق</a></nav>
+</header>
+<main>
+<h1>الأمان في فطن</h1>
+<p class="meta">آخر تحديث: 9 أكتوبر 2026</p>
+<p class="lead">تطبيق يحمي الناس من الاحتيال لازم يكون هو نفسه آمن. هذا ملخص اللي سويناه، ومبني على الضوابط الأساسية للأمن السيبراني ومعيار التطوير الآمن الصادرين من الهيئة الوطنية للأمن السيبراني.</p>
+
+<h2>كيف نحمي التطبيق</h2>
+<ul>
+  <li><b>تقليل البيانات:</b> ما نطلب هوية ولا رقم جوال ولا بريد. الفحص الأساسي يصير على جوالك بدون إنترنت.</li>
+  <li><b>تشفير كل الاتصالات</b> عبر HTTPS، ورفض أي خادم غير مشفّر.</li>
+  <li><b>سياسة أمان المحتوى (CSP):</b> التطبيق يحمّل خطوطه ومكتباته من نفس الموقع، ويمنع تحميل سكربتات من مصادر غير معروفة.</li>
+  <li><b>المفاتيح السرية في الخادم فقط</b>، ولا توصل للتطبيق أبدًا.</li>
+  <li><b>الخادم يقبل الطلبات من موقع فطن فقط</b>، ويحد عدد الطلبات لكل مستخدم عشان يمنع الإساءة.</li>
+  <li><b>كل مدخل يُعامل كبيانات غير موثوقة:</b> النصوص تُعرض كنص وليس كشيفرة، والبيانات المشتركة (الرادار) تُقبل بأنماط محددة فقط.</li>
+  <li><b>قارئ الروابط</b> يفتح الرابط من الخادم وليس من جوالك، ويرفض العناوين الداخلية والخاصة، ويحدد الحجم والوقت.</li>
+  <li><b>سجلات بدون بيانات شخصية:</b> ما نسجّل نصوص الرسائل ولا التسجيلات ولا عناوين IP.</li>
+  <li><b>اختبارات أمنية آلية</b> قبل كل تحديث (حقن الشيفرة، الروابط الخبيثة، العناوين الداخلية).</li>
+</ul>
+
+<h2>بلّغ عن ثغرة</h2>
+<p>إذا لقيت ثغرة أمنية في فطن، نشكرك من قلب. راسلنا على <a href="mailto:business0xhassan@gmail.com?subject=Fatin%20security">business0xhassan@gmail.com</a> بعنوان «ثغرة أمنية»، واذكر الخطوات اللي توصّل لها.</p>
+<ul>
+  <li>نرد خلال 3 أيام عمل، ونصلح الثغرات الخطيرة بأسرع وقت.</li>
+  <li>لا تطّلع على بيانات غيرك، ولا توقف الخدمة، ولا تنشر الثغرة قبل ما نصلحها.</li>
+  <li>اللي يبلّغ بمسؤولية نذكر اسمه في صفحة الشكر (إذا حب).</li>
+</ul>
+<p>الملف المعياري للتواصل الأمني: <a href="security.txt"><code>security.txt</code></a></p>
+</main>
+
+<section class="en" lang="en" dir="ltr">
+<h2>Security (English)</h2>
+<p>Fatin minimises data, encrypts all traffic, ships a strict Content-Security-Policy with self-hosted fonts and libraries, keeps every secret on the server, accepts requests only from its own origin with per-client rate limits, fetches links server-side with private-address (SSRF) blocking, and keeps logs free of personal data. Please report vulnerabilities to <a href="mailto:business0xhassan@gmail.com?subject=Fatin%20security">business0xhassan@gmail.com</a>; we reply within 3 working days. Do not access others' data, degrade the service, or disclose before a fix.</p>
+</section>
+
+<footer>
+  <div>© 2026 حسان عبدالله الينبعاوي. جميع الحقوق محفوظة.</div>
+  <div>فطن مشروع طالب مستقل، وليس تابعًا لأي جهة حكومية أو بنك.</div>
+</footer>
+</div>
+</body>
+</html>

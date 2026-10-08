@@ -1,0 +1,5 @@
+Contact: mailto:business0xhassan@gmail.com
+Expires: 2027-10-09T00:00:00.000Z
+Preferred-Languages: ar, en
+Canonical: https://hasa32054-crypto.github.io/fatin/security.txt
+Policy: https://hasa32054-crypto.github.io/fatin/security.html
