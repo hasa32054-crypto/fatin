@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-U+a+RIJmsd+OYZqcGfjmoUcyJE4uqHLRgq6xy34ZbaM=' 'sha256-RQgKEpCfEARa2/LJuA1DA8Cd5TzyJlpGDH94CFWuZ90=' 'sha256-dZjjluebB80W5d9Qgneldw68oINphLskRhmnvmYh4OM='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https: http://localhost:* http://127.0.0.1:*; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-U+a+RIJmsd+OYZqcGfjmoUcyJE4uqHLRgq6xy34ZbaM=' 'sha256-5RhL/5LMpIDzzrk/5/zw39YDtGUYUccoU4TpNWMC5ig=' 'sha256-dZjjluebB80W5d9Qgneldw68oINphLskRhmnvmYh4OM='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https: http://localhost:* http://127.0.0.1:*; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#03130D">
@@ -515,6 +515,12 @@ details.settings summary{cursor:pointer;font-family:var(--f-display);font-weight
 .cs-result.lose{background:rgba(255,107,94,.12);border:1px solid rgba(255,107,94,.55)}
 .cs-result b{display:block;font-family:var(--f-display);font-size:19px}
 .cs-result.win b{color:var(--safe)}.cs-result.lose b{color:var(--danger)}
+.ch-card{margin-top:12px;padding:14px 12px;border-radius:16px;border:1px solid rgba(224,188,94,.45);background:linear-gradient(160deg,rgba(224,188,94,.12),rgba(62,224,155,.06))}
+.ch-time{font-family:var(--f-display);font-weight:800;font-size:34px;line-height:1.15;color:var(--safe)}
+.ch-line{font-size:15px;margin-top:4px}
+.ch-best{font-size:13px;opacity:.75;min-height:0}
+.ch-best:empty{display:none}
+.ch-share{margin-top:10px;width:100%;min-height:48px}
 .cs-result span{font-size:14px;color:var(--muted)}
 
 
@@ -3180,7 +3186,7 @@ function endSim(win,why){
   const d=document.createElement("div"); d.className="cm end "+(win?"win":"lose");
   d.innerHTML="<b></b><span></span>"; d.querySelector("b").textContent=L2(win?"win_t":"lose_t");
   d.querySelector("span").textContent=why;
-  const again=document.createElement("button"); again.className="btn btn-gold"; again.style.marginTop="10px"; again.textContent=L2("again"); again.onclick=()=>{ const ks=Object.keys(SCEN); startSim(ks[(ks.indexOf(simScen)+1)%ks.length]); };
+  const again=document.createElement("button"); again.className="btn btn-gold"; again.style.cssText="margin:10px auto 0;display:block"; again.textContent=L2("again"); again.onclick=()=>{ const ks=Object.keys(SCEN); startSim(ks[(ks.indexOf(simScen)+1)%ks.length]); };
   d.appendChild(again);
   $("chat").appendChild(d); $("chat").scrollTop=$("chat").scrollHeight;
   if(win) burst($("chat"),"var(--safe)");
@@ -3670,7 +3676,7 @@ function showCallAlert(a){
 }
 $("ca-big").onclick=()=>callEnd("win");
 function callEnd(how){
-  if(!call) return; hideSoftAlert(); const k=call.k, risk=call.risk; callStop(false); callUI("idle"); $("cs-in").hidden=true; $("cs-mode").hidden=true;
+  if(!call) return; hideSoftAlert(); const k=call.k, risk=call.risk, t0=call.t0; callStop(false); callUI("idle"); $("cs-in").hidden=true; $("cs-mode").hidden=true;
   $("cs-state").textContent="انتهت المكالمة";
   const c=CALLS[k];
   const r=$("cs-result"); r.hidden=false;
@@ -3682,9 +3688,10 @@ function callEnd(how){
   else if(how==="win") t=["win","أحسنت! أغلقت قبل ما يوصل لك","مؤشر الخطر كان "+Math.round(risk)+"%. التصرف الصح دايمًا: أغلق واتصل بالجهة بنفسك."];
   else t=["win","أنهيت المكالمة","تصرف آمن. لو اتصل مرة ثانية، لا تعطه أي بيانات."];
   r.className="cs-result "+t[0]; r.innerHTML="<b></b><span></span>"; r.querySelector("b").textContent=t[1]; r.querySelector("span").textContent=t[2];
-  const again=document.createElement("button"); again.className="btn btn-ghost"; again.style.marginTop="10px"; again.textContent="مكالمة ثانية"; again.onclick=()=>{ const ks=Object.keys(CALLS); callSet(ks[(ks.indexOf(k)+1)%ks.length]); }; r.appendChild(again);
+  const again=document.createElement("button"); again.className="btn btn-ghost"; again.style.cssText="margin:10px auto 0;display:block"; again.textContent="مكالمة ثانية"; again.onclick=()=>{ const ks=Object.keys(CALLS); callSet(ks[(ks.indexOf(k)+1)%ks.length]); }; r.appendChild(again);
+  const chSay=(c.scam&&t[0]==="win"&&how!=="declined"&&t0)?chCard(r,k,(Date.now()-t0)/1000):"";
   if(t[0]==="win"&&c.scam) burst($("callscr"),"var(--safe)");
-  if(mode==="visual") speak(t[1]+". "+t[2]); else if(mode!=="simple"){ flash(t[0]==="win"?"safe":"danger"); if(mode==="touch") vibrate(t[0]==="win"?"safe":"danger"); }
+  if(mode==="visual") speak(t[1]+". "+t[2]+(chSay?" "+chSay:"")); else if(mode!=="simple"){ flash(t[0]==="win"?"safe":"danger"); if(mode==="touch") vibrate(t[0]==="win"?"safe":"danger"); }
 }
 $("cs-accept").onclick=async()=>{ if(!call||call.ended) return;
   try{ const a=VOICE.el||(VOICE.el=new Audio()); a.setAttribute("playsinline",""); if(!VOICE.busy){ a.onended=null; a.onerror=null; a.onplaying=null; a.src=SILENT_WAV; const p=a.play(); p&&p.then&&p.then(()=>{ VOICE.unlocked=true; }).catch(()=>{}); } }catch(e){}
@@ -3730,6 +3737,53 @@ $("paste-btn").onclick=async()=>{
   // after the start-up example is placed, put the shared message in its spot
   const go=()=>{ $("msg").value=t; if(profile&&store.get("fatin-onb")==="1"){ showTab("scan"); setTimeout(run,350); } };
   setTimeout(go,900);
+}catch(e){} })();
+/* ---------- #تحدي_فطن: after beating a scam call, a score card to challenge family ---------- */
+const AR_DIG=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const CH_NAME={bank:"«البنك»",nafath:"«أبشر»",family:"«القريب»"};
+function chTime(s){ s=Math.max(1,Math.round(s));
+  const sec=x=>x===1?"ثانية":x===2?"ثانيتين":AR_DIG(x)+" "+(x<=10?"ثوانٍ":"ثانية");
+  if(s<60) return s===1?"ثانية وحدة":sec(s);
+  const m=Math.floor(s/60), x=s%60, mm=m===1?"دقيقة":m===2?"دقيقتين":AR_DIG(m)+" "+(m<=10?"دقائق":"دقيقة");
+  return mm+(x?" و"+sec(x):""); }
+function chLink(k){ return SITE_URL+"app/?c="+encodeURIComponent(k); }
+function chText(k,secs){ return "كشفت محتال "+(CH_NAME[k]||"")+" في "+chTime(secs)+" بتطبيق فطن 🛡️\nتقدر تكشفه أسرع مني؟ جرّب نفس المكالمة:\n"+chLink(k)+"\n#تحدي_فطن"; }
+async function chImage(k,secs,best){
+  const W=1080, cv=document.createElement("canvas"); cv.width=W; cv.height=W; const x=cv.getContext("2d");
+  try{ await document.fonts.load('700 80px "Alexandria"'); }catch(e){}
+  const g=x.createLinearGradient(0,0,0,W); g.addColorStop(0,"#062a1d"); g.addColorStop(1,"#03130D"); x.fillStyle=g; x.fillRect(0,0,W,W);
+  x.strokeStyle="rgba(224,188,94,.55)"; x.lineWidth=6; x.strokeRect(40,40,W-80,W-80);
+  const ic=new Image(); ic.src="icons/icon-512.png"; try{ await ic.decode(); x.save(); x.beginPath(); if(x.roundRect) x.roundRect(W/2-110,110,220,220,56); else x.rect(W/2-110,110,220,220); x.clip(); x.drawImage(ic,W/2-110,110,220,220); x.restore(); }catch(e){}
+  x.direction="rtl"; x.textAlign="center"; const F='"Alexandria","IBM Plex Sans Arabic",Tahoma,sans-serif';
+  x.fillStyle="#F3F8F5"; x.font="600 54px "+F; x.fillText("كشفت محتال "+(CH_NAME[k]||""),W/2,430);
+  x.fillStyle="#3EE09B"; x.font="800 150px "+F; x.fillText(chTime(secs),W/2,610);
+  x.fillStyle="#E0BC5E"; x.font="600 46px "+F; x.fillText("تقدر تكشفه أسرع مني؟",W/2,730);
+  if(best) { x.fillStyle="rgba(243,248,245,.7)"; x.font="400 36px "+F; x.fillText("أفضل وقت لي: "+chTime(best),W/2,800); }
+  x.fillStyle="#F3F8F5"; x.font="700 48px "+F; x.fillText("#تحدي_فطن",W/2,920);
+  x.fillStyle="rgba(243,248,245,.6)"; x.font="400 30px "+F; x.fillText("فطن · سندك الذكي ضد الاحتيال",W/2,980);
+  return new Promise(z=>cv.toBlob(b=>z(b),"image/png"));
+}
+function chCard(host,k,secs){
+  const key="fatin-best-"+k, prev=+store.get(key)||0, rec=!prev||secs<prev; if(rec) store.set(key,String(Math.round(secs)));
+  const best=rec?Math.round(secs):prev;
+  const d=document.createElement("div"); d.className="ch-card"; d.setAttribute("role","group"); d.setAttribute("aria-label","نتيجة #تحدي_فطن");
+  const t=document.createElement("div"); t.className="ch-time"; t.textContent=chTime(secs);
+  const l=document.createElement("div"); l.className="ch-line"; l.textContent="كشفت محتال "+(CH_NAME[k]||"")+" في "+chTime(secs)+(rec&&prev?" · رقم قياسي جديد!":"");
+  const b=document.createElement("div"); b.className="ch-best"; b.textContent=(prev&&!rec)?"أفضل وقت لك: "+chTime(prev):"";
+  const sh=document.createElement("button"); sh.type="button"; sh.className="btn btn-gold ch-share"; sh.textContent="تحدّى أهلك";
+  sh.onclick=async()=>{ const text=chText(k,secs);
+    try{ const blob=await chImage(k,secs,prev&&!rec?prev:0); const f=blob&&new File([blob],"fatin-challenge.png",{type:"image/png"});
+      if(f&&navigator.canShare&&navigator.canShare({files:[f]})){ await navigator.share({files:[f],text}); return; }
+      if(navigator.share){ await navigator.share({text}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
+    window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener"); };
+  d.append(t,l,b,sh); const ag=host.querySelector(":scope > .btn"); host.insertBefore(d,ag||null);
+  return "كشفت المحتال في "+chTime(secs)+". تقدر تتحدى أهلك من زر «تحدّى أهلك».";
+}
+/* a challenge link (?c=bank) opens the same call once the person is set up */
+(()=>{ try{ const q=new URLSearchParams(location.search), k=q.get("c"); if(!k||!CALLS[k]||!CALLS[k].scam) return;
+  history.replaceState(null,"",location.pathname); let n=0;
+  const tick=setInterval(()=>{ if(++n>240) return clearInterval(tick);
+    if(profile&&store.get("fatin-onb")==="1"&&($("onb").hidden||$("onb").classList.contains("gone"))){ clearInterval(tick); showTab("call"); callSet(k); toast("وصلك تحدّي! جرّب تكشف المحتال أسرع"); } },700);
 }catch(e){} })();
 /* ---------- chat practice: a notification first, then the messages app ---------- */
 function notifDing(){ try{ const ctx=new (window.AudioContext||window.webkitAudioContext)(); ctx.resume&&ctx.resume(); const t=ctx.currentTime+.02;
@@ -3787,7 +3841,7 @@ $("call-go").onclick=()=>{
 document.querySelectorAll("#call-scen .chip").forEach(c=>c.onclick=()=>{ document.querySelectorAll("#call-scen .chip").forEach(x=>x.classList.toggle("on",x===c)); });
 { const acc=$("cs-accept").onclick; $("cs-accept").onclick=function(){ callRingOff(); return acc.apply(this,arguments); }; }
 { const dec=$("cs-decline").onclick; $("cs-decline").onclick=function(){ callRingOff(); return dec.apply(this,arguments); }; }
-{ const _end=callEnd; callEnd=function(how){ callRingOff(); _end(how); const r=$("cs-result"); if(r&&!r.hidden){ const again=r.querySelector("button"); if(again){ again.textContent="مكالمة ثانية"; again.onclick=()=>{ callExitFull(); $("v-call").classList.remove("started"); callStop(true); $("screen").scrollTo({top:0}); }; } } }; }
+{ const _end=callEnd; callEnd=function(how){ callRingOff(); _end(how); const r=$("cs-result"); if(r&&!r.hidden){ const again=r.querySelector(":scope > button"); if(again){ again.textContent="مكالمة ثانية"; again.onclick=()=>{ callExitFull(); $("v-call").classList.remove("started"); callStop(true); $("screen").scrollTo({top:0}); }; } } }; }
 { const _stop=callStop; callStop=function(silent){ callRingOff(); _stop(silent); if(silent) $("device").classList.remove("call-full"); }; }
 
 /* =====================================================================

@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hasa32054crypto.fatin",
+      "sha256_cert_fingerprints": ["ضع_هنا_بصمة_SHA-256_من_Play_Console"]
+    }
+  }
+]

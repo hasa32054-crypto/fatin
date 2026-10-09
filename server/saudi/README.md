@@ -56,6 +56,8 @@ sudo bash /opt/fatin/server/saudi/setup.sh --domain api.fatin.sa
 - الحالة: `sudo systemctl status fatin`
 - السجل (بدون أي بيانات مستخدمين): `sudo journalctl -u fatin -n 50`
 - تحديث الكود: نفس أمر التثبيت `sudo bash /opt/fatin/server/saudi/setup.sh`
+- **تجهيز صوت فهد مسبقًا** (بعد التثبيت، ومرة كل شهر): `cd /opt/fatin/server/saudi && node warm-voices.mjs`
+  يولّد جمل المكالمات التدريبية الثابتة (حوالي 57 جملة) وتنحفظ على قرص السيرفر في جدة، فتشتغل فورًا من داخل المملكة. لعرضها بدون إرسال: `node warm-voices.mjs --dry`
 
 ## الأمان المطبّق
 - HTTPS تلقائي (Caddy + Let's Encrypt) وترويسات أمان.

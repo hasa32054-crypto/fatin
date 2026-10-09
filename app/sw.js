@@ -1,5 +1,5 @@
 /* Fatin service worker: the app works offline after the first visit. */
-const CACHE = "fatin-v26";
+const CACHE = "fatin-v27";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png",
   "../fonts/fonts.css", "../fonts/Alexandria.woff", "../fonts/IBMPlexSansArabic-Regular.woff", "../fonts/IBMPlexSansArabic-Medium.woff", "../fonts/IBMPlexSansArabic-SemiBold.woff", "../vendor/qrcode.min.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });

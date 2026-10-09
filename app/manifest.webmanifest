@@ -1,4 +1,5 @@
 {
+  "id": "/fatin/app/",
   "name": "فَطِن · سندك الذكي ضد الاحتيال",
   "short_name": "فطن",
   "description": "تطبيق يكشف رسائل ومكالمات الاحتيال، ويحذّر كل مستخدم بالطريقة التي تناسبه.",
@@ -43,5 +44,28 @@
       "text": "text",
       "url": "url"
     }
-  }
+  },
+  "screenshots": [
+    {
+      "src": "../store/screenshots/2-scan-danger.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "فحص رسالة احتيال"
+    },
+    {
+      "src": "../store/screenshots/4-call-ring.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "مكالمة تدريبية"
+    },
+    {
+      "src": "../store/screenshots/5-challenge.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "#تحدي_فطن"
+    }
+  ]
 }
