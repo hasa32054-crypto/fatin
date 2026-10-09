@@ -1,0 +1,122 @@
+openapi: 3.1.0
+info:
+  title: Fatin Open API
+  version: "1.0"
+  summary: Scam message, link and phone-number awareness API (Arabic-first, 10 languages)
+  description: |
+    Fatin's open interface for government entities, banks, telecoms and developers.
+    - No text, URL path or user data is stored by `/v1/check`.
+    - `/v1/link` stores only the **domain** of links it judges dangerous, for the public feed.
+    - Independent student project by Hassan Abdullah Alyenbawi. Not affiliated with any government body or bank.
+  contact:
+    name: Hassan Abdullah Alyenbawi
+    url: https://hasa32054-crypto.github.io/fatin/security.html
+  license:
+    name: All rights reserved — integration requires written permission
+    url: https://github.com/hasa32054-crypto/fatin/blob/main/LICENSE
+servers:
+  - url: https://fatin.hasa32054.workers.dev
+    description: Current (Cloudflare)
+  - url: https://api.fatin.example.sa
+    description: Planned in-Kingdom server (Oracle Cloud, Jeddah) — placeholder
+security:
+  - {}
+  - partnerKey: []
+components:
+  securitySchemes:
+    partnerKey:
+      type: http
+      scheme: bearer
+      description: Optional partner key issued by Fatin. Raises rate limits ×50. Only the SHA-256 of the key is kept on the server.
+  schemas:
+    Verdict:
+      type: string
+      enum: [safe, suspicious, danger]
+    CheckResult:
+      type: object
+      required: [verdict, score, reasons, signals, engine]
+      properties:
+        verdict: { $ref: "#/components/schemas/Verdict" }
+        score: { type: integer, minimum: 0, maximum: 100 }
+        reasons: { type: array, items: { type: string }, description: Plain-Arabic explanations (up to 5) }
+        signals:
+          type: array
+          items: { type: string }
+          description: Machine-readable signal ids, e.g. otp, card, lookalike, imp, newnum, secret, ship, money, deposit, fakejob, short, badlink, official
+        links: { type: array, items: { type: string }, description: Hosts found in the text }
+        brands: { type: array, items: { type: string }, description: Organisations the text claims to be }
+        lookalike:
+          type: [object, "null"]
+          properties: { brand: { type: string }, fake: { type: string }, official: { type: string } }
+        engine: { type: string, example: "1.0.bf04288543" }
+    LinkResult:
+      type: object
+      properties:
+        ok: { type: boolean }
+        url: { type: string }
+        final: { type: string, description: Where the link actually lands after redirects }
+        host: { type: string }
+        chain: { type: array, items: { type: string } }
+        official: { type: [object, "null"], properties: { domain: { type: string }, name: { type: string } } }
+        title: { type: string }
+        asks: { type: object, properties: { card: { type: boolean }, otp: { type: boolean }, password: { type: boolean }, id: { type: boolean }, iban: { type: boolean } } }
+        ageDays: { type: [integer, "null"], description: Domain age from RDAP }
+        signals: { type: array, items: { type: object, properties: { id: { type: string }, w: { type: integer }, ar: { type: string }, en: { type: string } } } }
+        score: { type: integer }
+        verdict: { type: string, enum: [safe, unknown, caution, danger] }
+        impersonates: { type: [string, "null"] }
+    Error:
+      type: object
+      properties: { error: { type: string, enum: [text_required, bad_url, method, slow_down, not_found, server] } }
+paths:
+  /v1:
+    get:
+      summary: Service information
+      responses: { "200": { description: OK } }
+  /v1/check:
+    post:
+      summary: Check a message (SMS, WhatsApp, email, call transcript)
+      description: Runs the same on-device engine the app uses. The text is not stored or logged.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object, required: [text], properties: { text: { type: string, maxLength: 4000 } } }
+            example: { text: "مصرف الراجحي: تم إيقاف بطاقتك، حدّث بياناتك عبر http://alrajhi-update.top" }
+      responses:
+        "200": { description: Verdict, content: { application/json: { schema: { $ref: "#/components/schemas/CheckResult" } } } }
+        "400": { description: Missing text, content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "429": { description: Rate limited (60 per 10 minutes per IP; ×50 with a partner key) }
+  /v1/link:
+    post:
+      summary: Open a link safely on the server and read where it leads
+      description: Follows redirects with SSRF protection (no private/internal addresses, size and time limits, no script execution).
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [url], properties: { url: { type: string, format: uri } } } } }
+      responses:
+        "200": { description: Link report, content: { application/json: { schema: { $ref: "#/components/schemas/LinkResult" } } } }
+        "400": { description: Invalid or blocked URL }
+        "429": { description: Rate limited (20 per 10 minutes per IP; ×50 with a partner key) }
+  /v1/feed:
+    get:
+      summary: Domains flagged as dangerous in the last 30 days (JSON)
+      responses:
+        "200":
+          description: Feed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  updated: { type: [string, "null"], format: date-time }
+                  count: { type: integer }
+                  domains: { type: array, items: { type: object, properties: { domain: { type: string }, first_seen: { type: string }, last_seen: { type: string }, sightings: { type: integer }, signals: { type: array, items: { type: string } }, impersonates: { type: [string, "null"] } } } }
+  /v1/feed.stix:
+    get:
+      summary: Same feed as a STIX 2.1 bundle (for CERTs and threat-intel platforms)
+      responses: { "200": { description: STIX 2.1 bundle, content: { "application/stix+json;version=2.1": {} } } }
+  /v1/stats:
+    get:
+      summary: Community radar — counts by scam pattern over 7 days (no individual reports)
+      responses: { "200": { description: Aggregates } }

@@ -61,5 +61,19 @@ const h = r.headers;
 ok(h.get("x-content-type-options") === "nosniff" && h.get("strict-transport-security") && h.get("referrer-policy") === "no-referrer" && h.get("cache-control") === "no-store", "ترويسات الأمان موجودة");
 ok(!/console\.log\([^)]*(text|ip|body|audio)/i.test(src), "الخادم ما يسجّل نصوص أو أصوات أو IP");
 
+console.log("\n[3] الواجهة المفتوحة /v1 والمحرك");
+r = await call("/v1/check", { method: "POST", body: JSON.stringify({ text: "أرسل رمز التحقق اللي وصلك" }) }, "7.7.7.7");
+const v1 = await r.json();
+ok(r.status === 200 && v1.verdict === "danger" && r.headers.get("access-control-allow-origin") === "*", "/v1/check يفحص ومفتوح للجهات (CORS *)");
+ok(!kv.size || ![...kv.values()].some(v => String(v).includes("رمز التحقق اللي وصلك")), "/v1/check ما يحفظ النص");
+ok(!r.headers.get("set-cookie"), "/v1 بدون كوكيز");
+r = await call("/v1/link", { method: "POST", body: JSON.stringify({ url: "http://127.0.0.1/admin" }) }, "7.7.7.8");
+ok(r.status === 400, "/v1/link يرفض العناوين الداخلية (SSRF)");
+r = await call("/v1/check", { method: "POST", body: JSON.stringify({ text: "x" }), headers: { "content-type": "application/json", Authorization: "Bearer not-a-real-partner-key" } }, "7.7.7.9");
+ok(r.status === 200, "مفتاح شريك غير صحيح ما يعطي صلاحيات (يعامل كطلب عادي)");
+const { execFileSync } = await import("node:child_process");
+let synced = true; try { execFileSync(process.execPath, [path.join(root, "tools/build-sdk.mjs"), "--check"], { stdio: "pipe" }); } catch (e) { synced = false; }
+ok(synced, "المحرك في الخادم والحزمة مطابق للتطبيق");
+
 console.log("\n" + (fail ? "✗ " + fail + " فشل، " : "✓ ") + pass + " نجح");
 process.exit(fail ? 1 : 0);
